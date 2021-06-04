@@ -13,13 +13,14 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 #hero {
 	margin-bottom: 0;
 }
-.searchbox {
+.alphabet {
 	background: #FFF;
 	margin: 1em 0;
 	padding: 1em;
 	position: sticky;
   top: 0;
 }
+
 .searchbox input {
 	font-size: 18px; 
 	margin: 0 0 0 0; 
