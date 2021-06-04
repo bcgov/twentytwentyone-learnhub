@@ -1,0 +1,92 @@
+/*
+Theme Name: Learning Hub
+Theme URI: https://ihub.gww.gov.bc.ca/learninghub
+Description: A child theme for Twenty Twenty One for the Learning Hub
+Author: Allan Haggett
+Author URI: https://allankenneth.com/
+Template: twentytwentyone
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+#hero {
+	margin-bottom: 0;
+}
+.searchbox {
+	background: #FFF;
+	margin: 1em 0;
+	padding: 1em;
+	position: sticky;
+  top: 0;
+}
+.searchbox input {
+	font-size: 18px; 
+	margin: 0 0 0 0; 
+	padding: 1em; 
+	width: 100%;
+}
+.alphabet {
+	margin: 1em 0;
+}
+#bcgovmast a,
+.site-title {
+	color: #FFF !important;
+}
+.wp-block-search__inside-wrapper {
+	border: 0 !important;
+}
+.wp-block-search__input {
+	background: #F2F2F2 !important;
+	border: 1px solid #999 !important;
+	border-right: 0 !important;
+}
+.wp-block-search__button {
+	background: #3a9bd9 !important;
+	border: 0 !important;
+	color: #FFF !important;
+}
+.helpingimprove {
+	color: #FFF;
+
+}
+.helpingimprove span {
+	color: #3496d2
+}
+.delivermethlink {
+	margin: 1em 0;
+}
+.delivermethlink a {
+	color: #333;
+}
+.course {
+	margin-bottom: 1em;
+}
+.coursename,
+.details {
+	background-color: #FFF; 
+	padding: 0 1em 1em 1em;
+}
+.coursename a {
+	color: #333; 
+	display: block;
+	font-size: 1.4em;
+	padding: .5em 0 0 0;
+	text-decoration: none;
+}
+.course .learningpartner,
+.coursecats,
+.courseregister {
+	margin: 0 0 1em 0;
+}
+.course .learningpartner,
+.course .learningpartner a {
+	color: #3a9bd9;
+}
+.singular .entry-header {
+	border: 0;
+}
+.singular .entry-header {
+	margin-bottom: 0;
+	margin-top: 0;
+}
