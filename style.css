@@ -91,3 +91,10 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 	margin-bottom: 0;
 	margin-top: 0;
 }
+.site-header, 
+.site-main, 
+.widget-area, 
+.site-footer
+{
+ padding: 0;
+}
