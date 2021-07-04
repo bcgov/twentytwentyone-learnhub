@@ -23,6 +23,10 @@ $blog_info    = get_bloginfo( 'name' );
 <a style="font-size: 1.5em; font-weight: bold; text-decoration: none;" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<?php echo esc_html( $blog_info ); ?>
 </a>
+<img alt="Where Ideas Work logo" 
+		class="wiw-logo" 
+		src="https://lc.virtuallearn.ca/portal/wp-content/uploads/sites/6/2021/04/where-ideas-work.png" 
+		width="280">
 </div>
 </header><!-- #masthead -->
 
