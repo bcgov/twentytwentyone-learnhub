@@ -102,3 +102,9 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 .wiw-logo {
 	float: right;
 }
+
+.site-footer > .site-info,
+.site-footer > .site-info a {
+	border: 0;
+	color: #FFF !important;
+}
