@@ -8,27 +8,6 @@
  */
 
 ?>
-<style>
-.navbg {
-	background-color: #3f5986;
-}
-.wp-block-button:not(.is-style-outline) .wp-block-button__link:hover, 
-.wp-block-button:not(.is-style-outline) .wp-block-button__link:active {
-	background: #FFF !important;
-	color: #333 !important;
-}
-.navbg {
-	background-color: #3f5986;
-	border-top: 2px solid #f8be43;
-	padding-left: 1em;
-	padding-right: 1em;
-}
-.primary-navigation .primary-menu-container > ul {
-	flex-direction: row;
-	justify-content: flex-end;
-}
-
-</style>
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
 	<div class="navbg">
 	<div class="alignwide">

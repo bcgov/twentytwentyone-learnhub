@@ -15,8 +15,8 @@ $blog_info    = get_bloginfo( 'name' );
 ?>
 
 <div id="bcgovmast" style="background-color: #003265">
-<header id="" class="" role="banner">
-<div class="alignwide" style="padding: 1em;">
+<header id="mainheader" class="mainhead" role="banner">
+<div class="alignwide" style="padding: 1.4em;">
 <?php if ( has_custom_logo() ) : ?>
 <?php the_custom_logo(); ?>
 <?php endif; ?>
