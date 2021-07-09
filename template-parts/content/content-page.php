@@ -11,18 +11,26 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
 
 	<?php if ( ! is_front_page() ) : ?>
-		<header class="entry-header alignfull" style="background: #FFF; padding: 2em 2em 3em 2em;">
-		<div class="alignwide">
-			<?php get_template_part( 'template-parts/header/entry-header' ); ?>
-			<?php twenty_twenty_one_post_thumbnail(); ?>
-		</div>
-		</header><!-- .entry-header -->
+
+		
+<div class="dark-wrap">
+<div class="wp-block-columns alignwide" id="pagetop">
+<div class="wp-block-column" style="flex-basis:33.33%">
+	<?php twenty_twenty_one_post_thumbnail(); ?>
+</div>
+<div class="wp-block-column">
+	<?php the_title( '<h1 class="pagehead">', '</h1>' ); ?>
+</div>
+</div>
+</div>
+
+
 	<?php elseif ( has_post_thumbnail() ) : ?>
 		<header class="entry-header alignwide">
-			<?php twenty_twenty_one_post_thumbnail(); ?>
+			
 		</header><!-- .entry-header -->
 	<?php endif; ?>
 
@@ -56,4 +64,3 @@
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
-</article><!-- #post-<?php the_ID(); ?> -->

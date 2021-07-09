@@ -36,6 +36,14 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 }
 
+.coursecat { 
+	background: #28537d; 
+	border-radius: 5px; 
+	color: #FFF; 
+	display: inline-block; 
+	padding: .25em .5em; 
+	text-decoration: none;
+}
 .navbg {
 	background-color: #01284f;
 	border-top: 2px solid #f8be43;
@@ -46,10 +54,36 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 	flex-direction: row;
 	justify-content: flex-end;
 }
-.frontpage-news {
+.primary-navigation > div > .menu-wrapper > li > .sub-menu li {
+	background-color: #01284f !important;
+	border: 0 !important;
+}
+.hero {
+	margin-bottom: 0;
+	padding: 0 !important;
+}
+.dark-wrap, 
+#pagetop {
+	background-color: #28537d;
+	color: #FFF;
+	margin-bottom: 0;
+}
+
+.pagehead {
+	
+	margin-top: 1em !important;
+}
+.entry-header, 
+.post-thumbnail, 
+.entry-content, 
+.entry-footer, 
+.author-bio {
+	margin-top: 0;
+}
+.frontpage-news li {
 	background-color: #FFF;
 	color: #333;
-	padding: 2em;
+	padding: 1.5em !important;
 }
 .site-main > article > *, 
 .site-main > .not-found > *, 
@@ -57,8 +91,8 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 .wp-block-template-part > * {
 	margin-top: 0;
 }
-#hero {
-	margin-bottom: 0;
+.post-thumbnail .wp-post-image {
+	margin: 0;
 }
 .alphabet {
 	background: #FFF;
@@ -129,7 +163,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 }
 .course .learningpartner,
 .course .learningpartner a {
-	color: #3a9bd9;
+	color: #28537d;
 }
 .singular .entry-header {
 	border: 0;
@@ -149,9 +183,22 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 .wiw-logo {
 	float: right;
 }
-
+#bcgovfoot {
+	background-color: #003265; 
+	color: #FFF;
+}
 .site-footer > .site-info,
 .site-footer > .site-info a {
 	border: 0;
 	color: #FFF !important;
+}
+
+.widget-area {
+	margin-top: 0 !important;
+}
+
+@media only screen and (max-width: 600px) {
+	.wiw-logo {
+		display: none;
+	}
 }
