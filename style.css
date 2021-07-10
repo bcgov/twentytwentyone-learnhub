@@ -62,16 +62,34 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 	margin-bottom: 0;
 	padding: 0 !important;
 }
-.dark-wrap, 
-#pagetop {
+.dark-wrap {
 	background-color: #28537d;
 	color: #FFF;
+}
+#pagetop {
 	margin-bottom: 0;
 }
-
+#coursetop {
+	margin-bottom: 2em;
+	padding: 1em 0;
+}
+.dark-wrap {
+	margin-bottom: 0;
+}
+#coursetop a {
+	background-color: #01284f;
+	border-radius: 3px;
+	color: #FFF;
+	display: inline-block;
+	padding: .15em 1.3em;
+	text-decoration: none;
+}
 .pagehead {
-	
 	margin-top: 1em !important;
+}
+.coursehead {
+	margin-top: 0 !important;
+	margin-bottom: 1em !important;
 }
 .entry-header, 
 .post-thumbnail, 
@@ -79,6 +97,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 .entry-footer, 
 .author-bio {
 	margin-top: 0;
+	margin-bottom: 0;
 }
 .frontpage-news li {
 	background-color: #FFF;
