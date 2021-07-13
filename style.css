@@ -215,7 +215,21 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 .widget-area {
 	margin-top: 0 !important;
 }
-
+/* .partner-url {
+	
+} */
+.partnerofferings {
+	background-color: #003366;
+	color: #FFF;
+	display: block;
+	margin: 1em 0;
+	padding: .5em 2em;
+	text-align: center;
+	text-decoration: none;
+}
+.partnerofferings:hover {
+	background-color: #333;
+}
 @media only screen and (max-width: 600px) {
 	.wiw-logo {
 		display: none;
