@@ -38,6 +38,9 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 .primary-navigation > div > .menu-wrapper .sub-menu-toggle {
 	display: none;
 }
+#bcgovmast a:focus {
+	background-color: transparent !important; 
+}
 .coursecat { 
 	background: #28537d; 
 	border-radius: 5px; 
