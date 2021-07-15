@@ -31,19 +31,15 @@ while ( have_posts() ) :
 endwhile; // End of the loop.
 ?>
 <?php
-// $categories = get_categories( array(
-//     'taxonomy'=> 'learning_partner',
-//     'orderby' => 'name',
-//     'order'   => 'ASC'
-// ) );
 $terms = get_terms( array(
     'taxonomy' => 'learning_partner',
     'hide_empty' => false,
     'orderby'    => 'count',
+    'order'   => 'DESC',
     'exclude' => 408
 ) );
 ?>
-
+</div> <!-- /.entry-content -->
 <div class="alignwide" style="display: flex; flex-direction: row; flex-wrap: wrap;">
 <?php foreach( $terms as $category ) : ?>
     
@@ -54,6 +50,15 @@ $terms = get_terms( array(
         esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ),
         esc_html( $category->name )
     );
+    $partnerurl = '';
+    $term_vals = get_term_meta($category->term_id);
+    foreach($term_vals as $key=>$val){
+        if($key == 'partner-url') {
+            $partnerurl = $val[0];
+        }
+        
+    } 
+
     ?>
     <div style="background-color: #FFF; flex-basis: 48%; margin: 1%; padding: 1em;">
 
@@ -66,14 +71,18 @@ $terms = get_terms( array(
     <?php else: ?>
         <div><em>This partner does not currently have any courses listed in the Hub.</em></div>
     <?php endif ?>
-    <?php $term_vals = get_term_meta($category->term_id);
-    foreach($term_vals as $key=>$val){
-        if($key == 'partner-url') {
-            echo '<div><a class="partner-url" target="_blank" rel="noopener" href="' . $val[0] . '">View Partner Website</a></div>';
-        }
-        
-    } 
-    ?>
+    <?php if(!empty($partnerurl)): ?>
+    <div>
+        <a class="partner-url" 
+            target="_blank" 
+            rel="noopener" 
+            href="<?= $partnerurl ?>">
+                View Partner Website
+        </a>
+    </div>
+    <?php endif ?>
+
+
 </div>
 
 <?php endforeach ?>
