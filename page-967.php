@@ -51,10 +51,15 @@ $terms = get_terms( array(
         esc_html( $category->name )
     );
     $partnerurl = '';
+    $partnerlogo = '';
     $term_vals = get_term_meta($category->term_id);
     foreach($term_vals as $key=>$val){
+        //echo $val[0] . '<br>';
         if($key == 'partner-url') {
             $partnerurl = $val[0];
+        }
+        if($key == 'category-image-id') {
+            $partnerlogo = $val[0];
         }
         
     } 
@@ -62,6 +67,16 @@ $terms = get_terms( array(
     ?>
     <div style="background-color: #FFF; flex-basis: 48%; margin: 1%; padding: 1em;">
 
+
+    <?php if(!empty($partnerlogo)): ?>
+    
+    <?php $image_attributes = wp_get_attachment_image_src( $attachment_id = $partnerlogo, $size = 'large' ) ?>
+    <?php if ( $image_attributes ) : ?>
+    <img src="<?php echo $image_attributes[0]; ?>" 
+            width="<?php echo $image_attributes[1]; ?>" 
+            height="<?php echo $image_attributes[2]; ?>">
+    <?php endif; ?>
+    <?php endif; ?>
 
    <h3><?= esc_html( $category->name ) ?> </h3>
     <div><?= sprintf( esc_html__( '%s', 'textdomain' ), $category->description ) ?></div>
@@ -71,6 +86,8 @@ $terms = get_terms( array(
     <?php else: ?>
         <div><em>This partner does not currently have any courses listed in the Hub.</em></div>
     <?php endif ?>
+
+
     <?php if(!empty($partnerurl)): ?>
     <div>
         <a class="partner-url" 
