@@ -60,14 +60,10 @@ $terms = get_terms( array(
         }
         if($key == 'category-image-id') {
             $partnerlogo = $val[0];
-        }
-        
+        }  
     } 
-
     ?>
     <div style="background-color: #FFF; flex-basis: 48%; margin: 1%; padding: 1em;">
-
-
     <?php if(!empty($partnerlogo)): ?>
     <?php $image_attributes = wp_get_attachment_image_src( $attachment_id = $partnerlogo, $size = 'medium' ) ?>
     <?php if ( $image_attributes ) : ?>
