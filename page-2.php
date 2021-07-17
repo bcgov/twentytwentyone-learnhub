@@ -48,10 +48,10 @@ $args = array(
 <?php endforeach ?>
 </div>
 
-<div class="alignfull" style="background-color: #FFF; padding: 1em; text-align: center">
+<div class="alignfull" style="background-color: #FFF; padding: 2em; text-align: center">
 
 <h2>Learning is brought to you by&hellip;</h2>
-
+<div class="alignfull" style="padding: 2em 0;">
 <?php
 $terms = get_terms( array(
     'taxonomy' => 'learning_partner',
@@ -72,19 +72,20 @@ $terms = get_terms( array(
     } 
     ?>
     <?php if(!empty($partnerlogo)): ?>
-    <?php $image_attributes = wp_get_attachment_image_src( $attachment_id = $partnerlogo, $size = 'thumbnail' ) ?>
+    <?php $image_attributes = wp_get_attachment_image_src( $attachment_id = $partnerlogo, $size = 'small' ) ?>
     <?php if ( $image_attributes ) : ?>
-    
-    <img src="<?php echo $image_attributes[0]; ?>" 
+    <!-- <a class="logolink" href="<?= esc_url( get_category_link( $category->term_id ) ) ?>"> -->
+        <img src="<?php echo $image_attributes[0]; ?>" 
             width="100"
-			style="filter: grayscale(1);">
-
+			style="display: inline-block; filter: grayscale(1); margin: 0 1em;">
+    <!-- </a> -->
     <?php endif; ?>
     <?php endif; ?>
 
 <?php endforeach ?>
-<div><a class="wp-block-button__link has-background" style="background-color: #145693;" href="/portal/corporate-learning-partners/">Meet the learning partners</a></div>
 
+</div>
+<div><a class="wp-block-button__link has-background" style="background-color: #145693;" href="/portal/corporate-learning-partners/">Meet the learning partners</a></div>
 </div>
 
 

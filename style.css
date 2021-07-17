@@ -80,6 +80,13 @@ iframe {
 	background-color: #FFF;
 	color: #333;
 }
+.logolink {
+	text-decoration: none;
+}
+.logolink:active,
+.logolink:focus {
+	background-color: transparent;
+}
 #pagetop {
 	margin-bottom: 0;
 }
@@ -230,6 +237,7 @@ iframe {
 
 .widget-area {
 	margin-top: 0 !important;
+	color: #FFF !important;
 }
 /* .partner-url {
 	
