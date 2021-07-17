@@ -45,7 +45,7 @@ $terms = get_terms( array(
     
     <?php
     $category_link = sprintf( 
-        '<a href="%1$s" title="%2$s" class="partnerofferings">View courses offered by %3$s</a>',
+        '<a href="%1$s" title="%2$s" class="partnerofferings">View courses offered by this partner</a>',
         esc_url( get_category_link( $category->term_id ) ),
         esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ),
         esc_html( $category->name )
@@ -69,16 +69,19 @@ $terms = get_terms( array(
 
 
     <?php if(!empty($partnerlogo)): ?>
-    
-    <?php $image_attributes = wp_get_attachment_image_src( $attachment_id = $partnerlogo, $size = 'large' ) ?>
+    <?php $image_attributes = wp_get_attachment_image_src( $attachment_id = $partnerlogo, $size = 'medium' ) ?>
     <?php if ( $image_attributes ) : ?>
+    <div style="text-align:center">
     <img src="<?php echo $image_attributes[0]; ?>" 
             width="<?php echo $image_attributes[1]; ?>" 
             height="<?php echo $image_attributes[2]; ?>">
+    </div>
     <?php endif; ?>
+    <?php else: ?>
+    <h3><?= esc_html( $category->name ) ?> </h3>
     <?php endif; ?>
 
-   <h3><?= esc_html( $category->name ) ?> </h3>
+    
     <div><?= sprintf( esc_html__( '%s', 'textdomain' ), $category->description ) ?></div>
     <div><?= sprintf( esc_html__( '%s courses', 'textdomain' ), $category->count ) ?></div>
     <?php if($category->count > 0): ?>
