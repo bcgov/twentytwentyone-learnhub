@@ -171,7 +171,7 @@ iframe {
 	border-right: 0 !important;
 }
 .wp-block-search__button {
-	background: #3a9bd9 !important;
+	background: #145693 !important;
 	border: 0 !important;
 	color: #FFF !important;
 }
@@ -252,8 +252,8 @@ iframe {
 }
 .partnerofferings,
 .more-link {
-	background-color: #003366;
-	border-radius: 0 0 3px 3px;
+	background-color: #145693;
+	border-radius: 3px;
 	color: #FFF;
 	display: block;
 	margin-top: .5em;

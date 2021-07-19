@@ -85,7 +85,7 @@ $terms = get_terms( array(
     </div>
     <?php endif; ?>
     <?php endif; ?>
-    <h3 class="partnername" style="margin: 0 0 1em 0; text-align: center"><?= esc_html( $category->name ) ?> </h3>
+    <h3 class="partnername" style="margin: 0 0 .5em 0; text-align: center"><?= esc_html( $category->name ) ?> </h3>
     <div class="partnerdesc" style="background-color: #FFF; padding: 1em 2em;">
     <div>
     <?= sprintf( esc_html__( '%s', 'textdomain' ), $category->description ) ?>

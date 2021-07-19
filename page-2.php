@@ -26,16 +26,17 @@ $args = array(
 
 <div class="wp-block-columns alignwide">
 <?php $latest_posts = get_posts( $args ) ?>
+<?php $count = 1 ?>
 <?php foreach($latest_posts as $post) : ?>
 <?php setup_postdata( $post ) ?>
-<div class="wp-block-column" style="flex-basis:50%">
+<div class="wp-block-column" style="flex-basis: 50%;">
 	<div style="margin: 0">
 		<a href="<?php the_permalink() ?>">
 			<?php twenty_twenty_one_post_thumbnail(); ?>
 		</a>
 	</div>
 	<div class="" style="background-color:#FFF; margin: 0; padding: 1em;">
-		<h3>
+		<h3 style="margin-bottom: .5em;">
 			<a href="<?php the_permalink() ?>">
 				<?php the_title() ?>
 			</a>
@@ -45,6 +46,11 @@ $args = array(
 		</div>
 	</div>
 </div>
+<?php $count++ ?>
+<?php if($count%2>0): ?>
+</div>
+<div class="wp-block-columns alignwide">
+<?php endif ?>
 <?php endforeach ?>
 </div>
 
@@ -55,8 +61,9 @@ $args = array(
 <?php
 $terms = get_terms( array(
     'taxonomy' => 'learning_partner',
-    'hide_empty' => false,
+    'hide_empty' => true,
     'orderby'    => 'count',
+    'number' => 6,
     'order'   => 'DESC',
     'exclude' => 408
 ) );
@@ -85,7 +92,7 @@ $terms = get_terms( array(
 <?php endforeach ?>
 
 </div>
-<div><a class="wp-block-button__link has-background" style="background-color: #145693;" href="/portal/corporate-learning-partners/">Meet the learning partners</a></div>
+<div><a class="wp-block-button__link has-background" style="background-color: #145693; border-radius: 3px; " href="/portal/corporate-learning-partners/">Meet the learning partners</a></div>
 </div>
 
 
