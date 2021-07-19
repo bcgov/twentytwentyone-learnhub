@@ -143,7 +143,12 @@ iframe {
 	position: sticky;
 	top: 0;
 }
-
+.searchbox {
+	background-color: #FFF;
+	border-radius: 3px;
+	margin: 1em 0;
+	padding: .5em;
+}
 .searchbox input {
 	font-size: 18px; 
 	margin: 0 0 0 0; 
@@ -239,17 +244,25 @@ iframe {
 	margin-top: 0 !important;
 	color: #FFF !important;
 }
-/* .partner-url {
-	
-} */
-.partnerofferings {
+.widget-area a {
+	color: #FFF !important;
+}
+.partner-url {
+	border-radius: 3px;	
+}
+.partnerofferings,
+.more-link {
 	background-color: #003366;
+	border-radius: 0 0 3px 3px;
 	color: #FFF;
 	display: block;
-	margin: 1em 0;
+	margin-top: .5em;
 	padding: .5em 2em;
 	text-align: center;
 	text-decoration: none;
+}
+.partnerofferings {
+	margin: 1em 2em;
 }
 .partnerofferings:hover {
 	background-color: #333;

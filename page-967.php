@@ -40,15 +40,25 @@ $terms = get_terms( array(
 ) );
 ?>
 </div> <!-- /.entry-content -->
-<div class="alignwide" style="display: flex; flex-direction: row; flex-wrap: wrap;">
+
+<div id="partnerlist">
+<div class="alignwide">
+    <div class="entry-content searchbox" style="text-align: center">
+    <input class="search form-control mb-3" placeholder="Type here to filter partners">
+	</div>
+	</div>
+	
+<div class="list alignwide" style="display: flex; flex-direction: row; flex-wrap: wrap;">
 <?php foreach( $terms as $category ) : ?>
     
     <?php
+    $pcount = $category->count . ' course';
+    if($category->count > 1) $pcount = $category->count . ' courses';
     $category_link = sprintf( 
-        '<a href="%1$s" title="%2$s" class="partnerofferings">View courses offered by this partner</a>',
+        '<a href="%1$s" title="%2$s" class="partnerofferings">View %3$s offered by this partner</a>',
         esc_url( get_category_link( $category->term_id ) ),
         esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ),
-        esc_html( $category->name )
+        esc_html( $pcount )
     );
     $partnerurl = '';
     $partnerlogo = '';
@@ -63,32 +73,25 @@ $terms = get_terms( array(
         }  
     } 
     ?>
-    <div style="background-color: #FFF; flex-basis: 48%; margin: 1%; padding: 1em;">
+    <div style="background-color: #FFF; border-radius: 3px; flex-basis: 48%; margin: 1%; padding-top: 2em;">
     <?php if(!empty($partnerlogo)): ?>
     <?php $image_attributes = wp_get_attachment_image_src( $attachment_id = $partnerlogo, $size = 'medium' ) ?>
     <?php if ( $image_attributes ) : ?>
-    <div style="text-align:center">
+    <div style="margin: 1em 0; text-align:center;">
     <img src="<?php echo $image_attributes[0]; ?>" 
             width="<?php echo $image_attributes[1]; ?>" 
-            height="<?php echo $image_attributes[2]; ?>">
+            height="<?php echo $image_attributes[2]; ?>"
+            alt="<?= esc_html( $category->name ) ?> logo">
     </div>
     <?php endif; ?>
-    <?php else: ?>
-    <h3><?= esc_html( $category->name ) ?> </h3>
     <?php endif; ?>
-
-    
-    <div><?= sprintf( esc_html__( '%s', 'textdomain' ), $category->description ) ?></div>
-    <div><?= sprintf( esc_html__( '%s courses', 'textdomain' ), $category->count ) ?></div>
-    <?php if($category->count > 0): ?>
-    <?= sprintf( esc_html__( '%s', 'textdomain' ), $category_link ) ?>
-    <?php else: ?>
-        <div><em>This partner does not currently have any courses listed in the Hub.</em></div>
-    <?php endif ?>
-
-
-    <?php if(!empty($partnerurl)): ?>
+    <h3 class="partnername" style="margin: 0 0 1em 0; text-align: center"><?= esc_html( $category->name ) ?> </h3>
+    <div class="partnerdesc" style="background-color: #FFF; padding: 1em 2em;">
     <div>
+    <?= sprintf( esc_html__( '%s', 'textdomain' ), $category->description ) ?>
+    </div>
+    <?php if(!empty($partnerurl)): ?>
+    <div style="margin-top: 1.5em; text-align: center;">
         <a class="partner-url" 
             target="_blank" 
             rel="noopener" 
@@ -97,12 +100,38 @@ $terms = get_terms( array(
         </a>
     </div>
     <?php endif ?>
+    </div>
+    <?php if($category->count > 0): ?>
+    <?= sprintf( esc_html__( '%s', 'textdomain' ), $category_link ) ?>
+    <?php else: ?>
+        <div style="background-color: #F2F2F2; margin: 2em; padding: 1em; text-align: center;">
+            <em>This partner does not currently have any courses listed in the Hub.</em>
+        </div>
+    <?php endif ?>
+
 
 
 </div>
 
 <?php endforeach ?>
+    </div>
+    </div>
 </div> <!-- /wp-block-columns -->
 
 
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+<script>
+
+var courseoptions = {
+    valueNames: [ 'partnername', 'partnerdesc' ]
+};
+var partners = new List('partnerlist', courseoptions);
+document.getElementById('pcount').innerHTML = partners.update().matchingItems.length;
+partners.on('searchComplete', function(){
+    //console.log(upcomingClasses.update().matchingItems.length);
+    //console.log(courses.update().matchingItems.length);
+    document.getElementById('pcount').innerHTML = partners.update().matchingItems.length;
+});
+
+</script>
 <?php get_footer() ?>
