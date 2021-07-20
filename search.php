@@ -24,60 +24,31 @@ if ( have_posts() ) {
 			);
 			?>
 		</h1>
-        </div>
-	</header><!-- .page-header -->
 
-	<div class="search-result-count alignwide">
+
 		<?php
 		printf(
 			esc_html(
 				/* translators: %d: The number of search results. */
 				_n(
-					'We found %d result for your search.',
-					'We found %d results for your search.',
+					'We found %d course for your search.',
+					'We found %d courses for your search.',
 					(int) $wp_query->found_posts,
-					'twentytwentyone'
+					'twentytwentyone-learninghub'
 				)
 			),
 			(int) $wp_query->found_posts
 		);
 		?>
-	</div><!-- .search-result-count -->
-	<div class="alignwide">
+	        </div>
+	</header><!-- .page-header -->
+	<div class="entry-content">
 	<?php
 	// Start the Loop.
 	while ( have_posts() ) {
 		the_post();
-?>
-		<div class="course">
-                <div style="background: #3a9bd9; height: 6px; width: 25%;"></div> 
-                <div class="coursename">
-                <a  href="<?php echo get_permalink(); ?>">
-                    <?= the_title(); ?>
-                </a>
-                <!-- <a href="#course-<?= $post->ID ?>" class="showdeets">#</a> -->
-                </div>
-                <div class="details" id="course-<?= $post->ID ?>">
-                    <div class="learningpartner">
-                        <?php the_terms( $post->ID, 'learning_partner', 'Offered by: ', ', ', ' ' ); ?>
-                    </div>
-                    <div class="coursedesc">
-                        <?php the_content(); ?>
-                    </div>
-                    <div class="coursecats">
-                        <?php the_terms( $post->ID, 'course_category', 'Categories: ', ', ', ' ' ); ?>
-                    </div>
-                    <div class="courseregister">
-                    <a style="background: #3a9bd9; color: #F2F2F2; font-size: 1.2rem; padding: .5em 1em; text-align: center; text-decoration: none;" 
-                        href="<?= $post->course_link ?>" 
-                        target="_blank" 
-                        rel="noopener">
-                            Register Here +
-                    </a>
-                    </div>
-                </div>
-           </div> <!-- /.course -->
-		   <?php
+		get_template_part( 'template-parts/course/single-course' );
+
 	} // End the loop.
 ?></div><?php 
 	// Previous/next page navigation.

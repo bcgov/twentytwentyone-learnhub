@@ -54,7 +54,7 @@ $args = array(
 <?php endforeach ?>
 </div>
 
-<div class="alignfull" style="background-color: #FFF; padding: 2em; text-align: center">
+<div class="alignfull" style="background-color: #FFF; padding: 4em 2em; text-align: center">
 
 <h2>Learning is brought to you by&hellip;</h2>
 <div class="alignfull" style="padding: 2em 0;">
@@ -88,7 +88,6 @@ $terms = get_terms( array(
     <!-- </a> -->
     <?php endif; ?>
     <?php endif; ?>
-
 <?php endforeach ?>
 
 </div>
