@@ -108,6 +108,7 @@ iframe {
 	margin-bottom: 1em !important;
 }
 
+.post-thumbnail,
 .post-thumbnail .wp-post-image {
 	margin: 0;
 }
@@ -216,6 +217,9 @@ iframe {
 }
 .courseregister {
 	margin: 1em 0 0 0;
+}
+.entry-content {
+	margin: 0;
 }
 .singular .entry-header {
 	border: 0;

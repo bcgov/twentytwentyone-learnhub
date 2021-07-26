@@ -17,12 +17,11 @@ $blog_info    = get_bloginfo( 'name' );
 <div id="bcgovmast" style="background-color: #003265">
 <header id="mainheader" class="mainhead" role="banner">
 <div class="alignwide" style="padding: 1.4em 0;">
-<?php if ( has_custom_logo() ) : ?>
-<?php the_custom_logo(); ?>
-<?php endif; ?>
-<a style="font-size: 1.5em; font-weight: bold; text-decoration: none;" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<?php echo esc_html( $blog_info ); ?>
+
+<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+	<?php the_custom_logo(); ?>
 </a>
+
 <img alt="Where Ideas Work logo" 
 		class="wiw-logo" 
 		src="https://lc.virtuallearn.ca/portal/wp-content/uploads/sites/6/2021/04/where-ideas-work.png" 
