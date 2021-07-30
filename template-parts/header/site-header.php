@@ -18,14 +18,18 @@ $blog_info    = get_bloginfo( 'name' );
 <header id="mainheader" class="mainhead" role="banner">
 <div class="alignwide" style="padding: 1.4em 0;">
 
+<img alt="Where Ideas Work logo" 
+		class="wiw-logo" 
+		height="48" 
+		src="https://lc.virtuallearn.ca/portal/wp-content/uploads/sites/6/2021/07/where-ideas-work.png" 
+		width="220">
+		
 <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<?php the_custom_logo(); ?>
 </a>
 
-<img alt="Where Ideas Work logo" 
-		class="wiw-logo" 
-		src="https://lc.virtuallearn.ca/portal/wp-content/uploads/sites/6/2021/04/where-ideas-work.png" 
-		width="280">
+
+
 </div>
 </header><!-- #masthead -->
 

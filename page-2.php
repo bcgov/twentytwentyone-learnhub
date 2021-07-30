@@ -24,34 +24,60 @@ $args = array(
 );
 ?>
 
-<div class="wp-block-columns alignwide">
+<div class="alignwide">
+<div class="hubgrid">
+<div class="hubgridinner">
 <?php $latest_posts = get_posts( $args ) ?>
 <?php $count = 1 ?>
 <?php foreach($latest_posts as $post) : ?>
 <?php setup_postdata( $post ) ?>
-<div class="wp-block-column" style="flex-basis: 50%;">
-	<div style="margin: 0">
+<div class="hubcard">
+	<div>
+        <?php if($post->news_link): ?>
+        <a href="<?php echo $post->news_link ?>" target="_blank" rel="noopener">
+			<?php twenty_twenty_one_post_thumbnail(); ?>
+		</a>
+        <?php else: ?>
 		<a href="<?php the_permalink() ?>">
 			<?php twenty_twenty_one_post_thumbnail(); ?>
 		</a>
+        <?php endif ?>
 	</div>
-	<div class="" style="background-color:#FFF; margin: 0; padding: 1em;">
-		<h3 style="margin-bottom: .5em;">
+	<div class="hubtitle">
+        <?php if($post->news_link): ?>
+        <h3>
+            <a href="<?php echo $post->news_link ?>" target="_blank" rel="noopener">
+				<?php the_title() ?>
+			</a>
+		</h3>
+        <?php else: ?>
+        <h3>
 			<a href="<?php the_permalink() ?>">
 				<?php the_title() ?>
 			</a>
 		</h3>
-		<div>
-			<?php the_excerpt() ?>
-		</div>
+        <?php endif ?>
+
+    </div>
+	<div class="hubexcerpt flexible">
+        <?php echo wp_strip_all_tags( get_the_excerpt(), true ); ?>
 	</div>
+    <div class="hublink">
+        <?php if($post->news_link): ?>
+            <a href="<?php echo $post->news_link ?>" target="_blank" rel="noopener">Read More</a>
+        <?php else: ?>
+            <a href="<?= the_permalink() ?>">Read More</a>
+        <?php endif ?>
+    </div>
 </div>
 <?php $count++ ?>
 <?php if($count%2>0): ?>
 </div>
-<div class="wp-block-columns alignwide">
+<div class="hubgridinner">
 <?php endif ?>
 <?php endforeach ?>
+</div>
+</div>
 </div>
 
 <div class="alignfull" style="background-color: #FFF; padding: 4em 2em; text-align: center">
