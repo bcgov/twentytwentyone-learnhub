@@ -234,9 +234,9 @@ iframe {
 }
 .numcount,
 .coursecat { 
-	background: #28537d; 
+	background: #FFF; 
 	border-radius: 5px; 
-	color: #FFF; 
+	color: #333; 
 	display: inline-block; 
 	padding: .25em .5em; 
 	text-decoration: none;
