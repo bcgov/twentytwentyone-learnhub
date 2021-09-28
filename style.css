@@ -10,7 +10,6 @@ License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
-
 :root {
 
 	/* Font Family */
@@ -47,14 +46,33 @@ iframe {
 	color: #FFF;
 }
 
+.wordmark {
+	display: block;
+	font-size: 1.5em;
+	text-decoration: none;
+}
+.wordmark span {
+	display: inline-block;
+	letter-spacing: -.1em;
+	margin-left: -8px;
+}
 #site-navigation,
 .primary-menu-container,
 .menu-button-container,
 .menu-wrapper {
 	background-color: #01284f;
 }
+
+#bcgovmast a,
+.site-title {
+	color: #FFF !important;
+}
+
 #bcgovmast a:focus {
 	background-color: transparent !important; 
+}
+.mainhead {
+	padding: 1em 0;
 }
 
 .navbg {
@@ -63,6 +81,22 @@ iframe {
 	padding-left: 1em;
 	padding-right: 1em;
 }
+
+.wiw-logo {
+	
+	float: right;
+	/* margin-top: -.30em; */
+}
+
+@media only screen and (max-width: 600px) {
+	.wiw-logo {
+		display: none;
+		
+	}
+}
+
+
+
 .primary-navigation .primary-menu-container > ul {
 	flex-direction: row;
 	justify-content: flex-end;
@@ -72,7 +106,7 @@ iframe {
 	border: 0 !important;
 }
 .hero {
-	margin-bottom: 0;
+	
 	padding: 0 !important;
 }
 .dark-wrap {
@@ -184,13 +218,6 @@ iframe {
 }
 
 
-
-
-
-
-
-
-
 .post-thumbnail,
 .post-thumbnail .wp-post-image {
 	margin: 0;
@@ -200,7 +227,7 @@ iframe {
 	margin: 1em 0;
 	padding: 1em;
 	position: sticky;
-	top: 0;
+	top: 28px;
 }
 .searchbox {
 	background-color: #FFF;
@@ -216,10 +243,6 @@ iframe {
 }
 .alphabet {
 	margin: 1em 0;
-}
-#bcgovmast a,
-.site-title {
-	color: #FFF !important;
 }
 
 
@@ -263,13 +286,28 @@ iframe {
 	border: 0 !important;
 	color: #FFF !important;
 }
+.widget {
+	border-bottom: 2px solid #f8be43;
+	padding: 1em 0;
+}
 .helpingimprove {
+	/* border-bottom: 2px solid #f8be43; */
 	color: #FFF;
-
+	font-size: 3.5em;
+	line-height: 1em;
+	padding-bottom: 1em;	
 }
 .helpingimprove span {
 	color: #3496d2
 }
+#custom_html-7 {
+	padding-top: 4em;
+}
+#custom_html-5,
+#nav_menu-2 {
+	padding-bottom: 4em;
+}
+
 .delivermethlink {
 	margin: 1em 0;
 }
@@ -318,10 +356,10 @@ iframe {
 {
  padding: 0;
 }
-
-.wiw-logo {
-	float: right;
+.site-main > * {
+	margin-top : 0;
 }
+
 
 #bcgovfoot {
 	background-color: #003265; 
@@ -360,8 +398,6 @@ iframe {
 .partnerofferings:hover {
 	background-color: #333;
 }
-@media only screen and (max-width: 600px) {
-	.wiw-logo {
-		display: none;
-	}
+.landacknowledge {
+	font-size: 1.3em;
 }

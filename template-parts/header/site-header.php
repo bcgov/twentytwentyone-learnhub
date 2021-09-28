@@ -16,19 +16,20 @@ $blog_info    = get_bloginfo( 'name' );
 
 <div id="bcgovmast" style="background-color: #003265">
 <header id="mainheader" class="mainhead" role="banner">
-<div class="alignwide" style="padding: 1.4em 0;">
+<div class="alignwide">
 
+
+<div class="wiw-logo">
 <img alt="Where Ideas Work logo" 
-		class="wiw-logo" 
 		height="48" 
 		src="https://lc.virtuallearn.ca/portal/wp-content/uploads/sites/6/2021/07/where-ideas-work.png" 
 		width="220">
-		
-<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<?php the_custom_logo(); ?>
+
+</div>		
+<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="wordmark">
+	<?php //the_custom_logo(); ?>
+	Learning <span>HUB</span>
 </a>
-
-
 
 </div>
 </header><!-- #masthead -->
