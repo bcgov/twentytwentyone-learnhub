@@ -14,7 +14,7 @@ $wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
 $blog_info    = get_bloginfo( 'name' );
 ?>
 
-<div id="bcgovmast" style="background-color: #003265">
+<div id="bcgovmast">
 <header id="mainheader" class="mainhead" role="banner">
 <div class="alignwide">
 
