@@ -21,10 +21,40 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 	--global--font-size-xl: 2.25rem;
 	--global--font-size-xxl: 3rem;
 	--global--font-size-xxxl: 3.5rem;
+
 	--global--spacing-vertical: 0;
 }
+img,
+iframe {
+	height: auto;
+	max-width: 100%;
+}
+
+.my-1 {
+	margin: 1em 0;
+}
+.mt-1 {
+	margin-top: 1em;
+}
+
+.p-1 {
+	padding: 1em;
+}
+.p-2 {
+	padding: 2em;
+}
+.p-3 {
+	padding: 3em;
+}
+.bg-white {
+	background-color: #FFF;
+}
+
 #bcgovmast {
 	background-color: #003265;
+}
+#bcgovmast a:focus {
+	background-color: transparent !important; 
 }
 .wordmark {
 	color: #FFF;
@@ -43,6 +73,12 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 	float: right;
 	margin: .8em 0;
 }
+@media only screen and (max-width: 600px) {
+	.wiw-logo {
+		display: none;
+		
+	}
+}
 
 .navbg {
 	background-color: #01284f;
@@ -57,9 +93,26 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 	color: #FFF;
 }
 
-.wp-block-search__inside-wrapper {
-	border: 2px solid #003265 !important;
-	margin: 1em 0;
+
+
+
+.dark-wrap,
+#pagetop {
+	background-color: #28537d;
+	color: #FFF;
+	margin-bottom: 0;
+}
+.white-wrap {
+	background-color: #FFF;
+	color: #333;
+}
+.pagehead {
+	margin: 1em 0 !important;
+}
+
+#coursetop,
+#partnertop {
+	padding: 2em 0;
 }
 
 
@@ -123,6 +176,85 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 		width: 100%;
 	}
 }
+
+
+
+
+.searchbox {
+	background: #FFF;
+	border-radius: .25em;
+	margin: 1em 0;
+	padding: 1em;
+}
+.searchbox input {
+	font-size: 18px; 
+	margin: 0 0 0 0; 
+	padding: 1em; 
+	width: 100%;
+}
+.wp-block-search__inside-wrapper {
+	border: 0 !important;
+}
+.wp-block-search__input {
+	background: #F2F2F2 !important;
+	border: 1px solid #999 !important;
+	border-right: 0 !important;
+}
+.wp-block-search__button {
+	background: #145693 !important;
+	border: 0 !important;
+	color: #FFF !important;
+}
+.alphabet {
+	background: #FFF;
+	margin-bottom: .5em;
+	padding: .3em 0;
+	position: sticky;
+	text-align: center;
+	
+	top: 28px;
+}
+.alphabet a {
+	background: #F1F1F1;
+	border-radius: 3px;
+	display: inline-block;
+	font-size: .6em;
+	margin: 0 .15em;
+	padding: .25em .5em;
+	text-decoration: none;
+}
+
+.course {
+	margin-bottom: 1em;
+}
+
+.coursename a {
+	color: #333; 
+	display: block;
+	font-size: 1.4em;
+	text-decoration: none;
+}
+
+.coursecats,
+.delivery-method {
+	font-size: 0.8em;
+	margin-bottom: .5em;
+}
+.coursecats a,
+.delivery-method a {
+	background-color: #F1F1F1;
+	border-radius: 3px;
+	text-decoration: none;
+}
+
+.courseregister {
+	margin: 1em 0 0 0;
+}
+
+
+
+
+
 
 
 #bcgovfoot {

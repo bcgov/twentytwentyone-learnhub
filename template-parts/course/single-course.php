@@ -1,5 +1,6 @@
-<div class="course">
+<div class="course bg-white">
 <div style="background: #28537d; height: 6px; width: 100%;"></div> 
+<div class="p-1">
     <div class="coursename">
     <a  href="<?php echo get_permalink(); ?>">
         <?= the_title(); ?>
@@ -10,7 +11,7 @@
         <div class="learningpartner">
             <?php the_terms( $post->ID, 'learning_partner', 'Offered by: ', ', ', ' ' ); ?>
         </div>
-        <div class="coursedesc">
+        <div class="coursedesc bg-white my-1">
             <?php the_content(); ?>
         </div>
         <div class="coursecats">
@@ -28,5 +29,6 @@
                 Register on <?= $exsys[0]->name ?>
         </a>
         </div>
+    </div>
     </div>
 </div> <!-- /.course -->
