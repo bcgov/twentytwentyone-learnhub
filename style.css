@@ -24,17 +24,33 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 	--global--spacing-vertical: 0;
 }
+.menu-button-container #primary-mobile-menu {
+	color: #FFF;
+	margin-top: 1em;
+}
+.primary-navigation > .primary-menu-container,
+.primary-navigation-open .menu-button-container {
+	background-color: #01284f;
+}
 img,
 iframe {
 	height: auto;
 	max-width: 100%;
 }
 
+/* I like utility classes after working wtih Bootstrap for so long. Sue me.*/
 .my-1 {
 	margin: 1em 0;
+	margin-bottom: 1em !important;
 }
 .mt-1 {
 	margin-top: 1em;
+}
+.mt-wee {
+	margin-top: .5em;
+}
+.mb-1 {
+	margin-bottom: 1em !important;
 }
 
 .p-1 {
@@ -108,6 +124,10 @@ iframe {
 }
 .pagehead {
 	margin: 1em 0 !important;
+}
+
+.hero {
+	padding: 0 !important;
 }
 
 #coursetop,
@@ -250,8 +270,20 @@ iframe {
 .courseregister {
 	margin: 1em 0 0 0;
 }
-
-
+.registerbutton {
+	background: #28537d; 
+	color: #F2F2F2; 
+	display: block;
+	font-size: 1.4rem; 
+	padding: .5em 1em; 
+	text-align: center; 
+	text-decoration: none;
+}
+.learningpartner,
+.learningpartner a {
+	color: #28537d;
+	font-weight: bold; 
+}
 
 
 
