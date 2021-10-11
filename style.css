@@ -48,7 +48,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 .menu-button-container #primary-mobile-menu {
 	color: #FFF;
-	margin-top: 1em;
+	margin-top: .25em;
 }
 .primary-navigation > .primary-menu-container,
 .primary-navigation-open .menu-button-container {
