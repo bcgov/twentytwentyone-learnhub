@@ -182,7 +182,12 @@ iframe {
 	margin-bottom: 1em;
 	padding: 2em 0;
 }
-
+.wp-block-columns.has-background {
+	padding: 0;
+}
+.wp-block-image.size-large {
+	margin-bottom: 0;
+}
 .post-thumbnail .wp-post-image {
 	margin-top: 0;
 }
@@ -195,6 +200,11 @@ iframe {
 }
 .coursehead {
 	margin-top: 0 !important;
+}
+.partner-url {
+	font-weight: bold;
+	margin-top: 2em;
+	text-align: center;
 }
 
 .hubgrid {
@@ -221,6 +231,10 @@ iframe {
 	min-height: 120px;
 	padding: 2em 0;
 	text-align: center;
+}
+.hubfeatimage img {
+	height: 70px;
+	width: auto;
 }
 .flexible {
     flex-grow: 1;
