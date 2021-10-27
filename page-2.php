@@ -11,6 +11,15 @@
 
 get_header();
 ?>
+<?php 
+/* Start the Loop */
+while ( have_posts() ) :
+	the_post();
+	the_content();
+	//get_template_part( 'template-parts/content/content-page' );
+endwhile; // End of the loop.
+?>
+
 <div class="wp-block-cover alignfull has-white-background-color has-background-dim" style="min-height:260px">
 <div class="wp-block-cover__inner-container">
 <p class="has-text-align-center mb-1">Search the catalogue, or 
@@ -41,20 +50,6 @@ get_header();
 </p>
 </div>
 </div>
-
-<?php 
-/* Start the Loop */
-while ( have_posts() ) :
-	the_post();
-	the_content();
-	//get_template_part( 'template-parts/content/content-page' );
-endwhile; // End of the loop.
-?>
-<?php
-$args = array(
-	'numberposts' => 4
-);
-?>
 
 <div class="alignfull" style="background-color: #FFF; padding: 4em 2em; text-align: center">
 <h2>Learning is brought to you by&hellip;</h2>
@@ -109,6 +104,11 @@ $terms = get_terms( array(
 <div class="alignwide">
 <div class="hubgrid">
 <div class="hubgridinner">
+<?php
+$args = array(
+	'numberposts' => 4
+);
+?>
 <?php $latest_posts = get_posts( $args ) ?>
 <?php $count = 1 ?>
 <?php foreach($latest_posts as $post) : ?>
