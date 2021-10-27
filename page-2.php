@@ -14,11 +14,11 @@ get_header();
 <div class="wp-block-cover alignfull has-white-background-color has-background-dim" style="min-height:260px">
 <div class="wp-block-cover__inner-container">
 <p class="has-text-align-center mb-1">Search the catalogue, or 
-    <a href="https://lc.virtuallearn.ca/portal/course/" data-type="page">see a list of all courses</a>.
+    <a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/" data-type="page">see a list of all courses</a>.
 </p>
 <form role="search" 
         method="get" 
-        action="https://lc.virtuallearn.ca/portal/" 
+        action="https://learningcentre.gww.gov.bc.ca/learninghub/" 
         class="wp-block-search__button-inside wp-block-search__icon-button wp-block-search">
 <div class="wp-block-search__inside-wrapper">
 
@@ -35,9 +35,9 @@ get_header();
 </div>
 </form>
 <p class="has-text-align-center mt-1">
-    <a href="https://lc.virtuallearn.ca/portal/foundational-courses/">Foundational Courses</a> | 
-    <a href="https://lc.virtuallearn.ca/portal/supervisors-and-managers/">Supervisors and Managers</a> | 
-    <a href="https://lc.virtuallearn.ca/portal/leadership/">Leadership</a>
+    <a href="https://learningcentre.gww.gov.bc.ca/learninghub/foundational-courses/">Foundational Courses</a> | 
+    <a href="https://learningcentre.gww.gov.bc.ca/learninghub/supervisors-and-managers/">Supervisors and Managers</a> | 
+    <a href="https://learningcentre.gww.gov.bc.ca/learninghub/leadership/">Leadership</a>
 </p>
 </div>
 </div>
@@ -97,7 +97,7 @@ $terms = get_terms( array(
 <div>
     <a class="wp-block-button__link has-background" 
         style="background-color: #145693; border-radius: 3px; " 
-        href="/portal/corporate-learning-partners/">
+        href="/learninghub/corporate-learning-partners/">
             Meet the Partners
         </a>
 </div>
