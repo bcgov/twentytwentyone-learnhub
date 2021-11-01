@@ -20,7 +20,7 @@ while ( have_posts() ) :
 endwhile; // End of the loop.
 ?>
 
-<div class="wp-block-cover alignfull has-white-background-color has-background-dim" style="min-height:260px">
+<div class="wp-block-cover alignfull has-white-background-color has-background-dim" style="background-color: #FFF; min-height:260px">
 <div class="wp-block-cover__inner-container">
 <p class="has-text-align-center mb-1">Search the catalogue, or 
     <a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/" data-type="page">see a list of all courses</a>.
@@ -54,29 +54,7 @@ endwhile; // End of the loop.
 
 
 
-
-<div class="alignfull" style="background-color: #FFF; padding: 4em 2em; text-align: center">
-<h2>Learning is brought to you by&hellip;</h2>
-<div class="alignfull" style="padding: 2em 0;">
-<img src="http://learningcentre.gww.gov.bc.ca/learninghub/wp-content/uploads/sites/17/2021/10/partner-logos-small-greyscale.jpg" 
-    alt="Learning Partner Logos"
-    height="86"
-    width="421">
-</div>
-<div>
-    <a class="wp-block-button__link has-background" 
-        style="background-color: #145693; border-radius: 3px; " 
-        href="http://learningcentre.gww.gov.bc.ca/learninghub/corporate-learning-partners/">
-            Meet the Partners
-        </a>
-</div>
-</div>
-
-
-
-
-
-
+<div class="alignfull" style="background-color: #c3d4e4;">
 <div class="alignwide">
 <div class="hubgrid">
 <div class="hubgridinner">
@@ -135,6 +113,29 @@ $args = array(
 <?php endif ?>
 <?php endforeach ?>
 </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="alignfull" style="background-color: #FFF; padding: 4em 2em; text-align: center">
+<h2>Learning is brought to you by&hellip;</h2>
+<div class="alignfull" style="padding: 2em 0;">
+<img src="http://learningcentre.gww.gov.bc.ca/learninghub/wp-content/uploads/sites/17/2021/10/partner-logos-small-greyscale.jpg" 
+    alt="Learning Partner Logos"
+    height="86"
+    width="421">
+</div>
+<div>
+    <a class="wp-block-button__link has-background" 
+        style="background-color: #145693; border-radius: 3px; " 
+        href="http://learningcentre.gww.gov.bc.ca/learninghub/corporate-learning-partners/">
+            Meet the Partners
+        </a>
 </div>
 </div>
 

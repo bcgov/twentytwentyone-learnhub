@@ -158,6 +158,11 @@ iframe {
 }
 
 
+.wp-block-cover.hero .wp-block-cover__inner-container {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
 .site-main > * {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -277,7 +282,7 @@ iframe {
 
 
 .searchbox {
-	background: #FFF;
+	/* background: #FFF; */
 	border-radius: .25em;
 	margin: 1em 0;
 	padding: 1em;
@@ -292,7 +297,7 @@ iframe {
 	border: 0 !important;
 }
 .wp-block-search__input {
-	background: #F2F2F2 !important;
+	/* background: #F2F2F2 !important; */
 	border: 1px solid #999 !important;
 	border-right: 0 !important;
 }
