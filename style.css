@@ -379,10 +379,21 @@ iframe {
 	border: 0;
 	color: #FFF !important;
 }
-
+@media only screen and (min-width: 652px) {
+	.widget-area {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: calc(2 * var(--global--spacing-horizontal));
+	}
+}
+@media only screen and (min-width: 1024px) {
+	.widget-area {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
 .widget-area {
-	margin-top: 0 !important;
 	color: #FFF !important;
+	margin-top: 0 !important;
 }
 .widget-area a {
 	color: #FFF !important;
