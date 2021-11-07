@@ -207,8 +207,9 @@ iframe {
 	margin-top: 0 !important;
 }
 .partner-url {
+	background-color: #FFF;
 	font-weight: bold;
-	margin-top: 2em;
+	padding: 1em 0;
 	text-align: center;
 }
 
