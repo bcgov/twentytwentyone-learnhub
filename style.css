@@ -314,7 +314,7 @@ iframe {
 	position: sticky;
 	text-align: center;
 	
-	top: 28px;
+	top: 0;
 }
 .alphabet a {
 	background: #F1F1F1;
