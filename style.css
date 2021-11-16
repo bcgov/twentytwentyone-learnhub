@@ -285,7 +285,7 @@ iframe {
 .searchbox {
 	/* background: #FFF; */
 	border-radius: .25em;
-	margin: 1em 0;
+	
 	padding: 1em;
 }
 .searchbox input {
@@ -309,7 +309,7 @@ iframe {
 }
 .alphabet {
 	background: #FFF;
-	margin-bottom: .5em;
+	
 	padding: .3em 0;
 	position: sticky;
 	text-align: center;
