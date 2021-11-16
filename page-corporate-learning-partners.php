@@ -94,6 +94,8 @@ $terms = get_terms( array(
     <?= sprintf( esc_html__( '%s', 'textdomain' ), $category->description ) ?>
 
 
+
+    </div>
     <?php if(!empty($partnerurl)): ?>
     <div class="partner-url">
         <a target="_blank" 
@@ -103,7 +105,6 @@ $terms = get_terms( array(
         </a>
     </div>
     <?php endif ?>
-    </div>
     <div class="hublink">
     <?php if($category->count > 0): ?>
 

@@ -207,8 +207,9 @@ iframe {
 	margin-top: 0 !important;
 }
 .partner-url {
+	background-color: #FFF;
 	font-weight: bold;
-	margin-top: 2em;
+	padding: 1em 0;
 	text-align: center;
 }
 
@@ -284,7 +285,7 @@ iframe {
 .searchbox {
 	/* background: #FFF; */
 	border-radius: .25em;
-	margin: 1em 0;
+	
 	padding: 1em;
 }
 .searchbox input {
@@ -308,12 +309,12 @@ iframe {
 }
 .alphabet {
 	background: #FFF;
-	margin-bottom: .5em;
+	
 	padding: .3em 0;
 	position: sticky;
 	text-align: center;
 	
-	top: 28px;
+	top: 0;
 }
 .alphabet a {
 	background: #F1F1F1;
@@ -379,10 +380,21 @@ iframe {
 	border: 0;
 	color: #FFF !important;
 }
-
+@media only screen and (min-width: 652px) {
+	.widget-area {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: calc(2 * var(--global--spacing-horizontal));
+	}
+}
+@media only screen and (min-width: 1024px) {
+	.widget-area {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
 .widget-area {
-	margin-top: 0 !important;
 	color: #FFF !important;
+	margin-top: 0 !important;
 }
 .widget-area a {
 	color: #FFF !important;
