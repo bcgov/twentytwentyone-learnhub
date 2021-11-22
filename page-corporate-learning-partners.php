@@ -36,8 +36,8 @@ $terms = get_terms( array(
     'hide_empty' => false,
     'orderby'    => 'count',
     'order'   => 'DESC',
-    'exclude' => [245,400,193]
-) ); // 245 = Office of Compt General, 400 = unknown, 193 = labour relations 
+    'exclude' => [121,372,144]
+) ); // 121 = Office of Compt General, 372 = unknown, 144 = labour relations 
 ?>
 </div> <!-- /.entry-content -->
 
