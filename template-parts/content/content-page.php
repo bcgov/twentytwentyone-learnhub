@@ -12,28 +12,6 @@
 ?>
 
 
-
-	<?php if ( ! is_front_page() ) : ?>
-
-		
-<div class="dark-wrap">
-<div class="wp-block-columns alignwide" id="pagetop">
-<div class="wp-block-column" style="flex-basis:33.33%">
-	<?php twenty_twenty_one_post_thumbnail(); ?>
-</div>
-<div class="wp-block-column">
-	<?php the_title( '<h1 class="pagehead">', '</h1>' ); ?>
-</div>
-</div>
-</div>
-
-
-	<?php elseif ( has_post_thumbnail() ) : ?>
-		<header class="entry-header alignwide">
-			
-		</header><!-- .entry-header -->
-	<?php endif; ?>
-
 	<div class="entry-content">
 		<?php
 		the_content();

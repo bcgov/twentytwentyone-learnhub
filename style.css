@@ -79,7 +79,14 @@ iframe {
 	clip: auto;
 	white-space: normal;
   }
-  
+
+button:hover {
+	border: 0;
+	color: #FFF;
+	font-size: 16px !important;
+	padding: .5em 1em !important;
+}
+
 /* I like utility classes after working wtih Bootstrap for so long. Sue me.*/
 .my-1 {
 	margin: 1em 0;
@@ -174,9 +181,16 @@ iframe {
 .author-bio {
 	margin: 0;
 }
-.dark-wrap,
+.dark-wrap {
+	background: rgb(10,108,179);
+	background: linear-gradient(90deg, #086eae 25%, #003366 50%, #003366 100%);
+	/*  */
+}
 #pagetop {
-	background-color: #28537d;
+	/*  */
+	/* background: url('https://lc.virtuallearn.ca/portal/wp-content/uploads/sites/6/2021/11/LH_Home.jpg') top left no-repeat; */
+	background: url('https://lc.virtuallearn.ca/portal/wp-content/uploads/sites/6/2021/11/LH_About.png') top left no-repeat;
+	
 	color: #FFF;
 	margin-bottom: 0;
 	padding: 0;
@@ -289,18 +303,20 @@ iframe {
 	padding: 1em;
 }
 .searchbox input {
+	background-color: #c3d4e4;
 	font-size: 18px; 
 	margin: 0 0 0 0; 
 	padding: 1em; 
 	width: 100%;
 }
 .wp-block-search__inside-wrapper {
-	border: 0 !important;
+	/* border: 0 !important; */
+	border: 3px solid #173f63 !important;
 }
 .wp-block-search__input {
 	/* background: #F2F2F2 !important; */
-	border: 1px solid #999 !important;
-	border-right: 0 !important;
+	border: 0 !important;
+	/* border-right: 0 !important; */
 }
 .wp-block-search__button {
 	background: #145693 !important;
