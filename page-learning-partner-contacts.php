@@ -28,8 +28,8 @@ $terms = get_terms( array(
     'taxonomy' => 'learning_partner',
     'hide_empty' => false,
     'orderby'    => 'count',
-    'order'   => 'DESC'
-    //'exclude' => [121,372,144]
+    'order'   => 'DESC',
+    'exclude' => [372]
 ) ); // 121 = Office of Compt General, 372 = unknown, 144 = labour relations 
 ?>
 </div> <!-- /.entry-content -->
