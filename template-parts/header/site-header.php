@@ -40,7 +40,7 @@ $blog_info    = get_bloginfo( 'name' );
 
 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="wordmark">
 	<?php //the_custom_logo(); ?>
-	Learning <span style="color: #ebba44">HUB</span>
+	Learning <span style="color: #ebba44; font-weight: bold;">HUB</span>
 </a>
 </div>
 </header><!-- #masthead -->
