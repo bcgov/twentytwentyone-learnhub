@@ -40,10 +40,10 @@ $terms = get_terms( array(
         <input class="search form-control mb-3" placeholder="Type here to filter partners">
     </div> -->
 	
-<div class="alignwide"  id="partnerlist">
+<div class="entry-content"  id="partnerlist">
 <div class="wp-block-cover has-white-background-color has-background-dim" style="margin-top: 1em; min-height:100px;">
     <div class="wp-block-cover__inner-container">
-        <input class="search" placeholder="">
+        <input class="search" placeholder="Search within this page&hellip;">
     </div>
 </div>
 <div class="list">
