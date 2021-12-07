@@ -6,3 +6,12 @@ function twentytwentyone_styles() {
 	array( 'twenty-twenty-one-style' ), wp_get_theme()->get('Version') );
 }
 add_action( 'wp_enqueue_scripts', 'twentytwentyone_styles');
+
+function searchfilter($query) {
+    if ($query->is_search && !is_admin() ) {
+        $query->set('post_type',array('courses'));
+    }
+	return $query;
+}
+ 
+add_filter('pre_get_posts','searchfilter');

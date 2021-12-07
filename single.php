@@ -17,17 +17,33 @@ while ( have_posts() ) :
 
 	//get_template_part( 'template-parts/content/content-single' );
 ?>
-<div class="dark-wrap">
-<div class="wp-block-columns alignwide" id="pagetop">
-<div class="wp-block-column" style="flex-basis:33.33%">
-	<?php twenty_twenty_one_post_thumbnail(); ?>
+
+
+<div class="wp-block-cover alignfull has-background-dim-80 has-background-dim hero" 
+	style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;background-color:#28537d;min-height:300px">
+		
+		<?php $thum = get_the_post_thumbnail_url(get_the_ID(),'full') ?>
+
+			<img loading="lazy" 
+					class="wp-block-cover__image-background wp-image-4447" 
+					alt="" 
+					src="<?= $thum ?>" 
+					tyle="object-position:71% 18%" 
+					data-object-fit="cover" 
+					data-object-position="71% 18%" 
+					sizes="(max-width: 1352px) 100vw, 1352px" 
+					width="1352" 
+					height="888">
+
+	<div class="wp-block-cover__inner-container">
+		<?php the_title( '<h1 class="alignfull has-text-align-center heroheader has-white-color has-text-color">', '</h1>' ); ?>
+		<div style="text-align: center">
+			<em>Posted on <?php the_date() ?></em>
+		</div>
+	</div>
 </div>
-<div class="wp-block-column">
-	<?php the_title( '<h1 class="pagehead">', '</h1>' ); ?>
-	<div>Posted <?php the_date() ?> by <?php the_author() ?></div>
-</div>
-</div>
-</div>
+
+
 <div class="entry-content">
 <div style="background-color: #FFF; padding: 1em;">
 <?php the_content() ?>
