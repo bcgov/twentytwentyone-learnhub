@@ -9,7 +9,7 @@ add_action( 'wp_enqueue_scripts', 'twentytwentyone_styles');
 
 function searchfilter($query) {
     if ($query->is_search && !is_admin() ) {
-        $query->set('post_type',array('courses'));
+        $query->set('post_type',array('course'));
     }
 	return $query;
 }
