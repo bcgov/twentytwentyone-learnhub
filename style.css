@@ -80,12 +80,12 @@ iframe {
 	white-space: normal;
   }
 
-button:hover {
+/* button:hover {
 	border: 0;
 	color: #FFF;
 	font-size: 16px !important;
 	padding: .5em 1em !important;
-}
+} */
 
 /* I like utility classes after working wtih Bootstrap for so long. Sue me.*/
 .my-1 {
