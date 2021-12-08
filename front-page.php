@@ -43,10 +43,10 @@ endwhile; // End of the loop.
     </button>
 </div>
 </form>
-<p class="has-text-align-center mt-1">
+<p class="has-text-align-center has-black-color has-text-color has-small-font-size">
     <a href="https://learningcentre.gww.gov.bc.ca/learninghub/foundational-courses/">Foundational Courses</a> | 
-    <a href="https://learningcentre.gww.gov.bc.ca/learninghub/supervisors-and-managers/">Supervisors and Managers</a> | 
-    <a href="https://learningcentre.gww.gov.bc.ca/learninghub/leadership/">Leadership</a>
+    <a href="https://learningcentre.gww.gov.bc.ca/learninghub/supervisors-and-managers/">Supervisors &amp; Managers</a> | 
+    <a href="https://learningcentre.gww.gov.bc.ca/learninghub/leadership/">Leadership in the BCPS</a>
 </p>
 </div>
 </div>
