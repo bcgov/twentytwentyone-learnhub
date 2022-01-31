@@ -9,9 +9,15 @@ add_action( 'wp_enqueue_scripts', 'twentytwentyone_styles');
 
 function searchfilter($query) {
     if ($query->is_search && !is_admin() ) {
-        $query->set('post_type',array('course'));
+        $query->set('orderby', 'name');
+        $query->set('order', 'ASC');
+        $query->set('post_type', array('course'));
+        
     }
 	return $query;
 }
  
 add_filter('pre_get_posts','searchfilter');
+
+// My Learning https://learning.gov.bc.ca/psc/CHIPSPLM/EMPLOYEE/ELM/c/LM_OD_EMPLOYEE_FL.LM_MYCOURSES_FL.GBL
+// Approve Learning https://learning.gov.bc.ca/psc/CHIPSPLM/EMPLOYEE/ELM/c/NUI_FRAMEWORK.PT_LANDINGPAGE.GBL?&lp=ELM.EMPLOYEE.LM_HR_SELF_SERVICE_GBL&lp=ELM.EMPLOYEE.LM_HR_SELF_SERVICE_GBL

@@ -241,10 +241,10 @@ iframe {
 .hubcard {
 	border-radius: 3px;
 	display: flex;
-	flex-basis: 50%;
+	flex-basis: 46%;
     flex-direction: column;
-	margin: 1em;
-	width: 50%;
+	margin: 2%;
+	width: 46%;
 }
 .hubfeatimage {
 	background-color: #FFF;

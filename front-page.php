@@ -96,11 +96,17 @@ $args = array(
 
     </div>
 	<div class="hubexcerpt flexible">
-        <?php echo wp_strip_all_tags( get_the_excerpt(), true ); ?>
+        <?php the_excerpt(); ?>
 	</div>
     <div class="hublink">
         <?php if($post->news_link): ?>
-            <a href="<?php echo $post->news_link ?>" target="_blank" rel="noopener">Read More</a>
+            <a href="<?php echo $post->news_link ?>" target="_blank" rel="noopener">
+                Read More
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="inline bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                </svg>
+            </a>
         <?php else: ?>
             <a href="<?= the_permalink() ?>">Read More</a>
         <?php endif ?>
@@ -112,7 +118,17 @@ $args = array(
 <div class="hubgridinner">
 <?php endif ?>
 <?php endforeach ?>
+
+
 </div>
+
+</div>
+</div>
+<div class="alignwide" style="text-align: center">
+<div class="newslink" style="padding: 1em 2em 2em 2em">
+    <a class="wp-block-button__link has-background" style="background-color: #145693; border-radius: 3px; display: block; margin: 0 auto;" href="http://learningcentre.gww.gov.bc.ca/learninghub/news/">
+        Read Past Articles
+    </a>
 </div>
 </div>
 </div>
