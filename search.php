@@ -52,7 +52,15 @@ if ( have_posts() ) {
 	} // End the loop.
 ?></div><?php 
 	// Previous/next page navigation.
-	twenty_twenty_one_the_posts_navigation();
+	//the_posts_navigation();?>
+	<div class="alignwide" style="background: #FFF; margin: 3em auto; padding: 2em;">
+		<!-- <div class="nav-next alignright"><?php next_posts_link( 'Next Courses' ); ?></div> -->
+		<div class="aligncenter">
+			<?php echo the_posts_pagination() ?>
+		</div>
+		<!-- <div class="nav-previous"><?php previous_posts_link( 'Previous Courses' ); ?></div>	 -->
+	</div>
+ <?php
 
 	// If no content, include the "No posts found" template.
 } else {

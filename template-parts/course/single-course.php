@@ -18,6 +18,8 @@
         <div class="learningpartner mt-wee">
             <?php the_terms( $post->ID, 'learning_partner', 'Offered by: ', ', ', ' ' ); ?>
         </div>
+
+
         <div class="courseregister mt-1">
         <?php $exsys = get_the_terms( $post->ID, 'external_system', '', ', ', ' ' ) ?>
         <a class="registerbutton" 
@@ -27,6 +29,9 @@
                 Register on <?= $exsys[0]->name ?>
         </a>
         </div>
+
+
+        
         <div class="coursecats mt-1" style="display:none;">
             <?php the_terms( $post->ID, 'course_category', 'Categories: ', ', ', ' ' ); ?>
         </div>
