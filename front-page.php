@@ -20,7 +20,7 @@ while ( have_posts() ) :
 endwhile; // End of the loop.
 ?>
 
-<div class="wp-block-cover alignfull has-white-background-color has-background-dim" style="background-color: #FFF; min-height:260px">
+<div class="wp-block-cover alignfull has-white-background-color has-background-dim" style="background-color: #FFF; min-height:100px">
 <div class="wp-block-cover__inner-container">
 <p class="has-text-align-center mb-1">Search the catalogue, or 
     <a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/" data-type="page">see a list of all courses</a>.
@@ -43,14 +43,13 @@ endwhile; // End of the loop.
     </button>
 </div>
 </form>
-<p class="has-text-align-center has-black-color has-text-color has-small-font-size">
-    <a href="https://learningcentre.gww.gov.bc.ca/learninghub/foundational-courses/">Foundational Courses</a> | 
+</div>
+</div>
+<div class="has-text-align-center has-black-color has-text-color has-small-font-size" style="background-color: #FFF; padding: 0 0 3em 0;">
+    <a href="https://learningcentre.gww.gov.bc.ca/learninghub/foundational-courses/">Mandatory &amp; Foundational Courses</a> | 
     <a href="https://learningcentre.gww.gov.bc.ca/learninghub/supervisors-and-managers/">Supervisors &amp; Managers</a> | 
     <a href="https://learningcentre.gww.gov.bc.ca/learninghub/leadership/">Leadership in the BCPS</a>
-</p>
 </div>
-</div>
-
 
 
 
