@@ -24,386 +24,65 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 	/* --global--spacing-vertical: 0; */
 }
-.site-header,
-.site-main,
-.widget-area,
-.site-footer {
-	padding-top: 0;
-	padding-bottom: 0;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.site-header {
-	padding-top: 0;
-	padding-bottom: 0;
-}
-@media only screen and (min-width: 482px) {
-
-	.site-header {
-		padding-bottom: calc(3 * var(--global--spacing-vertical));
-	}
-}
-
-
-.menu-button-container #primary-mobile-menu {
-	color: #FFF;
-	margin-top: .25em;
-}
-.primary-navigation > .primary-menu-container,
-.primary-navigation-open .menu-button-container {
-	background-color: #01284f;
+h1,h2,h3,h4,h5,caption,figcaption {
+	text-wrap: balance; /* it's coming ... */
 }
 img,
 iframe {
 	height: auto;
 	max-width: 100%;
 }
-.sr-only {
-	position: absolute;
-	width: 1px;
-	height: 1px;
+
+
+#main {
 	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	white-space: nowrap;
-	border: 0;
-  }
-  
-  .sr-only-focusable:active, .sr-only-focusable:focus {
-	position: static;
-	width: auto;
-	height: auto;
-	overflow: visible;
-	clip: auto;
-	white-space: normal;
-  }
-
-/* button:hover {
-	border: 0;
-	color: #FFF;
-	font-size: 16px !important;
-	padding: .5em 1em !important;
-} */
-
-/* I like utility classes after working wtih Bootstrap for so long. Sue me.*/
-.my-1 {
-	margin: 1em 0;
-	margin-bottom: 1em !important;
-}
-.mt-1 {
-	margin-top: 1em !important;
-}
-.mt-wee {
-	margin-top: .5em;
-}
-.mb-1 {
-	margin-bottom: 1em !important;
 }
 
-.p-1 {
-	padding: 1em;
-}
-.p-2 {
-	padding: 2em;
-}
-.p-3 {
-	padding: 3em;
-}
-.bg-white {
-	background-color: #FFF;
-}
 
 #bcgovmast {
 	background-color: #003265;
 }
-#bcgovmast a:focus {
-	background-color: transparent !important; 
-}
+
 .wordmark {
 	color: #FFF;
 	display: block;
 	font-size: 1.5em;
 	padding: .5em 0;
 	text-decoration: none;
+	white-space:nowrap;
 }
 .wordmark span {
 	display: inline-block;
 	letter-spacing: -.1em;
-	margin-left: -8px;
 }
 
-.wiw-logo {
-	float: right;
-	margin: .8em 0;
-}
-.wiw-logo-mobile {
-	display: none;
-}
-@media only screen and (max-width: 600px) {
-	.wiw-logo {
-		display: none;
-		
-	}
-	.wiw-logo-mobile {
-		display: block;
-	}
-}
-
-.navbg {
-	background-color: #01284f;
-	border-top: 2px solid #f8be43;
-	padding: 0;
+.primary-navigation {
+	display: inline-block;
+	margin: 1em 2em;
 }
 .primary-navigation .primary-menu-container > ul {
 	flex-direction: row;
 	justify-content: flex-end;
+	
 }
 .primary-navigation .primary-menu-container > ul li a {
 	color: #FFF;
 }
 
-
-.wp-block-cover.hero .wp-block-cover__inner-container {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-.site-main > * {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-.entry-header, 
-.post-thumbnail, 
-.entry-content, 
-.entry-footer, 
-.author-bio {
-	margin: 0;
-}
-.dark-wrap {
-	background: rgb(10,108,179);
-	background: linear-gradient(90deg, #086eae 25%, #003366 50%, #003366 100%);
-	/*  */
-}
-#pagetop {
-	/*  */
-	/* background: url('https://lc.virtuallearn.ca/portal/wp-content/uploads/sites/6/2021/11/LH_Home.jpg') top left no-repeat; */
-	background: url('https://lc.virtuallearn.ca/portal/wp-content/uploads/sites/6/2021/11/LH_About.png') top left no-repeat;
-	
+#searchbar a {
 	color: #FFF;
-	margin-bottom: 0;
-	padding: 0;
 }
-.white-wrap {
-	background-color: #FFF;
-	color: #333;
-	margin-bottom: 1em;
-	padding: 2em 0;
-}
-.wp-block-columns.has-background {
-	padding: 0;
-}
-.wp-block-image.size-large {
-	margin-bottom: 0;
-}
-.post-thumbnail .wp-post-image {
-	margin-top: 0;
-}
-
-.pagehead {
-	padding: 1em 0;
-}
-.allcourseslink {
-	margin: 0 auto !important;
-}
-.coursehead {
-	margin-top: 0 !important;
-}
-.partner-url {
-	background-color: #FFF;
-	font-weight: bold;
-	padding: 1em 0;
-	text-align: center;
-}
-
-.pagination {
+.searchsubmit {
+	background-color: #145693 !important;
+	border-radius: 5px; 
 	border: 0;
-}
-.nav-links a {
-	background: #28537d;
-	border-radius: 3px;
-	color: #FFF !important;
-	display: inline-block;
-	padding: 5px 20px;
-	text-decoration: none;
-}
-.nav-links .current {
-	background: #333;
-	color: #FFF !important;
-	font-weight: bold;
-	text-decoration: none !important;
-}
-
-.hubgrid {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	width: 100%;
-}
-.hubgridinner {
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-}
-.hubcard {
-	border-radius: 3px;
-	display: flex;
-	flex-basis: 46%;
-    flex-direction: column;
-	margin: 2%;
-	width: 46%;
-}
-.hubfeatimage {
-	background-color: #FFF;
-	min-height: 120px;
-	padding: 2em 0;
-	text-align: center;
-}
-.hubfeatimage img {
-	height: 70px;
-	width: auto;
-}
-.flexible {
-    flex-grow: 1;
-}
-
-.hubtitle {
-	text-align: center;
-}
-.hubtitle,
-.hubexcerpt,
-.hublink {
-	background-color: #FFF;
-	padding: 1em;
-}
-.hubexcerpt, 
-.hublink {
-	padding-top: 0;
-}
-.hublink a {
-	background-color: #145693;
-	border-radius: 3px;
-	color: #FFF;
-	display: block;
-	padding: .5em 2em;
-	text-align: center;
-	text-decoration: none;
-}
-@media only screen and (max-width: 600px) {
-	.hubgrid,
-	.hubgridinner,
-	.hubcard {
-		display: block;
-		margin: 1em 0;
-		padding: 0;
-		width: 100%;
-	}
-}
-
-
-
-
-.searchbox {
-	/* background: #FFF; */
-	border-radius: .25em;
-	
-	padding: 1em;
-}
-.searchbox input {
-	background-color: #c3d4e4;
 	font-size: 18px; 
-	margin: 0 0 0 0; 
-	padding: 1em; 
-	width: 100%;
+	padding: .5em 1em;
 }
-.wp-block-search__inside-wrapper {
-	/* border: 0 !important; */
-	border: 3px solid #173f63 !important;
-}
-.wp-block-search__input {
-	/* background: #F2F2F2 !important; */
-	border: 0 !important;
-	/* border-right: 0 !important; */
-}
-.wp-block-search__button {
-	background: #145693 !important;
-	border: 0 !important;
+.searchsubmit:hover {
+	background-color: #145693 !important;
 	color: #FFF !important;
 }
-.alphabet {
-	background: #FFF;
-	
-	padding: .3em 0;
-	position: sticky;
-	text-align: center;
-	
-	top: 0;
-}
-.alphabet a {
-	background: #F1F1F1;
-	border-radius: 3px;
-	display: inline-block;
-	font-size: .6em;
-	margin: 0 .15em;
-	padding: .25em .5em;
-	text-decoration: none;
-}
-
-.course {
-	margin-bottom: 1em;
-}
-
-.coursename a {
-	color: #333; 
-	display: block;
-	font-size: 1.4em;
-	text-decoration: none;
-}
-
-.coursecats,
-.delivery-method {
-	font-size: 0.8em;
-	margin-bottom: .5em;
-}
-.coursecats a,
-.delivery-method a {
-	background-color: #F1F1F1;
-	border-radius: 3px;
-	text-decoration: none;
-}
-
-.courseregister {
-	margin: 1em 0 0 0;
-}
-.registerbutton {
-	background: #28537d; 
-	color: #F2F2F2; 
-	display: block;
-	font-size: 1.4rem; 
-	padding: .5em 1em; 
-	text-align: center; 
-	text-decoration: none;
-}
-.learningpartner,
-.learningpartner a {
-	color: #28537d;
-	font-weight: bold; 
-}
-
-
-
-
 
 #bcgovfoot {
 	background-color: #003265; 
@@ -414,43 +93,57 @@ iframe {
 	border: 0;
 	color: #FFF !important;
 }
-@media only screen and (min-width: 652px) {
-	.widget-area {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		column-gap: calc(2 * var(--global--spacing-horizontal));
+
+.course {
+    background: #FFF; 
+	border-radius: 5px;
+    /* border-top: 2px solid #28537d; */
+	color: #003366;
+	font-size: .9em;
+    margin: .3em 0;
+	max-width: 100%;
+    padding: .5em 1em; 
+    width: 640px; /* TODO add mobile adjustment */	
+}
+@media only screen and (max-width: 652px) {
+	.course {
+		font-size: .7em;
+		width: 300px;
 	}
 }
-@media only screen and (min-width: 1024px) {
-	.widget-area {
-		grid-template-columns: repeat(2, 1fr);
-	}
+.coursename:hover {
+	color: #28537d;
 }
-.widget-area {
-	color: #FFF !important;
-	margin-top: 0 !important;
+summary {
+	cursor: pointer;
+	font-size: 1.1em;
+	/* font-weight: bold; */
 }
-.widget-area a {
-	color: #FFF !important;
+
+
+
+[open] summary {
+	color: #000;
+	/* font-weight: bold; */
 }
-.widget {
-	border-bottom: 2px solid #f8be43;
-	padding: 4em 0;
+
+/* for blink/webkit */
+details summary::-webkit-details-marker {
+	color: #336699;
+	/* display: none; */
 }
-.helpingimprove {
+/* for firefox */
+details > summary:first-of-type {
+	/* list-style: none; */
+	color: #003366;
+}
+
+.outboundlink {
+	background-color: #003366;
+	border-radius: 5px;
 	color: #FFF;
-	font-size: 3.5em;
-	line-height: 1em;
-}
-.helpingimprove span {
-	color: #3496d2
-}
-.landacknowledge {
-	font-size: 1.3em;
-}
-#custom_html-7 {
-	padding-top: 4em;
-}
-.site-info {
-	margin: 3em 0;
+	display: inline-block;
+	margin: 0 1em 0 0;
+	padding: .25em 1em;
+	text-decoration: none;
 }
