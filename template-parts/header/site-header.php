@@ -55,17 +55,9 @@ $blog_info    = get_bloginfo( 'name' );
 </div>
 </header><!-- #masthead -->
 </div>
-<div id="searchbar" style="background-color: #01284f; border-top: 1px solid #FFF;  position: relative; z-index: 100;">
+<div id="searchbar" style="background-color: #01284f; border-top: 1px solid #FFF;  position: relative; z-index: 100; height: auto;">
 <div class="alignwide">
-<form method="get" action="https://wordpress.virtuallearn.ca/" class="" style="padding:.5em 0;">
-<label for="coursesearch" class="sr-only" style="display: none">Search</label>
-<input type="search" id="coursesearch" class="" name="s" style="background-color: #FFF; border: 0; border-radius: 5px; color: #000; font-size: 16px;" required>
-<input type="hidden" name="post_type" value="courses">
-<button type="submit" class="searchsubmit" aria-label="Submit Search">
-    Search
-</button>
-<!-- <span style="color:#FFF; font-size: 14px;">Suggested searches: <a href="/?s=flexiblebcps">#flexiblebcps</a> <a href="/?s=bcpsbelonging">#bcpsbelonging</a></span> -->
-</form>
+
 <?php
 $args = array(
     'post_type' => 'course',
@@ -74,6 +66,27 @@ $args = array(
 );
 $courses = get_posts( $args ); 
 ?>
+
+
+
+
+
+
+<form method="get" action="https://wordpress.virtuallearn.ca/" class="searchform">
+<label for="coursesearch" class="sr-only" style="display: none">Search</label>
+<input type="text" id="coursesearch" class="coursesearchfield" name="s" required>
+<input type="hidden" name="post_type" value="courses">
+<button type="submit" class="searchsubmit" aria-label="Submit Search">
+    Search
+</button>
+<!-- <span style="color:#FFF; font-size: 14px;">Suggested searches: <a href="/?s=flexiblebcps">#flexiblebcps</a> <a href="/?s=bcpsbelonging">#bcpsbelonging</a></span> -->
+</form>
+<div id="courseresults"></div>
+
+
+
+
+
 <script>
 var data = [
 <?php foreach($courses as $c) : ?>
@@ -109,13 +122,19 @@ $exlink = get_post_meta($c->ID,'course_link');
     ];
 
 var txtbox = document.getElementById('coursesearch');
+// txtbox.onfocus = function(e) {
+//   document.getElementById('searchbar').style.height = '400px';
+// }
 txtbox.onkeyup = function(e) {
     var searchfield = txtbox.value;
-    if(searchfield === '')  {
-        document.getElementById('courseresults').innerHTML = '';
-        return;
+
+    if(searchfield === '' || searchfield.length < 3)  {
+      document.getElementById('courseresults').innerHTML = '';
+      document.getElementById('searchbar').style.height = '80px';
+      return;
     }
-    
+    if(searchfield.length > 2)  {
+    document.getElementById('searchbar').style.height = '400px';
     var regex = new RegExp(searchfield, "i");
     var output = '<div class="coursebox" style="margin: 0 1em 1em 1em;">';
     data.forEach(function(item,index){
@@ -150,17 +169,22 @@ txtbox.onkeyup = function(e) {
     });
     output += '</div>';
     document.getElementById('courseresults').innerHTML = output;
-    
+  }
 };
 </script>
 
 
-<div style="display: flex; flex-direction: row">
-<div>
-    <div id="courseresults" style="background-color: #01284f; border-radius: 0 0 5px 5px; position: absolute; z-index: 100;"></div>
-</div>
 
-</div>
+
+
+
+
+
+
+
+
+
+
 
 
 </div>

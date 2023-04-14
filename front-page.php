@@ -28,6 +28,17 @@ endwhile; // End of the loop.
 <div class="wp-block-column" style="padding: 1em;">
 <div class="">
     List of courses: <a href="#">Newest to Oldest</a> <a href="#">Alphabetical List</a>
+    
+
+
+
+
+
+
+
+
+
+
 </div>
 
 </div>
