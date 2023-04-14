@@ -26,6 +26,8 @@
             rel="noopener">
                 <?php if(!empty($exsys[0]->name)): ?>
                 Register on <?= $exsys[0]->name ?>
+                <?php elseif($exsys[0]->name == 'Youtube'): ?>
+                Watch on <?= $exsys[0]->name ?>
                 <?php else: ?>
                 Get More Information
                 <?php endif ?>
