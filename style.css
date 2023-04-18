@@ -21,8 +21,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 	--global--font-size-xl: 2.25rem;
 	--global--font-size-xxl: 3rem;
 	--global--font-size-xxxl: 3.5rem;
-
-	/* --global--spacing-vertical: 0; */
+	--global--spacing-vertical: 1rem;
 }
 h1,h2,h3,h4,h5,caption,figcaption {
 	text-wrap: balance; /* it's coming ... */
@@ -57,18 +56,13 @@ iframe {
 }
 
 .primary-navigation {
-	display: inline-block;
-	margin: 1em 2em;
-}
-.primary-navigation .primary-menu-container > ul {
-	flex-direction: row;
-	justify-content: flex-end;
-	
+	margin-top: .75em;
 }
 .primary-navigation .primary-menu-container > ul li a {
 	color: #FFF;
 }
 #searchbar {
+	overflow: scroll;
 	transition-property: height;
 	transition-duration: 1s;
 	/* transition-delay: 2s; */
@@ -98,19 +92,24 @@ iframe {
 	color: #FFF !important;
 }
 .searchform {
+	/* margin: 0 auto; */
 	padding: .5em 0;
+	/* width: 600px; */
 }
 .coursesearchfield {
-	background-color: #FFF; 
+	background-color: #F0F8FF; 
 	border-radius: 5px !important;
-	border: 0; 
+	border: 0 !important;
 	border-radius: 5px; 
-	color: #000; 
+	color: #333; 
 	font-size: 16px;
 	width: 400px;
 }
 .coursebox {
-	/* background: #f1f1f1; */
+	background-color: #01284f; 
+	transition-property: height;
+	transition-duration: 1s;
+	padding: 1em;
 }
 .course {
     background: #FFF; 
@@ -118,10 +117,8 @@ iframe {
     /* border-top: 2px solid #28537d; */
 	color: #003366;
 	font-size: .9em;
-    margin: .3em 0;
-	max-width: 100%;
-	min-width: 100%;
-    padding: .5em 1em; 
+    margin: .2em 0;
+    padding: .25em .57em; 
     
 }
 .courseresults {
@@ -175,4 +172,14 @@ details > summary:first-of-type {
 	margin: 0 1em 0 0;
 	padding: .25em 1em;
 	text-decoration: none;
+}
+
+
+.pagination, 
+.comments-pagination {
+	border-top: 0;
+}
+
+.wp-block-columns.alignfull .wp-block-column p:not(.has-background), .wp-block-columns.alignfull .wp-block-column h1:not(.has-background), .wp-block-columns.alignfull .wp-block-column h2:not(.has-background), .wp-block-columns.alignfull .wp-block-column h3:not(.has-background), .wp-block-columns.alignfull .wp-block-column h4:not(.has-background), .wp-block-columns.alignfull .wp-block-column h5:not(.has-background), .wp-block-columns.alignfull .wp-block-column h6:not(.has-background) {
+	padding: 0;
 }

@@ -28,25 +28,12 @@ endwhile; // End of the loop.
 <div class="wp-block-column" style="padding: 1em;">
 <div class="">
     List of courses: <a href="#">Newest to Oldest</a> <a href="#">Alphabetical List</a>
-    
-
-
-
-
-
-
-
-
-
-
 </div>
 
 </div>
 <!-- /wp:column -->
-
 <!-- wp:column -->
 <div class="wp-block-column" style="padding: 1em;">
-
 <h3>#flexibleBCPS</h3>
 <p>Flexible workplaces? Managing remote teams? The courses and resources you need.</p>
 <details>
@@ -196,6 +183,7 @@ $learningpartners = get_terms( array(
     'taxonomy' => 'learning_partner',
     'hide_empty' => false,
     'orderby'    => 'count',
+    'number' => 5,
     'order'   => 'DESC',
     'exclude' => [121,372,144]
 ) ); // 121 = Office of Compt General, 372 = unknown, 144 = labour relations 
@@ -204,7 +192,7 @@ $learningpartners = get_terms( array(
 <?php foreach($learningpartners as $p): ?>
 <a style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;" href="/learning_partner/<?= $p->slug ?>"><?= $p->name ?></a> 
 <?php endforeach ?>
-
+&hellip;<br> <a style="background-color:#003366" class="wp-block-button__link has-white-color has-text-color has-background wp-element-button" href="/learning-hub/corporate-learning-partners">All Partners</a>
 </div>
 <!-- /wp:columns -->
 
