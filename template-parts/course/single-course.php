@@ -10,12 +10,12 @@
     <div style="padding: .25em 0 0 1.5em">
 
 
-    
     <?php the_content(); ?>
     
-    <div style="padding: .5em 0  ;">
+
+    <div class="coursemeta">
     <?php the_terms( $post->ID, 'delivery_method', '', ', ', ' ' ); ?>
-    <?php the_terms( $post->ID, 'learning_partner', 'offered by: ', ', ', ' ' ); ?>
+    <?php the_terms( $post->ID, 'learning_partner', 'offered by ', ', ', ' ' ); ?>
     
     <?php $exsys = get_the_terms( $post->ID, 'external_system', '', ', ', ' ' ) ?>
     <?php if(!empty($exsys[0]->name)): ?>

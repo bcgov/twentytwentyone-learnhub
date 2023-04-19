@@ -11,35 +11,28 @@
 
 get_header();
 
-if ( have_posts() ) {
+
 	?>
 	<header class="entry-header alignfull" style="background: #FFF; padding: 2em;">
 		<div class="alignwide">
-		
-
-
+		<?php 
+		$resultcount = (int) $wp_query->found_posts;
+		$plural = 'course';
+		if($resultcount > 0) $plural = 'courses';
+		?>
+		We found 
+		<span style="background-color: #F1F1F1; border-radius: 10px; display: inline-block; font-weight: bold; padding: 0 .5em;">
+			<?= $resultcount ?>
+		</span> 
+		<?= $plural ?> which match your search for 
 		<?php
 		printf(
-			esc_html(
-				/* translators: %d: The number of search results. */
-				_n(
-					'We found %d course which match your search ',
-					'We found %d courses which match your search ',
-					(int) $wp_query->found_posts,
-					'twentytwentyone-learninghub'
-				)
-			),
-			(int) $wp_query->found_posts
+			/* translators: %s: Search term. */
+			esc_html__( '"%s"', 'twentytwentyone' ),
+			'<span class="page-description search-term">' . esc_html( get_search_query() ) . '</span>'
 		);
 		?>
-					<?php
-			printf(
-				/* translators: %s: Search term. */
-				esc_html__( 'for "%s"', 'twentytwentyone' ),
-				'<span class="page-description search-term">' . esc_html( get_search_query() ) . '</span>'
-			);
-			?>
-	        </div>
+		</div>
 	</header><!-- .page-header -->
 	
 	<div class="alignwide">
@@ -49,7 +42,7 @@ if ( have_posts() ) {
 <div class="wp-block-columns alignfull"><!-- wp:column -->
 <div class="wp-block-column" style="flex: 66%;">
 <div class="">
-
+<?php if ( have_posts() ) { ?>
 <?php
 	// Start the Loop.
 	while ( have_posts() ) {
@@ -57,6 +50,13 @@ if ( have_posts() ) {
 		get_template_part( 'template-parts/course/single-course' );
 
 	} // End the loop.
+?>
+ <?php
+
+// If no content, include the "No posts found" template.
+} else {
+get_template_part( 'template-parts/content/content-none' );
+}
 ?>
 </div>
 </div>
@@ -102,11 +102,10 @@ if ( have_posts() ) {
 		</div>
 		<!-- <div class="nav-previous"><?php previous_posts_link( 'Previous Courses' ); ?></div>	 -->
 	</div>
- <?php
 
-	// If no content, include the "No posts found" template.
-} else {
-	get_template_part( 'template-parts/content/content-none' );
-}
 
+
+
+
+<?php 
 get_footer();

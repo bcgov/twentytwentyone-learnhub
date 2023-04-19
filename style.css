@@ -37,11 +37,30 @@ iframe {
 	padding: 0;
 }
 
+.main-nav {
+	margin-top: 1em;
+}
+.main-nav a {
+	color: #FFF;
+	display: inline-block;
+	margin: 0 .1em;
+	padding: .25em .5em;
+	text-decoration: none;
+}
+.main-nav a:hover {
+	background-color: #FFF;
+	border-radius: 5px;
+	color: #333;
+}
 
 #bcgovmast {
 	background-color: #003265;
 }
 
+.logomenu {
+	display: flex; 
+	flex-direction: row;
+}
 .wordmark {
 	color: #FFF;
 	display: block;
@@ -55,11 +74,9 @@ iframe {
 	letter-spacing: -.1em;
 }
 
-.primary-navigation {
-	margin-top: .75em;
-}
-.primary-navigation .primary-menu-container > ul li a {
-	color: #FFF;
+.searchwrap {
+	display: flex; 
+	justify-content: center;
 }
 #searchbar {
 	overflow: scroll;
@@ -126,6 +143,12 @@ iframe {
 	width: 600px;
 }
 @media only screen and (max-width: 652px) {
+	.logomenu {
+		display: block;
+	}
+	.primary-navigation {
+		margin-top: 0;
+	}
 	.course {
 		font-size: .7em;
 		width: 300px;
@@ -134,8 +157,9 @@ iframe {
 		width: 100%;
 	}
 	.coursesearchfield {
-		width: 100%;
+		width: 300px;
 	}
+	
 }
 .coursename:hover {
 	color: #28537d;
@@ -146,7 +170,17 @@ summary {
 	/* font-weight: bold; */
 }
 
-
+.coursemeta {
+	background: #F0F8FF; 
+	border-radius: 5px; 
+	font-size: 14px; 
+	margin: 1em 0; 
+	padding: .5em 1em;
+}
+.coursemeta a {
+	color: #003366;
+	text-decoration-color:#003366;
+}
 
 [open] summary {
 	color: #000;

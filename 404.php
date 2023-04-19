@@ -11,8 +11,9 @@
 
 get_header();
 ?>
+	<header class="entry-header alignfull" style="background: #FFF; padding: 2em;">
+		<div class="alignwide">
 
-	<header class="page-header alignwide">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing here', 'twentytwentyone' ); ?></h1>
 	</header><!-- .page-header -->
 
