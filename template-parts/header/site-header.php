@@ -19,7 +19,7 @@ $blog_info    = get_bloginfo( 'name' );
 <div class="alignwide">
 
 
-<div style="display: flex; flex-direction: row;">
+<div class="headwrap">
 <div style="flex: 1;">
 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="wordmark">
 	<?php //the_custom_logo(); ?>
@@ -28,7 +28,7 @@ $blog_info    = get_bloginfo( 'name' );
 </div>
 <div style="flex: 2 right;">
 <nav class="main-nav" role="navigation" aria-label="<?php esc_attr_e( 'Primary menu', 'twentytwentyone' ); ?>">
-
+<div>
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/corporate-learning-partners/">Partners</a>
@@ -40,7 +40,7 @@ $blog_info    = get_bloginfo( 'name' );
             <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
         </svg>
     </a>
-
+</div>
 </nav><!-- #site-navigation -->
 </div>
 </div>
@@ -51,9 +51,9 @@ $blog_info    = get_bloginfo( 'name' );
 <div id="searchbar" style="background-color: #01284f; ">
 <div class="alignwide"> <!-- searchwrap -->
     <form method="get" action="https://wordpress.virtuallearn.ca/" class="searchform">
+        <input type="hidden" name="post_type" value="course">
         <label for="coursesearch" class="sr-only" style="display: none">Search</label>
         <input type="search" id="coursesearch" class="coursesearchfield" name="s" required value="<?= esc_html( get_search_query() ) ?>">
-        <input type="hidden" name="post_type" value="course">
         <button type="submit" class="searchsubmit" aria-label="Submit Search" style="font-size: 18px">
             Search
         </button>

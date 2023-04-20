@@ -31,7 +31,9 @@ iframe {
 	height: auto;
 	max-width: 100%;
 }
-
+.headwrap {
+	display: flex;
+}
 
 #main {
 	padding: 0;
@@ -109,6 +111,7 @@ iframe {
 	color: #FFF !important;
 }
 .searchform {
+	display: flex;
 	/* margin: 0 auto; */
 	padding: .5em 0;
 	/* width: 600px; */
@@ -120,7 +123,6 @@ iframe {
 	border-radius: 5px; 
 	color: #333; 
 	font-size: 16px;
-	width: 400px;
 }
 .coursebox {
 	background-color: #01284f; 
@@ -143,6 +145,24 @@ iframe {
 	width: 600px;
 }
 @media only screen and (max-width: 652px) {
+	.headwrap {
+		display: block;
+		margin: 0;
+
+	}
+	.main-nav {
+		height: 60px;
+		margin-top: 0;
+		overflow-x: scroll;
+		width: 98%;
+
+	}
+	.main-nav div {
+		width: 50em;
+	}
+	.wordmark {
+		padding: .5em .25em 0 .25em;
+	}
 	.logomenu {
 		display: block;
 	}
@@ -150,14 +170,12 @@ iframe {
 		margin-top: 0;
 	}
 	.course {
-		font-size: .7em;
-		width: 300px;
+		font-size: .8em;
+		
 	}
-	.courseresults {
-		width: 100%;
-	}
+
 	.coursesearchfield {
-		width: 300px;
+		flex: 3;
 	}
 	
 }
