@@ -28,23 +28,55 @@ endwhile; // End of the loop.
 <div class="wp-block-column" style="padding: 1em;">
 
 
-    
-<h3 class="alignwide">Learning Partners</h3>
-<?php 
-$learningpartners = get_terms( array(
-    'taxonomy' => 'learning_partner',
-    'hide_empty' => false,
-    'orderby'    => 'count',
-    'number' => 5,
-    'order'   => 'DESC',
-    'exclude' => [121,372,144]
-) ); // 121 = Office of Compt General, 372 = unknown, 144 = labour relations 
+<h3>Suggested Searches</h3>
+<div style="background-color: #FFF; border-radius: 5px; padding: .5em;">
+<div><a href="/learninghub/?s=flexibleBCPS">#flexibleBCPS</a></div>
+<p>Flexible workplaces? Managing remote teams? The courses and resources you need.</p>
+</div>
+<div style="background-color: #FFF; border-radius: 5px; margin-top: 1em; padding: .5em;">
+<div><a href="/learninghub/?s=BCPSBelonging">#BCPSBelonging</a></div>
+<p>Great courses that cover equity, diversity and inclusion.</p>
+</div>
 
-?>
-<?php foreach($learningpartners as $p): ?>
-<a style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;" href="/learning_partner/<?= $p->slug ?>"><?= $p->name ?></a> 
-<?php endforeach ?>
-&hellip;<br> <a style="display: inline-block; margin-top: 1em;" class="" href="/learning-hub/corporate-learning-partners">See All Partners</a>
+
+<?php 
+$mand_args = array(
+    'post_type'                => 'course',
+    'post_status'              => 'publish',
+    'posts_per_page'           => 100,
+    'ignore_sticky_posts'      => 0,
+    'child_of'                 => 0,
+    'parent'                   => 0,
+    'orderby'                  => array('date' =>'ASC'),
+    'hide_empty'               => 0,
+    'hierarchical'             => 1,
+    'exclude'                  => '',
+    'include'                  => '',
+    'number'                   => '',
+    'pad_counts'               => true, 
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'keywords',
+            'field'    => 'slug',
+            'terms'    => 'mandatoryforall',
+        )
+    )
+);
+$mandatories = null;
+$mandatories = new WP_Query($mand_args);
+if( $mandatories->have_posts() ) : ?>
+
+    <h3 class="alignwide">Mandatory Courses</h3>
+    <?php while ($mandatories->have_posts()) : $mandatories->the_post(); ?>
+    <?php get_template_part( 'template-parts/course/single-course' );?>
+    <?php endwhile ?>
+    
+
+<?php endif; ?>
+<?php wp_reset_query($mandatories); ?>
+<a style="background-color: #FFF; border-radius: 5px; display: inline-block; font-weight: bold; padding: .5em 1em; margin: .1em; text-decoration: none;" class="" href="/learninghub/foundational-courses/">Learn More</a>
+
+
 
 
 </div>
@@ -58,21 +90,36 @@ $learningpartners = get_terms( array(
 <!-- /wp:heading -->
 <!-- wp:buttons {"align":"wide"} -->
 <div class="wp-block-buttons alignwide"><!-- wp:button {"style":{"color":{"background":"#003366"}}} -->
-<a href="#" class="" style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;">Foundational/Mandatory</a> 
+<a href="/learninghub/" class="" style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;">Foundational/Mandatory</a> 
 <!-- /wp:button -->
 
 <!-- wp:button {"style":{"color":{"background":"#003366"}}} -->
-<a href="#" class="" style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;">Supervisors and Managers</a>
+<a href="/learninghub/" class="" style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;">Supervisors and Managers</a>
 <!-- /wp:button -->
 
 <!-- wp:button {"style":{"color":{"background":"#003366"}}} -->
-<a href="#" class="" style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;">People Leaders</a>
+<a href="/learninghub/" class="" style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;">People Leaders</a>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 
 
 
-<h3 class="alignwide">Learning Systems</h3>
+<h3 class="alignwide">Delivery Methods</h3>
+<?php 
+$deliverymethods = get_terms( array(
+    'taxonomy' => 'delivery_method',
+    'hide_empty' => false,
+    'orderby'    => 'count',
+    'number' => 5,
+    'order'   => 'DESC'
+) ); 
+
+?>
+<?php foreach($deliverymethods as $dm): ?>
+<a style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;" href="/learninghub/delivery_method/<?= $dm->slug ?>"><?= $dm->name ?></a> 
+<?php endforeach ?>
+
+<!-- <h3 class="alignwide">Learning Systems</h3> -->
 <?php 
 $learningsystems = get_terms( array(
     'taxonomy' => 'external_system',
@@ -84,9 +131,26 @@ $learningsystems = get_terms( array(
 
 ?>
 <?php foreach($learningsystems as $s): ?>
-<a style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;" href="/external_system/<?= $s->slug ?>"><?= $s->name ?></a> 
+<!-- <a style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;" href="/learninghub/external_system/<?= $s->slug ?>"><?= $s->name ?></a>  -->
 <?php endforeach ?>
 
+    
+<h3 class="alignwide">Learning Partners</h3>
+<?php 
+$learningpartners = get_terms( array(
+    'taxonomy' => 'learning_partner',
+    'hide_empty' => false,
+    'orderby'    => 'count',
+    'number' => 8,
+    'order'   => 'DESC',
+    'exclude' => [121,372,144]
+) ); // 121 = Office of Compt General, 372 = unknown, 144 = labour relations 
+
+?>
+<?php foreach($learningpartners as $p): ?>
+<a style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;" href="/learninghub/learning_partner/<?= $p->slug ?>"><?= $p->name ?></a> 
+<?php endforeach ?>
+and many more &hellip; <br> <a style="background-color: #FFF; border-radius: 5px; display: inline-block; font-weight: bold; padding: .5em 1em; margin: .1em; text-decoration: none;" class="" href="/learning-hub/corporate-learning-partners">See All Partners</a>
 
 
 </div>
@@ -118,23 +182,25 @@ if( $news->have_posts() ) : ?>
 
     <h3 class="alignwide">Recent News</h3>
     <?php while ($news->have_posts()) : $news->the_post(); ?>
-    <div style="background: #FFF; padding: 1em;">
-    <h4>
+    <div style="background: #FFF; border-radius: 5px; padding: .5em;">
+    <div>
         <a href="<?= the_permalink() ?>">
             <?= the_title() ?>
         </a>
-    </h4>
+    </div>
     <div>
         <?= the_excerpt() ?>
     </div>
     </div>
     <?php endwhile ?>
     
-    <?php else: ?>
-        <p>No news is bad news?</p>
-    <?php endif; ?>
-    <?php wp_reset_query($news); ?>
-
+<?php else: ?>
+    <p>No news is bad news?</p>
+<?php endif; ?>
+<?php wp_reset_query($news); ?>
+<a style="background-color: #FFF; border-radius: 5px; display: inline-block; font-weight: bold; padding: .5em 1em; margin: .1em; text-decoration: none;" class="" href="/learninghub/foundational-courses/">
+    Read All News
+</a>
 
 </div>
 <!-- /wp:columns -->

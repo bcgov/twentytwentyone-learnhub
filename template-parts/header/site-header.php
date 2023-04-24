@@ -51,7 +51,6 @@ $blog_info    = get_bloginfo( 'name' );
 <div id="searchbar" style="background-color: #01284f; ">
 <div class="alignwide"> <!-- searchwrap -->
     <form method="get" action="/learninghub/" class="searchform">
-        <input type="hidden" name="post_type" value="course">
         <label for="coursesearch" class="sr-only" style="display: none">Search</label>
         <input type="search" id="coursesearch" class="coursesearchfield" name="s" required value="<?= esc_html( get_search_query() ) ?>">
         <button type="submit" class="searchsubmit" aria-label="Submit Search" style="font-size: 18px">

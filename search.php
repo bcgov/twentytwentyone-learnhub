@@ -42,6 +42,12 @@ get_header();
 <div class="wp-block-columns alignfull"><!-- wp:column -->
 <div class="wp-block-column" style="flex: 66%;">
 <div class="">
+	<?php if($resultcount > 0): ?>
+<button style="background: #FFF; border:0; border-radius: 5px; color: #333; font-size: 14px; float: right; padding: 0 1em;" onclick="openAll()">
+    Expand/Collapse
+</button>
+<?php endif ?>
+<div style="clear: both"></div>
 <?php if ( have_posts() ) { ?>
 <?php
 	// Start the Loop.
@@ -58,6 +64,19 @@ get_header();
 get_template_part( 'template-parts/content/content-none' );
 }
 ?>
+<script>
+<?php if($resultcount <= 3): ?>
+document.body.querySelectorAll('details').forEach((e) => {
+	(e.hasAttribute('open')) ? e.removeAttribute('open') : e.setAttribute('open',true);
+});
+<?php endif ?>
+function openAll() {
+    let foo = document.body.querySelectorAll('details').forEach((e) => {
+        (e.hasAttribute('open')) ? e.removeAttribute('open') : e.setAttribute('open',true);
+    });
+    return foo;
+}
+</script>
 </div>
 </div>
 <!-- /wp:column -->
@@ -78,12 +97,50 @@ get_template_part( 'template-parts/content/content-none' );
 </div>
 <h4>Suggested Searches</h4>
 <div style="background-color: #FFF; border-radius: 5px; padding: .5em;">
-<div><a href="/learninghub/?s=flexiblebcps&post_type=courses">#flexibleBCPS</a></div>
+<div><a href="/learninghub/?s=flexibleBCPS">#flexibleBCPS</a></div>
 <p>Flexible workplaces? Managing remote teams? The courses and resources you need.</p>
 </div>
 <div style="background-color: #FFF; border-radius: 5px; margin-top: 1em; padding: .5em;">
-<div><a href="/learninghub/?s=BCPSBelonging&post_type=courses">#BCPSBelonging</a></div>
+<div><a href="/learninghub/?s=BCPSBelonging">#BCPSBelonging</a></div>
 <p>Great courses that cover equity, diversity and inclusion.</p>
+</div>
+<?php 
+$news_args = array(
+    'post_type'                => 'post',
+    'post_status'              => 'publish',
+    'posts_per_page'           => 3,
+    'ignore_sticky_posts'      => 0,
+    'child_of'                 => 0,
+    'parent'                   => 0,
+    'orderby'                  => array('post_date' =>'ASC'),
+    'hide_empty'               => 0,
+    'hierarchical'             => 1,
+    'exclude'                  => '',
+    'include'                  => '',
+    'number'                   => '',
+    'pad_counts'               => true, 
+);
+$news = null;
+$news = new WP_Query($news_args);
+if( $news->have_posts() ) : ?>
+
+    <h4 class="alignwide">Recent News</h4>
+    <div style="background: #FFF; border-radius: 5px; padding: .5em;">
+    <?php while ($news->have_posts()) : $news->the_post(); ?>
+    <div>
+        <a href="<?= the_permalink() ?>">
+            <?= the_title() ?>
+        </a>
+    </div>
+    <?php endwhile ?>
+	</div>
+    
+<?php else: ?>
+    <p>No news is bad news?</p>
+<?php endif; ?>
+<?php wp_reset_query($news); ?>
+
+
 
 <!-- /wp:column -->
 </div>
