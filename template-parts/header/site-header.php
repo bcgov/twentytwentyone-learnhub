@@ -29,10 +29,10 @@ $blog_info    = get_bloginfo( 'name' );
 <div style="flex: 2 right;">
 <nav class="main-nav" role="navigation" aria-label="<?php esc_attr_e( 'Primary menu', 'twentytwentyone' ); ?>">
 <div>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/corporate-learning-partners/">Partners</a>
-    <a href="/course/">All Courses</a>
+    <a href="/learninghub/">Home</a>
+    <a href="/learninghub/about/">About</a>
+    <a href="/learninghub/corporate-learning-partners/">Partners</a>
+    <a href="/learninghub/course/">All Courses</a>
     <a href="https://learning.gov.bc.ca/CHIPSPLM/signon.html" target="_blank" rel="noopener">
         PSA Learning System
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
@@ -50,7 +50,7 @@ $blog_info    = get_bloginfo( 'name' );
 </div>
 <div id="searchbar" style="background-color: #01284f; ">
 <div class="alignwide"> <!-- searchwrap -->
-    <form method="get" action="https://wordpress.virtuallearn.ca/" class="searchform">
+    <form method="get" action="/learninghub/" class="searchform">
         <input type="hidden" name="post_type" value="course">
         <label for="coursesearch" class="sr-only" style="display: none">Search</label>
         <input type="search" id="coursesearch" class="coursesearchfield" name="s" required value="<?= esc_html( get_search_query() ) ?>">

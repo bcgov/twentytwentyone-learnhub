@@ -67,13 +67,13 @@ get_template_part( 'template-parts/content/content-none' );
 <h4>Suggested Courses</h4>
 <div style="background-color: #FFF; border-radius: 5px; padding: .5em;">
 <div>
-    <a href="https://learningcentre.gww.gov.bc.ca/learninghub/foundational-courses/">Mandatory &amp; Foundational</a>
+    <a href="/learninghub/foundational-courses/">Mandatory &amp; Foundational</a>
 </div>
 <div>
-    <a href="https://learningcentre.gww.gov.bc.ca/learninghub/supervisors-and-managers/">Supervisors &amp; Managers</a>
+    <a href="/learninghub/supervisors-and-managers/">Supervisors &amp; Managers</a>
 </div>
 <div>
-    <a href="https://learningcentre.gww.gov.bc.ca/learninghub/leadership/">Leadership in the BCPS</a>
+    <a href="/learninghub/leadership/">Leadership in the BCPS</a>
 </div>
 </div>
 <h4>Suggested Searches</h4>
@@ -82,7 +82,7 @@ get_template_part( 'template-parts/content/content-none' );
 <p>Flexible workplaces? Managing remote teams? The courses and resources you need.</p>
 </div>
 <div style="background-color: #FFF; border-radius: 5px; margin-top: 1em; padding: .5em;">
-<div><a href="/learninghub/?s=flexiblebcps&post_type=courses">#BCPSBelonging</a></div>
+<div><a href="/learninghub/?s=BCPSBelonging&post_type=courses">#BCPSBelonging</a></div>
 <p>Great courses that cover equity, diversity and inclusion.</p>
 
 <!-- /wp:column -->
