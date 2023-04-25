@@ -8,11 +8,13 @@
         
     </summary>
     <div style="padding: .25em 0 0 1.5em">
-
-
+        
     <?php the_content(); ?>
-    
-
+    <?php if(!empty($post->mandatory_notes)): ?>
+    <div class="mandonotes" style="background-color: #fffede; border-radius: 5px; margin: 1em 0 0 0; padding: 1em;">
+        <?= $post->mandatory_notes ?>
+    </div>
+    <?php endif ?>
     <div class="coursemeta">
     <?php the_terms( $post->ID, 'delivery_method', '', ', ', ' ' ); ?>
     <?php the_terms( $post->ID, 'learning_partner', 'offered by ', ', ', ' ' ); ?>

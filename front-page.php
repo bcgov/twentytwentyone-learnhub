@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
+ * @since Twenty Twenty-One 1.0 
  */
 
 get_header();
@@ -53,7 +53,7 @@ $mand_args = array(
         array(
             'taxonomy' => 'keywords',
             'field'    => 'slug',
-            'terms'    => 'mandatoryforall',
+            'terms'    => 'mandatorybcps',
         )
     )
 );
@@ -152,7 +152,7 @@ $news_args = array(
     'ignore_sticky_posts'      => 0,
     'child_of'                 => 0,
     'parent'                   => 0,
-    'orderby'                  => array('post_date' =>'ASC'),
+    'orderby'                  => array('post_date' =>'DESC'),
     'hide_empty'               => 0,
     'hierarchical'             => 1,
     'exclude'                  => '',
@@ -185,8 +185,10 @@ if( $news->have_posts() ) : ?>
     <p>No news is bad news?</p>
 <?php endif; ?>
 <?php wp_reset_query($news); ?>
-<a style="background-color: #FFF; border-radius: 5px; display: inline-block; font-weight: bold; padding: .5em 1em; margin: .1em; text-decoration: none;" class="" href="/learninghub/foundational-courses/">
-    Read Past News
+<a style="background-color: #FFF; border-radius: 5px; display: inline-block; font-weight: bold; padding: .5em 1em; margin: .1em; text-decoration: none;" 
+    class="" 
+    href="/learninghub/news/">
+        Read Past News
 </a>
 
 </div>
