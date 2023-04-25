@@ -11,12 +11,7 @@
 
 get_header();
 
-?>
 
-
-
-
-<?php
 while ( have_posts() ) : // Start the Loop
 	the_post();
 	the_content();
@@ -66,10 +61,10 @@ $mandatories = null;
 $mandatories = new WP_Query($mand_args);
 if( $mandatories->have_posts() ) : ?>
 
-    <h3 class="alignwide">Mandatory Courses</h3>
-    <?php while ($mandatories->have_posts()) : $mandatories->the_post(); ?>
-    <?php get_template_part( 'template-parts/course/single-course' );?>
-    <?php endwhile ?>
+<h3 class="alignwide">Mandatory Courses</h3>
+<?php while ($mandatories->have_posts()) : $mandatories->the_post(); ?>
+<?php get_template_part( 'template-parts/course/single-course' );?>
+<?php endwhile ?>
     
 
 <?php endif; ?>
@@ -87,9 +82,9 @@ if( $mandatories->have_posts() ) : ?>
 
 <h3 class="alignwide">Suggested Courses</h3>
 
-    <a href="/learninghub/foundational-courses/" style="background-color: #FFF; border-radius: 5px; display: block; padding: .25em; margin: .1em; text-decoration: none;">Mandatory &amp; Foundational</a>
-    <a href="/learninghub/supervisors-and-managers/" style="background-color: #FFF; border-radius: 5px; display: block; padding: .25em; margin: .1em; text-decoration: none;">Supervisors &amp; Managers</a>
-    <a href="/learninghub/leadership/" style="background-color: #FFF; border-radius: 5px; display: block; padding: .25em; margin: .1em; text-decoration: none;">Leadership in the BCPS</a>
+<a href="/learninghub/foundational-courses/" style="background-color: #FFF; border-radius: 5px; display: block; padding: .25em; margin: .1em; text-decoration: none;">Mandatory &amp; Foundational</a>
+<a href="/learninghub/supervisors-and-managers/" style="background-color: #FFF; border-radius: 5px; display: block; padding: .25em; margin: .1em; text-decoration: none;">Supervisors &amp; Managers</a>
+<a href="/learninghub/leadership/" style="background-color: #FFF; border-radius: 5px; display: block; padding: .25em; margin: .1em; text-decoration: none;">Leadership in the BCPS</a>
 
 
 
@@ -168,24 +163,23 @@ $news_args = array(
 $news = null;
 $news = new WP_Query($news_args);
 if( $news->have_posts() ) : ?>
-
-    <h3 class="alignwide">Recent News</h3>
-    <?php while ($news->have_posts()) : $news->the_post(); ?>
-    <div style="background: #FFF; border-radius: 5px; padding: .5em;">
-        <div style="background-color: #ebf6ff; border-radius: 5px; float: right; font-size: 14px; line-height: 1.3em; margin: 0 0 3em 1em; padding: .5em; text-align: center; text-transform: uppercase; width: 3.5em;">
-            <?php echo get_the_date('M') ?>
-            <span style="font-size: 20px; font-weight: bold;"><?php echo get_the_date('d') ?></span>
-        </div>
-        <div>
-            <a style="font-weight: bold;" href="<?= the_permalink() ?>">
-                <?= the_title() ?>
-            </a>
-        </div>
-        <div>
-            <?= the_excerpt() ?>
-        </div>
+<h3 class="alignwide">Recent News</h3>
+<?php while ($news->have_posts()) : $news->the_post(); ?>
+<div style="background: #FFF; border-radius: 5px; padding: .5em;">
+    <div style="background-color: #ebf6ff; border-radius: 5px; float: right; font-size: 14px; line-height: 1.3em; margin: 0 0 3em 1em; padding: .5em; text-align: center; text-transform: uppercase; width: 3.5em;">
+        <?php echo get_the_date('M') ?>
+        <span style="font-size: 20px; font-weight: bold;"><?php echo get_the_date('d') ?></span>
     </div>
-    <?php endwhile ?>
+    <div>
+        <a style="font-weight: bold;" href="<?= the_permalink() ?>">
+            <?= the_title() ?>
+        </a>
+    </div>
+    <div>
+        <?= the_excerpt() ?>
+    </div>
+</div>
+<?php endwhile ?>
     
 <?php else: ?>
     <p>No news is bad news?</p>
