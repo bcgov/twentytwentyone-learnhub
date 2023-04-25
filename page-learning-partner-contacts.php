@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all Learning Partners
+ * The template for displaying all Learning Partners contact information
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *

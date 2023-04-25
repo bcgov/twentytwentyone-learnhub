@@ -48,11 +48,11 @@ $blog_info    = get_bloginfo( 'name' );
 
 </header><!-- #masthead -->
 </div>
-<div id="searchbar" style="background-color: #01284f; ">
+<div id="searchbar" style="background-color: #01284f;">
 <div class="alignwide"> <!-- searchwrap -->
     <form method="get" action="/learninghub/" class="searchform">
-        <label for="coursesearch" class="sr-only" style="display: none">Search</label>
-        <input type="search" id="coursesearch" class="coursesearchfield" name="s" required value="<?= esc_html( get_search_query() ) ?>">
+        <label for="s" class="sr-only" style="">Search</label>
+        <input type="search" id="s" class="s" name="s" required value="<?= esc_html( get_search_query() ) ?>">
         <button type="submit" class="searchsubmit" aria-label="Submit Search" style="font-size: 18px">
             Search
         </button>

@@ -43,8 +43,8 @@ get_header();
 <div class="wp-block-column" style="flex: 66%;">
 <div class="">
 	<?php if($resultcount > 0): ?>
-<button style="background: #FFF; border:0; border-radius: 5px; color: #333; font-size: 14px; float: right; padding: 0 1em;" onclick="openAll()">
-    Expand/Collapse
+<button id="expandcollapse" style="background: #FFF; border:0; border-radius: 5px; color: #333; font-size: 14px; float: right; padding: 0 1em;">
+    Expand All
 </button>
 <?php endif ?>
 <div style="clear: both"></div>
@@ -70,7 +70,18 @@ document.body.querySelectorAll('details').forEach((e) => {
 	(e.hasAttribute('open')) ? e.removeAttribute('open') : e.setAttribute('open',true);
 });
 <?php endif ?>
-function openAll() {
+
+let exco = document.getElementById('expandcollapse');
+exco.addEventListener('click', (e) => { 
+        e.preventDefault();
+		if(exco.innerHTML == 'Collapse All') {
+			exco.innerHTML = 'Expand All';
+		} else {
+			exco.innerHTML = 'Collapse All';
+		}
+		toggleAll();
+});
+function toggleAll() {
     let foo = document.body.querySelectorAll('details').forEach((e) => {
         (e.hasAttribute('open')) ? e.removeAttribute('open') : e.setAttribute('open',true);
     });

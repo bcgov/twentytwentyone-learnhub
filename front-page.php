@@ -30,11 +30,11 @@ endwhile; // End of the loop.
 
 <h3>Suggested Searches</h3>
 <div style="background-color: #FFF; border-radius: 5px; padding: .5em;">
-<div><a href="/learninghub/?s=flexibleBCPS">#flexibleBCPS</a></div>
+<div><a style="font-weight: bold;" href="/learninghub/?s=flexibleBCPS">#flexibleBCPS</a></div>
 <p>Flexible workplaces? Managing remote teams? The courses and resources you need.</p>
 </div>
 <div style="background-color: #FFF; border-radius: 5px; margin-top: 1em; padding: .5em;">
-<div><a href="/learninghub/?s=BCPSBelonging">#BCPSBelonging</a></div>
+<div><a style="font-weight: bold;" href="/learninghub/?s=BCPSBelonging">#BCPSBelonging</a></div>
 <p>Great courses that cover equity, diversity and inclusion.</p>
 </div>
 
@@ -85,22 +85,11 @@ if( $mandatories->have_posts() ) : ?>
 <div class="wp-block-column" style="padding: 1em;">
 
 
-<!-- wp:heading {"align":"wide"} -->
 <h3 class="alignwide">Suggested Courses</h3>
-<!-- /wp:heading -->
-<!-- wp:buttons {"align":"wide"} -->
-<div class="wp-block-buttons alignwide"><!-- wp:button {"style":{"color":{"background":"#003366"}}} -->
-<a href="/learninghub/" class="" style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;">Foundational/Mandatory</a> 
-<!-- /wp:button -->
 
-<!-- wp:button {"style":{"color":{"background":"#003366"}}} -->
-<a href="/learninghub/" class="" style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;">Supervisors and Managers</a>
-<!-- /wp:button -->
-
-<!-- wp:button {"style":{"color":{"background":"#003366"}}} -->
-<a href="/learninghub/" class="" style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;">People Leaders</a>
-<!-- /wp:button --></div>
-<!-- /wp:buttons -->
+    <a href="/learninghub/foundational-courses/" style="background-color: #FFF; border-radius: 5px; display: block; padding: .25em; margin: .1em; text-decoration: none;">Mandatory &amp; Foundational</a>
+    <a href="/learninghub/supervisors-and-managers/" style="background-color: #FFF; border-radius: 5px; display: block; padding: .25em; margin: .1em; text-decoration: none;">Supervisors &amp; Managers</a>
+    <a href="/learninghub/leadership/" style="background-color: #FFF; border-radius: 5px; display: block; padding: .25em; margin: .1em; text-decoration: none;">Leadership in the BCPS</a>
 
 
 
@@ -150,7 +139,7 @@ $learningpartners = get_terms( array(
 <?php foreach($learningpartners as $p): ?>
 <a style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;" href="/learninghub/learning_partner/<?= $p->slug ?>"><?= $p->name ?></a> 
 <?php endforeach ?>
-and many more &hellip; <br> <a style="background-color: #FFF; border-radius: 5px; display: inline-block; font-weight: bold; padding: .5em 1em; margin: .1em; text-decoration: none;" class="" href="/learning-hub/corporate-learning-partners">See All Partners</a>
+and many more &hellip; <br> <a style="background-color: #FFF; border-radius: 5px; display: inline-block; font-weight: bold; padding: .5em 1em; margin: .1em; text-decoration: none;" class="" href="/learninghub/corporate-learning-partners">See All Partners</a>
 
 
 </div>
@@ -183,14 +172,18 @@ if( $news->have_posts() ) : ?>
     <h3 class="alignwide">Recent News</h3>
     <?php while ($news->have_posts()) : $news->the_post(); ?>
     <div style="background: #FFF; border-radius: 5px; padding: .5em;">
-    <div>
-        <a href="<?= the_permalink() ?>">
-            <?= the_title() ?>
-        </a>
-    </div>
-    <div>
-        <?= the_excerpt() ?>
-    </div>
+        <div style="background-color: #ebf6ff; border-radius: 5px; float: right; font-size: 14px; line-height: 1.3em; margin: 0 0 3em 1em; padding: .5em; text-align: center; text-transform: uppercase; width: 3.5em;">
+            <?php echo get_the_date('M') ?>
+            <span style="font-size: 20px; font-weight: bold;"><?php echo get_the_date('d') ?></span>
+        </div>
+        <div>
+            <a style="font-weight: bold;" href="<?= the_permalink() ?>">
+                <?= the_title() ?>
+            </a>
+        </div>
+        <div>
+            <?= the_excerpt() ?>
+        </div>
     </div>
     <?php endwhile ?>
     
@@ -199,7 +192,7 @@ if( $news->have_posts() ) : ?>
 <?php endif; ?>
 <?php wp_reset_query($news); ?>
 <a style="background-color: #FFF; border-radius: 5px; display: inline-block; font-weight: bold; padding: .5em 1em; margin: .1em; text-decoration: none;" class="" href="/learninghub/foundational-courses/">
-    Read All News
+    Read Past News
 </a>
 
 </div>
