@@ -21,6 +21,9 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 	--global--font-size-xl: 2.25rem;
 	--global--font-size-xxl: 3rem;
 	--global--font-size-xxxl: 3.5rem;
+
+	--global--color-primary: #003366;
+
 	--global--spacing-vertical: 1rem;
 }
 h1,h2,h3,h4,h5,caption,figcaption {
@@ -53,7 +56,7 @@ iframe {
 	text-decoration: none;
 }
 .main-nav a:hover {
-	background-color: #FFF;
+	background-color: #d3eaff;
 	border-radius: 5px;
 	color: #333;
 }
@@ -128,12 +131,12 @@ iframe {
 	background-color: #003366 !important;
 	border-radius: 5px !important;
 }
-.coursesearchfield {
-	background-color: #F0F8FF; 
+.s {
+	background-color: #ebf6ff; 
 	border-radius: 5px !important;
 	border: 0 !important;
 	border-radius: 5px; 
-	color: #333; 
+	color: #111;
 	font-size: 16px;
 	width: 420px;
 }
@@ -319,4 +322,15 @@ details > summary:first-of-type {
 		padding: 0;
 		width: 100%;
 	}
+}
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(:hover):not(:active):not(.has-background) {
+	background-color: #003366 !important;
+}
+.sr-only {
+	height:1px;
+	left:-10000px;
+	top:auto;
+	position:absolute;
+	overflow:hidden;
+	width:1px;
 }
