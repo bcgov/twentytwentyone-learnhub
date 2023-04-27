@@ -88,20 +88,20 @@ if( $mandatories->have_posts() ) : ?>
 
 
 
-<h3 class="alignwide">Delivery Methods</h3>
+<!-- <h3 class="alignwide">Delivery Methods</h3> -->
 <?php 
-$deliverymethods = get_terms( array(
-    'taxonomy' => 'delivery_method',
-    'hide_empty' => false,
-    'orderby'    => 'count',
-    'number' => 5,
-    'order'   => 'DESC'
-) ); 
+// $deliverymethods = get_terms( array(
+//     'taxonomy' => 'delivery_method',
+//     'hide_empty' => false,
+//     'orderby'    => 'count',
+//     'number' => 5,
+//     'order'   => 'DESC'
+// ) ); 
 
 ?>
-<?php foreach($deliverymethods as $dm): ?>
-<a style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;" href="/learninghub/delivery_method/<?= $dm->slug ?>"><?= $dm->name ?></a> 
-<?php endforeach ?>
+<?php //foreach($deliverymethods as $dm): ?>
+<!-- <a style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;" href="/learninghub/delivery_method/<?= $dm->slug ?>"><?= $dm->name ?></a>  -->
+<?php //endforeach ?>
 
 <!-- <h3 class="alignwide">Learning Systems</h3> -->
 <?php 
