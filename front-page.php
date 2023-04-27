@@ -45,7 +45,7 @@ endwhile; // End of the loop.
 </form>
 </div>
 </div>
-<div class="has-text-align-center has-black-color has-text-color has-small-font-size" style="background-color: #FFF; padding: 0 0 3em 0;">
+<div class="has-text-align-center has-black-color has-text-color has-small-font-size" style="background-color: #FFF; margin:0; padding: 0 0 3em 0;">
     <a href="https://learningcentre.gww.gov.bc.ca/learninghub/foundational-courses/">Mandatory &amp; Foundational Courses</a> | 
     <a href="https://learningcentre.gww.gov.bc.ca/learninghub/supervisors-and-managers/">Supervisors &amp; Managers</a> | 
     <a href="https://learningcentre.gww.gov.bc.ca/learninghub/leadership/">Leadership in the BCPS</a>
@@ -53,7 +53,7 @@ endwhile; // End of the loop.
 
 
 
-<div class="alignfull" style="background-color: #c3d4e4;">
+<div class="alignfull" style="background-color: #c3d4e4; margin: 0;">
 <div class="alignwide">
 <div class="hubgrid">
 <div class="hubgridinner">
@@ -137,7 +137,7 @@ $args = array(
 
 
 
-<div class="alignfull" style="background-color: #FFF; padding: 4em 2em; text-align: center">
+<div class="alignfull" style="background-color: #FFF; margin: 0; padding: 4em 2em; text-align: center">
 <h2>Learning is brought to you by&hellip;</h2>
 <div class="alignfull" style="padding: 2em 0;">
 <img src="https://learningcentre.gww.gov.bc.ca/learninghub/wp-content/uploads/sites/6/2021/10/partner-logos-small-greyscale.jpg" 
