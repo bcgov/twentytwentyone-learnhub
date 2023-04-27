@@ -334,3 +334,42 @@ details > summary:first-of-type {
 	overflow:hidden;
 	width:1px;
 }
+.corpartner {
+	background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22currentColor%22%20class%3D%22bi%20bi-person-badge%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M6.5%202a.5.5%200%200%200%200%201h3a.5.5%200%200%200%200-1h-3zM11%208a3%203%200%201%201-6%200%203%203%200%200%201%206%200z%22%2F%3E%3Cpath%20d%3D%22M4.5%200A2.5%202.5%200%200%200%202%202.5V14a2%202%200%200%200%202%202h8a2%202%200%200%200%202-2V2.5A2.5%202.5%200%200%200%2011.5%200h-7zM3%202.5A1.5%201.5%200%200%201%204.5%201h7A1.5%201.5%200%200%201%2013%202.5v10.795a4.2%204.2%200%200%200-.776-.492C11.392%2012.387%2010.063%2012%208%2012s-3.392.387-4.224.803a4.2%204.2%200%200%200-.776.492V2.5z%22%2F%3E%3C%2Fsvg%3E') no-repeat 5px 8px;
+	padding-left: 30px;
+}
+.ministrylearning {
+	background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22currentColor%22%20class%3D%22bi%20bi-slash-circle%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8%2015A7%207%200%201%201%208%201a7%207%200%200%201%200%2014zm0%201A8%208%200%201%200%208%200a8%208%200%200%200%200%2016z%22%2F%3E%3Cpath%20d%3D%22M11.354%204.646a.5.5%200%200%200-.708%200l-6%206a.5.5%200%200%200%20.708.708l6-6a.5.5%200%200%200%200-.708z%22%2F%3E%3C%2Fsvg%3E') no-repeat 20px 30px;
+	background-size: 40px;
+	padding-left: 75px !important;
+}
+.availtoall {
+	background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22currentColor%22%20class%3D%22bi%20bi-check-circle%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M8%2015A7%207%200%201%201%208%201a7%207%200%200%201%200%2014zm0%201A8%208%200%201%200%208%200a8%208%200%200%200%200%2016z%22%2F%3E%3Cpath%20d%3D%22M10.97%204.97a.235.235%200%200%200-.02.022L7.477%209.417%205.384%207.323a.75.75%200%200%200-1.06%201.06L6.97%2011.03a.75.75%200%200%200%201.079-.02l3.992-4.99a.75.75%200%200%200-1.071-1.05z%22%2F%3E%3C%2Fsvg%3E') no-repeat 20px 30px;
+	background-size: 40px;
+	padding-left: 75px !important;
+}
+.widget-area {
+	color: #FFF !important;
+	margin-top: 0 !important;
+}
+.widget-area a {
+	color: #FFF !important;
+}
+.widget {
+	border-bottom: 2px solid #f8be43;
+	padding: 4em 0;
+}
+.helpingimprove {
+	color: #FFF;
+	font-size: 3.5em;
+	line-height: 1em;
+}
+.helpingimprove span {
+	color: #3496d2
+}
+.landacknowledge {
+	font-size: 1.3em;
+}
+#custom_html-7 {
+	padding-top: 4em;
+}
