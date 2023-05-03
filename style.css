@@ -88,12 +88,7 @@ iframe {
 	display: flex; 
 	justify-content: center;
 }
-#searchbar {
-	overflow: scroll;
-	transition-property: height;
-	transition-duration: 1s;
-	/* transition-delay: 2s; */
-}
+
 #searchbar a {
 	color: #FFF;
 }
