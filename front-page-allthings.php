@@ -80,12 +80,6 @@ if( $mandatories->have_posts() ) : ?>
 <div class="wp-block-column" style="padding: 1em;">
 
 
-<h3 class="alignwide">Suggested Courses</h3>
-
-<a href="/learninghub/foundational-courses/" style="background-color: #FFF; border-radius: 5px; display: block; padding: .25em; margin: .1em; text-decoration: none;">Mandatory &amp; Foundational</a>
-<a href="/learninghub/supervisors-and-managers/" style="background-color: #FFF; border-radius: 5px; display: block; padding: .25em; margin: .1em; text-decoration: none;">Supervisors &amp; Managers</a>
-<a href="/learninghub/leadership/" style="background-color: #FFF; border-radius: 5px; display: block; padding: .25em; margin: .1em; text-decoration: none;">Leadership in the BCPS</a>
-
 
 
 <!-- <h3 class="alignwide">Delivery Methods</h3> -->
@@ -118,7 +112,22 @@ $learningsystems = get_terms( array(
 <!-- <a style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;" href="/learninghub/external_system/<?= $s->slug ?>"><?= $s->name ?></a>  -->
 <?php endforeach ?>
 
-    
+
+<h3 class="alignwide">Topics</h3>
+<?php 
+$topics = get_terms( array(
+    'taxonomy' => 'topics',
+    'hide_empty' => false,
+    'orderby'    => 'count',
+    'order'   => 'DESC'
+) ); // 121 = Office of Compt General, 372 = unknown, 144 = labour relations 
+
+?>
+<?php foreach($topics as $t): ?>
+<a style="background-color: #FFF; border-radius: 5px; display: inline-block; padding: .25em; margin: .1em; text-decoration: none;" href="/learninghub/topics/<?= $t->slug ?>"><?= $t->name ?></a> 
+<?php endforeach ?>
+
+
 <h3 class="alignwide">Learning Partners</h3>
 <?php 
 $learningpartners = get_terms( array(

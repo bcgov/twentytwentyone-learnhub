@@ -1,160 +1,153 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying the course index page
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
  * @package WordPress
  * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
+ * @since Twenty Twenty-One 1.0 
  */
 
 get_header();
-?>
-<?php 
-/* Start the Loop */
-while ( have_posts() ) :
+
+
+while ( have_posts() ) : // Start the Loop
 	the_post();
 	the_content();
-	//get_template_part( 'template-parts/content/content-page' );
 endwhile; // End of the loop.
 ?>
+<div class="wp-block-columns alignfull has-white-background-color has-background is-layout-flex wp-container-core-columns-layout-2 wp-block-columns-is-layout-flex" id="whatisthehub" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    <div class="wp-block-columns alignwide is-layout-flex wp-container-core-columns-layout-1 wp-block-columns-is-layout-flex">
+        <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+            <h2 class="wp-block-heading has-extra-large-font-size">What is the LearningHUB?</h2>
 
-<div class="wp-block-cover alignfull has-white-background-color has-background-dim" style="background-color: #FFF; min-height:100px">
-<div class="wp-block-cover__inner-container">
-<p class="has-text-align-center mb-1">Search the catalogue, or 
-    <a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/" data-type="page">see a list of all courses</a>.
-</p>
-<form role="search" 
-        method="get" 
-        action="https://learningcentre.gww.gov.bc.ca/learninghub/" 
-        class="wp-block-search__button-inside wp-block-search__icon-button wp-block-search">
-<div class="wp-block-search__inside-wrapper">
+            <p>In the B.C. Public Service, corporate learning is a shared space. 
+                The Learning Centre and its partners offer hundreds of courses, 
+                available to all BCPS employees. The Learning Hub is the place 
+                to see that full catalogue.</p>
+        </div>
 
-    <label for="wp-block-search__input-1" class="sr-only">Search</label>
-    <input type="search" 
-            id="wp-block-search__input-1" 
-            class="wp-block-search__input" 
-            name="s">
-
-    <input type="hidden" name="post_type" value="courses">
-    <button type="submit" class="wp-block-search__button" aria-label="Submit Search">
-        Search
-    </button>
+        <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)" id="homesearchbox">
+            <form role="search" method="get" action="https://wordpress.virtuallearn.ca/learninghub/" class="wp-block-search__button-outside wp-block-search__text-button aligncenter wp-block-search">
+                <label class="wp-block-search__label" for="wp-block-search__input-1">Search the full catalog</label>
+                <div class="wp-block-search__inside-wrapper ">
+                    <input class="wp-block-search__input" id="wp-block-search__input-1" placeholder="" value="" type="search" name="s" required/>
+                    <button aria-label="Search" class="wp-block-search__button has-text-color has-white-color wp-element-button" type="submit">Search</button>
+                </div>
+            </form>
+            <details>
+                <summary>Suggested Searches</summary>
+                <div style="background-color: #F1F1F1; border-radius: 5px; padding: .5em;">
+                    <div><a href="/learninghub/?s=flexibleBCPS">#flexibleBCPS</a></div>
+                    <p>Flexible workplaces? Managing remote teams? The courses and resources you need.</p>
+                    </div>
+                    <div style="background-color: #F1F1F1; border-radius: 5px; margin-top: 1em; padding: .5em;">
+                    <div><a href="/learninghub/?s=BCPSBelonging">#BCPSBelonging</a></div>
+                    <p>Great courses that cover equity, diversity and inclusion.</p>
+                </div>
+		    </details>
+        </div>
+    </div>
 </div>
-</form>
 </div>
-</div>
-<div class="has-text-align-center has-black-color has-text-color has-small-font-size" style="background-color: #FFF; margin:0; padding: 0 0 3em 0;">
-    <a href="https://learningcentre.gww.gov.bc.ca/learninghub/foundational-courses/">Mandatory &amp; Foundational Courses</a> | 
-    <a href="https://learningcentre.gww.gov.bc.ca/learninghub/supervisors-and-managers/">Supervisors &amp; Managers</a> | 
-    <a href="https://learningcentre.gww.gov.bc.ca/learninghub/leadership/">Leadership in the BCPS</a>
-</div>
-
-
-
-<div class="alignfull" style="background-color: #c3d4e4; margin: 0;">
 <div class="alignwide">
-<div class="hubgrid">
-<div class="hubgridinner">
-<?php
-$args = array(
-	'numberposts' => 4
-);
-?>
-<?php $latest_posts = get_posts( $args ) ?>
-<?php $count = 1 ?>
-<?php foreach($latest_posts as $post) : ?>
-<?php setup_postdata( $post ) ?>
-<div class="hubcard">
-	<div>
-        <?php if($post->news_link): ?>
-        <a href="<?php echo $post->news_link ?>" target="_blank" rel="noopener" title="<?php the_title() ?>">
-            <?php twenty_twenty_one_post_thumbnail('medium', ['class' => '', 'title' => 'Feature image', 'alt' => 'Feature image']); ?>
-		</a>
-        <?php else: ?>
-		<a href="<?php the_permalink() ?>"  title="<?= the_title() ?>">
-            <?php twenty_twenty_one_post_thumbnail('medium', ['class' => '', 'title' => 'Feature image', 'alt' => 'Feature image']); ?>
-		</a>
-        <?php endif ?>
-	</div>
-	<div class="hubtitle">
-        <?php if($post->news_link): ?>
-        <h3>
-            <a href="<?php echo $post->news_link ?>" target="_blank" rel="noopener" title="<?php the_title() ?>">
-				<?php the_title() ?>
-			</a>
-		</h3>
-        <?php else: ?>
-        <h3>
-			<a href="<?php the_permalink() ?>" title="<?php the_title() ?>">
-				<?php the_title() ?>
-			</a>
-		</h3>
-        <?php endif ?>
+    <h3>How is learning organized?</h3>
+    <p>Four types of categorization help you find exactly what you’re looking for: 
+        group, topic, audience and delivery.</p>
+<div style="background-color: #FFF; border-radius: .5em; margin: 1em 0; padding: 1em;">
+<h4 class="alignwide" style="flex:none">Groups</h4>
+<div class="wp-block-columns alignfull">
+<?php 
+$groups = get_terms( array(
+    'taxonomy' => 'groups',
+    'hide_empty' => false,
+    'orderby'    => 'count',
+    'order'   => 'DESC'
+) );
 
+?>
+<?php foreach($groups as $g): ?>
+    <div class="wp-block-column" style="padding: 1em;">
+    <a href="/learninghub/groups/<?= $g->slug ?>" style="text-decoration: none">
+        <div class="groupicon group-<?= $g->slug ?>" style="color: #003366;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path style="color: #003366;" d="M448 256A192 192 0 1 0 64 256a192 192 0 1 0 384 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zM224 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg></div>
+        <div><span style="font-weight: bold; text-decoration: underline;"><?= $g->name ?></span></div>
+        <div><?= $g->description ?></div>
+    </a>
     </div>
-	<div class="hubexcerpt flexible">
-        <?php the_excerpt(); ?>
-	</div>
-    <div class="hublink">
-        <?php if($post->news_link): ?>
-            <a href="<?php echo $post->news_link ?>" target="_blank" rel="noopener">
-                Read More
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="inline bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                    <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                </svg>
-            </a>
-        <?php else: ?>
-            <a href="<?= the_permalink() ?>">Read More</a>
-        <?php endif ?>
-    </div>
-</div>
-<?php $count++ ?>
-<?php if($count%2>0): ?>
-</div>
-<div class="hubgridinner">
-<?php endif ?>
 <?php endforeach ?>
 
-
-</div>
-
 </div>
 </div>
-<div class="alignwide" style="text-align: center">
-<div class="newslink" style="padding: 1em 2em 2em 2em">
-    <a class="wp-block-button__link has-background" style="background-color: #145693; border-radius: 3px; display: block; margin: 0 auto;" href="http://learningcentre.gww.gov.bc.ca/learninghub/news/">
-        Read Past Articles
-    </a>
+<div class="wp-block-columns alignfull">
+<div class="wp-block-column"  style="background-color: #FFF; border-radius: .5em; padding: 1em;">
+<h4 class="alignwide">Topics</h4>
+<?php 
+$topics = get_terms( array(
+    'taxonomy' => 'topics',
+    'hide_empty' => false,
+    'orderby'    => 'count',
+    'order'   => 'DESC'
+) ); // 121 = Office of Compt General, 372 = unknown, 144 = labour relations 
+
+?>
+<div style="columns:2 auto">
+<?php foreach($topics as $t): ?>
+<div><a style="font-weight: bold;" href="/learninghub/topics/<?= $t->slug ?>"><?= $t->name ?></a></div>
+<?php endforeach ?>
 </div>
 </div>
 </div>
+<div class="wp-block-columns alignfull"><!-- wp:column -->
+<div class="wp-block-column">
+<?php 
+$audiences = get_terms( array(
+    'taxonomy' => 'audience',
+    'hide_empty' => false,
+    'orderby'    => 'count',
+    'order'   => 'DESC'
+) ); // 121 = Office of Compt General, 372 = unknown, 144 = labour relations 
 
-
-
-
-
-
-<div class="alignfull" style="background-color: #FFF; margin: 0; padding: 4em 2em; text-align: center">
-<h2>Learning is brought to you by&hellip;</h2>
-<div class="alignfull" style="padding: 2em 0;">
-<img src="https://learningcentre.gww.gov.bc.ca/learninghub/wp-content/uploads/sites/6/2021/10/partner-logos-small-greyscale.jpg" 
-    alt="Learning Partner Logos"
-    height="86"
-    width="421">
+?>
+<div class="wp-block-column">
+    <div style="background-color: #FFF; border-radius: .5em; margin-right: 1em; margin-top: 0; padding: 1em;">
+    <h4>Audiences</h4>
+    <?php foreach($audiences as $a): ?>
+    <div class="" style="">
+        <div>
+            <a style="font-weight: bold;" href="/learninghub/audience/<?= $a->slug ?>"><?= $a->name ?></a>:
+            <?= $a->description ?>
+        </div>
+    </div>
+    <?php endforeach ?>
 </div>
-<div>
-    <a class="wp-block-button__link has-background" 
-        style="background-color: #145693; border-radius: 3px; " 
-        href="http://learningcentre.gww.gov.bc.ca/learninghub/corporate-learning-partners/">
-            Meet the Partners
-        </a>
 </div>
 </div>
+<div class="wp-block-column">
+    <div style="background-color: #FFF; border-radius: .5em; padding: 1em;">
+        <h4>Delivery Method</h4>
+    <?php 
+$delivery = get_terms( array(
+    'taxonomy' => 'delivery_method',
+    'hide_empty' => false,
+    'orderby'    => 'count',
+    'order'   => 'DESC',
+    'include' => array(3,37,82,236,410)
+    ) ); // 121 = Office of Compt General, 372 = unknown, 144 = labour relations 
+    
+?>
+<?php foreach($delivery as $d): ?>
+    <div class="" style="">
+        <div>
+            <a style="font-weight: bold;" href="/learninghub/delivery_method/<?= $d->slug ?>"><?= $d->name ?></a>:
+            <?= $d->description ?>
+        </div>
+    </div>
 
-
-
+<?php endforeach ?>
+</div>
+</div>
+</div>
 
 <?php get_footer() ?>

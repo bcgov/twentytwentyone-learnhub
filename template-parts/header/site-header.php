@@ -44,12 +44,13 @@ $blog_info    = get_bloginfo( 'name' );
 </div>
 <div id="searchbar" style="background-color: #01284f;">
 <div class="alignwide"> <!-- searchwrap -->
-    <form method="get" action="/learninghub/" class="searchform">
+    <form method="get" action="/learninghub/" class="searchform" style="float:right">
         <label for="s" class="sr-only" style="">Search</label>
-        <input type="search" id="s" class="s" name="s" required value="<?= esc_html( get_search_query() ) ?>">
+        <input type="search" id="s" class="s" name="s" placeholder="Enter keywords here" required value="<?= esc_html( get_search_query() ) ?>">
         <button type="submit" class="searchsubmit" aria-label="Submit Search" style="font-size: 18px">
             Search
         </button>
     </form>
+    <div style="clear:both"></div>
 </div>
 </div>

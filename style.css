@@ -60,7 +60,10 @@ iframe {
 	border-radius: 5px;
 	color: #333;
 }
-
+#homesearchbox {
+	border: 2px solid #003366;
+	border-radius: .5em;
+}
 #bcgovmast {
 	background-color: #003265;
 }
@@ -89,6 +92,20 @@ iframe {
 	justify-content: center;
 }
 
+#whatisthehub {
+	margin-top: 0;
+}
+.menus a.active {
+	font-weight: bold;
+}
+.groupicon {
+	float: left;
+	height: 3em;
+	margin: 1em;
+	margin-bottom: 5em !important;
+	margin-top: 2em !important;
+	width: 3em;
+}
 #searchbar a {
 	color: #FFF;
 }
@@ -127,11 +144,11 @@ iframe {
 	border-radius: 5px !important;
 }
 .s {
-	background-color: #ebf6ff; 
+	background-color: #145693; 
 	border-radius: 5px !important;
 	border: 0 !important;
 	border-radius: 5px; 
-	color: #111;
+	color: #FFF !important;
 	font-size: 16px;
 	width: 420px;
 }
@@ -154,6 +171,9 @@ iframe {
 .courseresults {
 	background-color: #01284f; 
 	width: 600px;
+}
+.wp-block-search .wp-block-search__input {
+	border: 2px solid #003366;
 }
 @media only screen and (max-width: 652px) {
 	.headwrap {

@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying search results pages
+ * The template for displaying archive pages
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
  * @subpackage Twenty_Twenty_One
@@ -12,9 +12,97 @@
 get_header();
 
 
+
+?>
+
+
+	<div class="wp-block-columns alignwide" style="padding-top: 2em;">
+	<div class="wp-block-column menus" style="background-color: #FFF; border-radius: .5em; flex: 29%; padding: 2%; margin-right: 1%;">
+	<div><strong>Groups</strong></div>
+	<?php 
+	$groups = get_categories(
+							array(
+								'taxonomy' => 'groups',
+								'orderby' => 'id',
+								'order' => 'DESC',
+								'hide_empty' => '0'
+							));
 	?>
-	<header class="entry-header alignfull" style="background: #FFF; padding: 2em;">
-		<div class="alignwide">
+	<?php foreach($groups as $g): ?>
+		<?php $active = ''; if($g->slug == $groupterm) $active = 'active'; ?>
+		<div style="margin:0;padding:0;">
+			<a class="<?= $active ?>" href="/learninghub/groups/<?= $g->slug ?>/<?= $to ?><?= $aud ?><?= $dms ?>">
+				<?= $g->name ?>
+			</a>
+			(<?= $g->count ?>)
+		</div>
+	<?php endforeach ?>
+
+	<div><strong>Topics</strong></div>
+	<?php 
+	$topics = get_categories(
+							array(
+								'taxonomy' => 'topics',
+								'orderby' => 'name',
+								'order' => 'ASC',
+								'hide_empty' => '0'
+							));
+	?>
+	<?php foreach($topics as $t): ?>
+		<?php $active = ''; if($t->slug == $topicterm) $active = 'active'; ?>
+		<div style="margin:0;padding:0;">
+			<a class="<?= $active ?>" href="/learninghub/<?= $gr ?>topics/<?= $t->slug ?>/<?= $aud ?><?= $dms ?>">
+				<?= $t->name ?>
+			</a>
+			(<?= $t->count ?>)
+		</div>
+	<?php endforeach ?>
+	
+	<div><strong>Audience</strong></div>
+	<?php 
+	$audiences = get_categories(
+							array(
+								'taxonomy' => 'audience',
+								'orderby' => 'id',
+								'order' => 'DESC',
+								'hide_empty' => '0'
+							));
+	?>
+	<?php foreach($audiences as $a): ?>
+		<?php $active = ''; if($a->slug == $audienceterm) $active = 'active'; ?>
+		<div style="margin:0;padding:0;">
+			<a class="<?= $active ?>" href="/learninghub/<?= $gr ?><?= $to ?>audience/<?= $a->slug ?>/<?= $dms ?>">
+				<?= $a->name ?>
+			</a>
+			(<?= $a->count ?>)
+		</div>
+	<?php endforeach ?>
+	<div><strong>Delivery Method</strong></div>
+	<?php 
+	$dms = get_categories(
+							array(
+								'taxonomy' => 'delivery_method',
+								'orderby' => 'id',
+								'order' => 'DESC',
+								'hide_empty' => '0',
+								'include' => array(3,37,82,236,410)
+							));
+	?>
+	<?php foreach($dms as $d): ?>
+		<?php $active = ''; if($d->slug == $dmterm) $active = 'active'; ?>
+		<div style="margin:0;padding:0;">
+			<a class="<?= $active ?>" href="/learninghub/<?= $gr ?><?= $to ?><?= $aud ?>delivery_method/<?= $d->slug ?>">
+				<?= $d->name ?>
+			</a>
+			(<?= $d->count ?>)
+		</div>
+	<?php endforeach ?>
+
+
+	</div>
+	<div class="wp-block-column" style="flex: 66%;">
+	<?php if( have_posts() ) : ?>
+		<div style="background-color: #FFF; border-radius: .5em; magrin: 1em 0; padding: 1em;">
 		<?php 
 		$resultcount = (int) $wp_query->found_posts;
 		$plural = 'course';
@@ -33,112 +121,15 @@ get_header();
 		);
 		?>
 		</div>
-	</header><!-- .page-header -->
-	
-	<div class="alignwide">
+	<?php while (have_posts()) : the_post(); ?>
+		<?php get_template_part( 'template-parts/course/single-course' ) ?>
+	<?php endwhile; ?>
+	<?php else : ?>
+		<p>Oh no! There are no courses that match your filters.</p>
+	<?php endif; ?>
 
-
-<!-- wp:columns {"align":"full"} -->
-<div class="wp-block-columns alignfull"><!-- wp:column -->
-<div class="wp-block-column" style="flex: 66%;">
-<div class="">
-	<?php if($resultcount > 0): ?>
-<button id="expandcollapse" style="background: #FFF; border:0; border-radius: 5px; color: #333; font-size: 14px; float: right; padding: 0 1em;">
-    Expand All
-</button>
-<?php endif ?>
-<div style="clear: both"></div>
-<?php if ( have_posts() ) { ?>
-<?php
-	// Start the Loop.
-	while ( have_posts() ) {
-		the_post();
-		get_template_part( 'template-parts/course/single-course' );
-
-	} // End the loop.
-?>
- <?php
-
-// If no content, include the "No posts found" template.
-} else {
-get_template_part( 'template-parts/content/content-none' );
-}
-?>
-<script>
-<?php if($resultcount <= 3): ?>
-document.body.querySelectorAll('details').forEach((e) => {
-	(e.hasAttribute('open')) ? e.removeAttribute('open') : e.setAttribute('open',true);
-});
-<?php endif ?>
-
-let exco = document.getElementById('expandcollapse');
-exco.addEventListener('click', (e) => { 
-        e.preventDefault();
-		if(exco.innerHTML == 'Collapse All') {
-			exco.innerHTML = 'Expand All';
-		} else {
-			exco.innerHTML = 'Collapse All';
-		}
-		toggleAll();
-});
-function toggleAll() {
-    let foo = document.body.querySelectorAll('details').forEach((e) => {
-        (e.hasAttribute('open')) ? e.removeAttribute('open') : e.setAttribute('open',true);
-    });
-    return foo;
-}
-</script>
-</div>
-</div>
-<!-- /wp:column -->
-<!-- wp:column -->
-<div class="wp-block-column" style="flex: 29%; padding: 0 2%;">
-
-<h4>Suggested Courses</h4>
-<div style="background-color: #FFF; border-radius: 5px; padding: .5em;">
-<div>
-    <a href="/learninghub/foundational-courses/">Mandatory &amp; Foundational</a>
-</div>
-<div>
-    <a href="/learninghub/supervisors-and-managers/">Supervisors &amp; Managers</a>
-</div>
-<div>
-    <a href="/learninghub/leadership/">Leadership in the BCPS</a>
-</div>
-</div>
-<h4>Suggested Searches</h4>
-<div style="background-color: #FFF; border-radius: 5px; padding: .5em;">
-<div><a href="/learninghub/?s=flexibleBCPS">#flexibleBCPS</a></div>
-<p>Flexible workplaces? Managing remote teams? The courses and resources you need.</p>
-</div>
-<div style="background-color: #FFF; border-radius: 5px; margin-top: 1em; padding: .5em;">
-<div><a href="/learninghub/?s=BCPSBelonging">#BCPSBelonging</a></div>
-<p>Great courses that cover equity, diversity and inclusion.</p>
-</div>
-
-
-
-<!-- /wp:column -->
-</div>
-</div>
-</div>
-</div>
-
-
-<?php 
-	// Previous/next page navigation.
-	//the_posts_navigation();?>
-	<div class="alignfull" style="background: #FFF;">
-		<!-- <div class="nav-next alignright"><?php next_posts_link( 'Next Courses' ); ?></div> -->
-		<div class="alignwide">
-			<?php echo the_posts_pagination() ?>
-		</div>
-		<!-- <div class="nav-previous"><?php previous_posts_link( 'Previous Courses' ); ?></div>	 -->
+	</div>
 	</div>
 
 
-
-
-
-<?php 
-get_footer();
+<?php get_footer(); ?>

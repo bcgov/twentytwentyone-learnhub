@@ -48,6 +48,9 @@
             </a>
         </span>
         </div>
+        <div><?php the_terms( $post->ID, 'topics', 'Topic: ', ', ', ' ' ); ?></div>
+        <div><?php the_terms( $post->ID, 'groups', 'Group: ', ', ', ' ' ); ?></div>
+        <div><?php the_terms( $post->ID, 'audience', 'Audience: ', ', ', ' ' ); ?></div>
         <?php else: ?>
 
             <div>Oh no! There's something wrong with this course. Please <?php the_terms( $post->ID, 'learning_partner', 'contact', ', ', ' ' ); ?></div>
