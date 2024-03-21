@@ -132,8 +132,7 @@ $delivery = get_terms( array(
     'taxonomy' => 'delivery_method',
     'hide_empty' => false,
     'orderby'    => 'count',
-    'order'   => 'DESC',
-    'include' => array(3,37,82,236,410)
+    'order'   => 'DESC'
     ) ); // 121 = Office of Compt General, 372 = unknown, 144 = labour relations 
     
 ?>
