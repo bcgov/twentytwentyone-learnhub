@@ -29,8 +29,8 @@ $blog_info    = get_bloginfo('name');
                     </a>
                 </div>
 
-                <div style="flex: 1; display: flex; align-items: center;justify-content: flex-end;">
-                    <nav class="main-nav" role="navigation" aria-label="<?php esc_attr_e('Primary menu', 'twentytwentyone'); ?>">
+                <div style="flex: 2 0;">
+                    <nav class="main-nav" style="display: flex; align-items: center;justify-content: flex-end;" role="navigation" aria-label="<?php esc_attr_e('Primary menu', 'twentytwentyone'); ?>">
                         <div>
                             <!-- <a href="/learninghub/">Home</a> -->
                             <a href="/learninghub/about/">About</a>
@@ -40,7 +40,7 @@ $blog_info    = get_bloginfo('name');
                         </div>
                     </nav><!-- #site-navigation -->
                 </div>
-                <form method="get" action="/learninghub/" class="searchform" style="flex:0 1;">
+                <form method="get" action="/learninghub/" class="searchform" style="flex:0 1; max-width: 40vw;">
                     <label for="s" class="sr-only" style="">Search</label>
                     <input type="search" id="s" class="s" name="s" placeholder="What do you want to learn?" required value="<?= esc_html(get_search_query()) ?>">
                     <button type="submit" class="searchsubmit" aria-label="Submit Search" style="font-size: 18px">
