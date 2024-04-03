@@ -27,6 +27,18 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
     --global--spacing-vertical: 1rem;
 }
 
+/* gov PSA colour palette
+gov-primary-blue: #234075 // contrast with white
+gov-primary-yellow: #E3A82B // contrast with black
+gov-secondary-orange: #E87722  // contrast with black
+gov-secondary-green: #007864 // contrast with white
+gov-secondary-red: #971B2F // contrast with white
+gov-secondary-blue: #4698CB  // contrast with black
+gov-secondary-brown: #866D48 // contrast with white
+gov-secondary-purple: #5F2167 // contrast with white
+*/
+
+
 h1,
 h2,
 h3,
@@ -115,6 +127,7 @@ iframe {
 
 #whatisthehub {
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 .menus a.active {
@@ -158,12 +171,6 @@ iframe {
     color: #FFF !important;
 }
 
-.searchform {
-    display: flex;
-    /* margin: 0 auto; */
-    padding: .5em 0;
-    /* width: 600px; */
-}
 
 .search-field {
     border-color: #FFF !important;
@@ -180,7 +187,6 @@ iframe {
     border-radius: 5px;
     color: #FFF !important;
     font-size: 16px;
-    width: 420px;
 }
 
 
