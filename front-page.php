@@ -43,7 +43,7 @@ endwhile; // End of the loop.
         <h3>How is learning organized?</h3>
         <p>Four types of categorization help you find exactly what you're looking for:
             group, audience, topic and delivery. </p>
-        <p style="color: gray;"><small>Click on any category link for search results filtered by that term.</small></p>
+        <p><small>Click on any category link for search results filtered by that term.</small></p>
 
 
         <div class="wp-block-columns alignfull" style="margin-top: 1em; gap: 1em;">

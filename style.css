@@ -34,6 +34,10 @@ gov-secondary-blue: #4698CB  // contrast with black
 gov-secondary-brown: #866D48 // contrast with white
 gov-secondary-purple: #5F2167 // contrast with white
 */
+body {
+    color: var(--bs-body-color);
+}
+
 h1,
 h2,
 h3,
@@ -43,6 +47,13 @@ caption,
 figcaption {
     text-wrap: balance;
     /* it's coming ... */
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--global--color-primary)
 }
 
 .more-link {
@@ -209,34 +220,6 @@ iframe {
 }
 
 @media only screen and (max-width: 652px) {
-    .headwrap {
-        display: block;
-        margin: 0;
-    }
-
-    .main-nav {
-        height: 60px;
-        margin-top: 0;
-        overflow-x: scroll;
-        width: 98%;
-    }
-
-    .main-nav div {
-        width: 50em;
-    }
-
-    .wordmark {
-        padding: .5em .25em 0 .25em;
-    }
-
-    .logomenu {
-        display: block;
-    }
-
-    .primary-navigation {
-        margin-top: 0;
-    }
-
     .course {
         font-size: .8em;
     }
