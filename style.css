@@ -9,7 +9,6 @@ Version: 1.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
-
 /* Variables */
 :root {
     /* Font Size */
@@ -21,9 +20,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
     --global--font-size-xl: 2.25rem;
     --global--font-size-xxl: 3rem;
     --global--font-size-xxxl: 3.5rem;
-
     --global--color-primary: #003366;
-
     --global--spacing-vertical: 1rem;
 }
 
@@ -37,8 +34,6 @@ gov-secondary-blue: #4698CB  // contrast with black
 gov-secondary-brown: #866D48 // contrast with white
 gov-secondary-purple: #5F2167 // contrast with white
 */
-
-
 h1,
 h2,
 h3,
@@ -74,7 +69,6 @@ iframe {
 /* .main-nav {
     margin-top: 1em;
 } */
-
 .main-nav a {
     color: #FFF;
     display: inline-block;
@@ -171,7 +165,6 @@ iframe {
     color: #FFF !important;
 }
 
-
 .search-field {
     border-color: #FFF !important;
 }
@@ -189,7 +182,6 @@ iframe {
     font-size: 16px;
 }
 
-
 .coursebox {
     background-color: #01284f;
     transition-property: height;
@@ -205,7 +197,6 @@ iframe {
     font-size: .9em;
     margin: .2em 0;
     padding: .25em .57em;
-
 }
 
 .courseresults {
@@ -221,7 +212,6 @@ iframe {
     .headwrap {
         display: block;
         margin: 0;
-
     }
 
     .main-nav {
@@ -229,7 +219,6 @@ iframe {
         margin-top: 0;
         overflow-x: scroll;
         width: 98%;
-
     }
 
     .main-nav div {
@@ -250,14 +239,12 @@ iframe {
 
     .course {
         font-size: .8em;
-
     }
 
     .coursesearchfield {
         flex: 3;
         width: auto;
     }
-
 }
 
 .coursename:hover {
@@ -310,7 +297,6 @@ details>summary:first-of-type {
     text-decoration: none;
 }
 
-
 .pagination,
 .comments-pagination {
     border-top: 0;
@@ -325,7 +311,6 @@ details>summary:first-of-type {
 .wp-block-columns.alignfull .wp-block-column h6:not(.has-background) {
     padding: 0;
 }
-
 
 .hubgrid {
     display: flex;
@@ -470,4 +455,54 @@ details>summary:first-of-type {
 
 #custom_html-7 {
     padding-top: 4em;
+}
+
+/* Bootstrap overrides */
+.search-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="rgba(255, 255, 255, 0.9)" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.navbar-dark,
+.navbar[data-bs-theme=dark] {
+    --bs-navbar-color: rgba(255, 255, 255, 0.9);
+    --bs-navbar-hover-color: rgba(255, 255, 255, 0.75);
+    --bs-navbar-disabled-color: rgba(255, 255, 255, 0.25);
+    --bs-navbar-active-color: #fff;
+    --bs-navbar-brand-color: #fff;
+    --bs-navbar-brand-hover-color: #fff;
+    --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+[data-bs-theme=dark] .navbar-toggler-icon {
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.dropdown-menu {
+    --bs-dropdown-bg: var(--global--color-primary);
+    background-color: var(--bs-dropdown-bg);
+}
+
+.navbar-nav {
+    align-items: flex-start;
+}
+
+.navbar-brand {
+    --bs-navbar-brand-margin-end: 0;
+    margin-right: var(--bs-navbar-brand-margin-end);
+}
+
+.navbar-collapse {
+    display: flex;
+}
+
+.navbar {
+    font-size: 18px;
 }
