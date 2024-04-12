@@ -48,6 +48,7 @@ figcaption {
     text-wrap: balance;
     /* it's coming ... */
 }
+
 h1,
 h2,
 h3,
@@ -438,6 +439,11 @@ details>summary:first-of-type {
 
 #custom_html-7 {
     padding-top: 4em;
+}
+
+.icon {
+    width: 4.5em;
+    height: 3em;
 }
 
 /* Bootstrap overrides */
