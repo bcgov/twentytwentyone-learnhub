@@ -17,7 +17,7 @@
 <details id="feedback">
     <summary>Need help? </summary>
     <div class="ms-3">
-        <p>Have a question about the Learning Hub? <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod">Submit an AskMyHR service request</a> using the category "Learning Centre".</p>
+        <p>Have a question about the LearningHUB? <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod">Submit an AskMyHR service request</a> using the category "Learning Centre".</p>
         <!-- <p><a href="https://survey.alchemer-ca.com/s3/50120510/8f3f4d590f25" target="_blank" rel="noopener">Give general feedback about the Learning Hub</a>.</p> -->
     </div>
 </details>

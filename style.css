@@ -22,6 +22,13 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
     --global--font-size-xxxl: 3.5rem;
     --global--color-primary: #003366;
     --global--spacing-vertical: 1rem;
+    --gov-primary-yellow: #E3A82B;
+    --gov-secondary-orange: #E87722;
+    --gov-secondary-green: #007864;
+    --gov-secondary-red: #971B2F;
+    --gov-secondary-blue: #4698CB;
+    --gov-secondary-brown: #866D48;
+    --gov-secondary-purple: #5F2167;
 }
 
 /* gov PSA colour palette
@@ -442,9 +449,52 @@ details>summary:first-of-type {
 }
 
 .icon {
-    width: 4.5em;
-    height: 3em;
+    width: 2rem;
+    height: 100%;
+    margin: 0;
 }
+
+.icon-square {
+    width: 2.75rem;
+    height: 3rem;
+}
+
+.bg-gov-blue {
+    background-color: var(--global--color-primary);
+    color: white;
+}
+.bg-gov-green {
+    background-color: var(--gov-secondary-green);
+    color: white;
+}
+
+.topic-card {
+    background-color: #f9eed5;
+    /* gov primary yellow 80% tint*/
+}
+
+a:hover .topic-card {
+    background-color: #f1d495;
+    /* gov primary yellow 50% tint*/
+}
+
+.icon-svg {
+    display: inline-flex;
+    align-self: center;
+}
+
+.icon-svg.baseline-svg svg {
+    top: .125em;
+    position: relative;
+    overflow: visible;
+}
+
+.icon-svg svg {
+    height: 1em;
+    width: 1em;
+    margin-right: .25rem;
+}
+
 
 /* Bootstrap overrides */
 .search-toggler-icon {
