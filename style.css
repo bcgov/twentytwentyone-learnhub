@@ -29,6 +29,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
     --gov-secondary-blue: #4698CB;
     --gov-secondary-brown: #866D48;
     --gov-secondary-purple: #5F2167;
+    --cover--height: calc(12 * var(--global--spacing-vertical));
 }
 
 /* gov PSA colour palette
@@ -463,14 +464,15 @@ details>summary:first-of-type {
     background-color: var(--global--color-primary);
     color: white;
 }
+
 .bg-gov-green {
     background-color: var(--gov-secondary-green);
     color: white;
 }
 
 .topic-card {
-    background-color: #f9eed5;
-    /* gov primary yellow 80% tint*/
+    background-color: #fcf6ea;
+    /* gov primary yellow 90% tint*/
 }
 
 a:hover .topic-card {
@@ -495,6 +497,18 @@ a:hover .topic-card {
     margin-right: .25rem;
 }
 
+.gov-yellow {
+    color: var(--gov-primary-yellow);
+}
+
+.bg-gov-yellow {
+    background-color: var(--gov-primary-yellow);
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
 
 /* Bootstrap overrides */
 .search-toggler-icon {
