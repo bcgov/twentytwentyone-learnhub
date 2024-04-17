@@ -58,7 +58,7 @@
 
                 <img class="mx-auto mx-lg-0 mt-3 mb-2 mt-lg-auto" style="min-height: 50px; max-height: 100px;" src="https://learn.bcpublicservice.gov.bc.ca/common-components/where-ideas-work-whitetext.svg" height="100px" width="380px" alt="Where Ideas Work logo">
             </div>
-            <div class="powered-by fs-6 d-block text-end border-top border-warning">
+            <div class="powered-by fs-6 d-block text-end border-top border-warning pt-1">
                 <?php
                 printf(
                     /* translators: %s: WordPress. */

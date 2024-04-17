@@ -26,7 +26,7 @@ endwhile; // End of the loop.
                 <p><a href="/learninghub/about">About the LearningHUB</a></p>
             </div>
             <div class="col-lg-5">
-                <div class="topic-card border-2 border rounded shadow-sm p-3">
+                <div class="topic-card border-2 border shadow-sm p-3">
                     <h3 class="fs-3">Start here</h3>
                     <p>Wondering where to start? These learning journeys will guide you.</p>
                     <p class="mb-1"><strong>Learning journeys</strong></p>
@@ -52,7 +52,7 @@ endwhile; // End of the loop.
             <label for="wp-block-search__input-1" class="sr-only">Search</label>
             <input type="search" id="wp-block-search__input-1" class="wp-block-search__input" name="s" placeholder="Search the full LearningHUB catalogue...">
             <input type="hidden" name="post_type" value="courses">
-            <button type="submit" class="wp-block-search__button" aria-label="Submit Search">
+            <button type="submit" class="wp-block-search__button searchsubmit" aria-label="Submit Search">
                 Search
             </button>
         </div>
@@ -71,7 +71,7 @@ endwhile; // End of the loop.
             </svg>
         </div><strong>Tip:</strong> Click on any category link for search results filtered by that term.</p>
         <div class="my-3 p-1">
-            <div class="row mb-4">
+            <div class="row mb-lg-3 mb-0">
                 <div class="col-lg-6 mb-3 mb-lg-0 h-100">
                     <div class="shadow-sm">
                         <div class="d-flex bg-gov-green px-3 py-2 rounded-top mb-2">
@@ -137,7 +137,7 @@ endwhile; // End of the loop.
                     </div>
                 </div>
             </div>
-            <div class="mt-lg-3 mb-4">
+            <div class="mt-lg-3 mb-3">
                 <div class="d-flex bg-gov-green px-3 py-2 rounded-top mb-2">
                     <div class="icon-square flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -202,11 +202,19 @@ endwhile; // End of the loop.
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="border border-2 rounded shadow-sm px-3 py-2">
-                        <h3 class="fs-3">Promotional space</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, quis consequuntur animi asperiores, rem maxime similique distinctio perferendis unde cupiditate excepturi dicta pariatur eos? Quas, voluptatibus nesciunt! Esse, excepturi suscipit.</p>
+                    <div class="card rounded-0 shadow-sm border-2">
+                        <img src="http://nori.virtuallearn.ca/learninghub/wp-content/uploads/2024/03/Home2.jpg" class="card-img-top rounded-0 object-fit-cover" alt="" style="height:18vh; ">
+                        <div class="bg-gov-yellow">
+                            <div class="card-body">
+                                <h3 class="text-black mb-3">What's new?</h3>
+                                <h4>Improved search</h4>
+                                <p class="card-text">Explore new features including course search filters and learning journeys.</p>
+                                <a href="/learninghub/about/" class="btn btn-primary bg-gov-blue">About the LearningHUB</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
             <div class="mt-4">
                 <h3 class="fs-3">Accommodations</h3>
