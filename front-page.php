@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the course index page
  *
@@ -14,24 +15,35 @@ while (have_posts()) : // Start the Loop
     the_content();
 endwhile; // End of the loop.
 ?>
+
+
 <div class="bg-white py-5" id="whatisthehub">
-    <div class="alignwide row">
-        <div class="col-lg-7 mb-4 mb-lg-0">
-            <h2 class="fs-1">What is corporate learning?</h2>
-            <p>In the B.C. Public Service, corporate learning is a shared space. The Learning Centre and its partners offer hundreds of courses, available to all BCPS employees. The LearningHUB is the place to see that full catalogue.</p>
-            <p><a href="/learninghub/about">About the LearningHUB</a></p>
-        </div>
-        <div class="col-lg-5">
-            <div class="topic-card border-2 border rounded shadow-sm p-3">
-                <h3 class="fs-3">Start here</h3>
-                <p>Wondering where to start? These learning journeys will guide you.</p>
-                <p class="mb-1"><strong>Learning journeys</strong></p>
-                <ul class="mb-2">
-                    <li>All Employees</li>
-                    <li>People Leaders</li>
-                </ul>
+    <div class="alignwide">
+        <div class="row">
+            <div class="col-lg-7 mb-4 mb-lg-0">
+                <h2 class="fs-1">What is corporate learning?</h2>
+                <p>In the B.C. Public Service, corporate learning is a shared space. The Learning Centre and its partners offer hundreds of courses, available to all BCPS employees. The LearningHUB is the place to see that full catalogue.</p>
+                <p><a href="/learninghub/about">About the LearningHUB</a></p>
+            </div>
+            <div class="col-lg-5">
+                <div class="topic-card border-2 border rounded shadow-sm p-3">
+                    <h3 class="fs-3">Start here</h3>
+                    <p>Wondering where to start? These learning journeys will guide you.</p>
+                    <p class="mb-1"><strong>Learning journeys</strong></p>
+                    <ul class="mb-2">
+                        <li>All Employees</li>
+                        <li>People Leaders</li>
+                    </ul>
+                </div>
             </div>
         </div>
+        <!-- <div class="mt-4 border border-2">
+            <a href="https://learningcentre.gww.gov.bc.ca/latww2023/"><img src="http://nori.virtuallearn.ca/learninghub/wp-content/uploads/2024/04/LWW_2023_subpage_header-280h.jpg" alt=""></a>
+        </div>
+        <div class="bg-gov-blue px-3 py-2">
+            <h3 class="text-white">Register today!</h3>
+            <p class="text-white mb-0">Learn @ Work Week 2023 runs from September 18 to 22</p>
+        </div> -->
     </div>
 </div>
 <div class="wp-block-cover__inner-container">
