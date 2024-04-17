@@ -12,44 +12,21 @@
 get_header();
 
 ?>
-
 <div class="wp-block-cover alignfull has-background-dim-80 has-background-dim hero" 
 	style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;background-color:#28537d;min-height:100px">
-		
 	<div class="wp-block-cover__inner-container">
 		<?php the_title( '<h1 class="alignfull has-text-align-center heroheader has-white-color has-text-color">', '</h1>' ); ?>
 	</div>
 </div>
-
-
-<div class="entry-content">
-    <?php
-/* Start the Loop */
-while ( have_posts() ) :
-	the_post();
-	the_content();
-endwhile; // End of the loop.
-?>
 <?php
 $terms = get_terms( array(
     'taxonomy' => 'journey',
     'hide_empty' => false,
     'orderby'    => 'count',
-    'order'   => 'DESC'
-) ); // 121 = Office of Compt General, 372 = unknown, 144 = labour relations 
-//'exclude' => [121,372,144]
-?>
-</div> <!-- /.entry-content -->
-
-
-
-    <!-- <div class="entry-content searchbox" style="text-align: center">
-        <input class="search form-control mb-3" placeholder="Type here to filter partners">
-    </div> -->
-	
+    'order'   => 'DESC') 
+);
+?>	
 <div class="alignwide">
-
-
 <?php foreach( $terms as $category ) : ?>
 <div> 
     <?php
@@ -63,16 +40,10 @@ $terms = get_terms( array(
     );
     ?>
     <h3><?= esc_html( $category->name ) ?> </h3>
-
     <div class="">
     <?= sprintf( esc_html__( '%s', 'textdomain' ), $category->description ) ?>
     </div>
- 
-    
 </div>
-
 <?php endforeach ?>
-
 </div>
-
 <?php get_footer() ?>
