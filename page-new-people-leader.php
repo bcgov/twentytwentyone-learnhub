@@ -39,13 +39,8 @@ foreach ($custom_terms as $child) {
 }
 ksort($children);
 
-// echo '<pre>';print_r($children); exit;
-//$custom_terms = get_terms('journey');
 foreach($children as $custom_term) {
-    // if($custom_term->slug == 'new-hire') {
-    // $term = get_term_by( 'id', $custom_term, $taxonomyname );
-    // echo '<pre>';var_dump($term);
-    // continue;
+
     wp_reset_query();
     $args = array(
         'post_type' => 'course',
@@ -70,15 +65,12 @@ foreach($children as $custom_term) {
             echo '</div>';
         endwhile;
      }
-    // }
 }
 ?>
 </div>
 <div class="wp-block-column menus" style="background-color: #FFF; border-radius: .5em; flex: 50%; padding: 2%; margin-right: 1%;">
 <h2 class="has-extra-large-font-size">Existing People Leaders</h2>
 <?php
-
-
     wp_reset_query();
     $args = array(
         'post_type' => 'course',
@@ -93,7 +85,6 @@ foreach($children as $custom_term) {
             ),
         ),
      );
-
      $loop = new WP_Query($args);
      if($loop->have_posts()) {
         while($loop->have_posts()) : $loop->the_post();
@@ -104,7 +95,6 @@ foreach($children as $custom_term) {
             echo '</div>';
         endwhile;
      }
-
 
 ?>
 </div>

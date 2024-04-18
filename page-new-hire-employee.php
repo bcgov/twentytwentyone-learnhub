@@ -38,10 +38,9 @@ foreach ($custom_terms as $child) {
     $children[$term->term_order] = $term;
 }
 ksort($children);
-// print_r($custom_terms); exit;
-//$custom_terms = get_terms('journey');
+
 foreach($children as $custom_term) {
-    // if($custom_term->slug == 'new-hire') {
+
     $term = get_term_by( 'id', $custom_term, $taxonomyname );
     wp_reset_query();
     $args = array(
@@ -61,22 +60,19 @@ foreach($children as $custom_term) {
      if($loop->have_posts()) {
         echo '<h3>'.$custom_term->name.'</h3>';
 
-
         while($loop->have_posts()) : $loop->the_post();
             echo '<div style="background-color: #fcf6ea; padding: 1em;">';
             echo '<a href="'.get_permalink().'">'.get_the_title().'</a><br>';
             echo '</div>';
         endwhile;
      }
-    // }
+
 }
 ?>
 </div>
 <div class="wp-block-column menus" style="background-color: #FFF; border-radius: .5em; flex: 50%; padding: 2%; margin-right: 1%;">
 <h2 class="has-extra-large-font-size">Existing Employees</h2>
 <?php
-
-
     wp_reset_query();
     $args = array(
         'post_type' => 'course',
@@ -102,7 +98,6 @@ foreach($children as $custom_term) {
             echo '</div>';
         endwhile;
      }
-
 
 ?>
 </div>
