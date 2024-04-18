@@ -26,17 +26,26 @@ get_header();
 </div>
 <div class="wp-block-columns alignwide" style="padding-top: 2em;">
 	<div class="wp-block-column menus" style="background-color: #FFF; border-radius: .5em; flex: 50%; padding: 2%; margin-right: 1%;">
-    <?php the_title( '<h2>', '</h2>' ); ?>
+    <?php the_title( '<h2 class="has-extra-large-font-size">', '</h2>' ); ?>
 
 <?php
 $termID = 639;
 $taxonomyname = "journey";
 $custom_terms = get_term_children( $termID, $taxonomyname ); 
-// print_r($custom_terms); exit;
+$children = array();
+foreach ($custom_terms as $child) {
+    $term = get_term_by( 'id', $child, $taxonomyname );
+    $children[$term->term_order] = $term;
+}
+ksort($children);
+
+// echo '<pre>';print_r($children); exit;
 //$custom_terms = get_terms('journey');
-foreach($custom_terms as $custom_term) {
+foreach($children as $custom_term) {
     // if($custom_term->slug == 'new-hire') {
-    $term = get_term_by( 'id', $custom_term, $taxonomyname );
+    // $term = get_term_by( 'id', $custom_term, $taxonomyname );
+    // echo '<pre>';var_dump($term);
+    // continue;
     wp_reset_query();
     $args = array(
         'post_type' => 'course',
@@ -44,17 +53,16 @@ foreach($custom_terms as $custom_term) {
         'order' => 'ASC',
         'tax_query' => array(
             array(
-                
                 'taxonomy' => 'journey',
                 'field' => 'slug',
-                'terms' => $term->slug,
+                'terms' => $custom_term->slug,
             ),
         ),
      );
 
      $loop = new WP_Query($args);
      if($loop->have_posts()) {
-        echo '<h3>'.$term->name.'</h3>';
+        echo '<h3>'.$custom_term->name.'</h3>';
 
         while($loop->have_posts()) : $loop->the_post();
             echo '<div style="background-color: #fcf6ea; padding: 1em;">';
@@ -67,7 +75,7 @@ foreach($custom_terms as $custom_term) {
 ?>
 </div>
 <div class="wp-block-column menus" style="background-color: #FFF; border-radius: .5em; flex: 50%; padding: 2%; margin-right: 1%;">
-<h2>Existing People Leaders</h2>
+<h2 class="has-extra-large-font-size">Existing People Leaders</h2>
 <?php
 
 
