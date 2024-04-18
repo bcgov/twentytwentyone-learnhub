@@ -26,7 +26,7 @@ get_header();
 </div>
 <div class="wp-block-columns alignwide" style="padding-top: 2em;">
 	<div class="wp-block-column menus" style="background-color: #FFF; border-radius: .5em; flex: 50%; padding: 2%; margin-right: 1%;">
-    <?php the_title( '<h2 class="has-large-font-size">', '</h2>' ); ?>
+    <?php the_title( '<h2 class="has-extra-large-font-size">', '</h2>' ); ?>
 
 <?php
 $termID = 638;
@@ -67,7 +67,7 @@ foreach($custom_terms as $custom_term) {
 ?>
 </div>
 <div class="wp-block-column menus" style="background-color: #FFF; border-radius: .5em; flex: 50%; padding: 2%; margin-right: 1%;">
-<h2>Existing Employees</h2>
+<h2 class="has-extra-large-font-size">Existing Employees</h2>
 <?php
 
 
