@@ -12,7 +12,18 @@
 get_header();
 
 ?>
+
 <style>
+.journeywrap {
+    display: grid;
+}
+.journeycourse {
+    background-color: #fcf6ea;
+    border-radius: .5em;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
 .groupbadge a {
     background-color: tomato;
     border-radius: .5em;
@@ -45,6 +56,7 @@ get_header();
 	<div class="wp-block-column menus" style="background-color: #FFF; border-radius: .5em; flex: 50%; padding: 2%; margin-right: 1%;">
     <?php the_title( '<h2 class="has-extra-large-font-size">', '</h2>' ); ?>
 
+
 <?php
 $termID = 638;
 $taxonomyname = "journey";
@@ -55,8 +67,8 @@ foreach ($custom_terms as $child) {
     $children[$term->term_order] = $term;
 }
 ksort($children);
-
-foreach($children as $custom_term) {
+$count = 0;
+foreach($children as $custom_term) :
 
     $term = get_term_by( 'id', $custom_term, $taxonomyname );
     wp_reset_query();
@@ -74,23 +86,31 @@ foreach($children as $custom_term) {
      );
 
      $loop = new WP_Query($args);
-     if($loop->have_posts()) {
-        echo '<h3>'.$custom_term->name.'</h3>';
+     if($loop->have_posts()): ?>
 
-        while($loop->have_posts()) : $loop->the_post();
-            echo '<div style="background-color: #fcf6ea; padding: 1em;">';
-            echo '<div class="groupbadge">'; 
-            echo the_terms( $post->ID, 'groups', '', ', ', ' ' ); 
-            echo '</div>';
-            echo '<div><a href="'.get_permalink().'">'.get_the_title().'</a></div>';
-            $refresh_cycle = get_post_meta(get_the_ID(), 'refresh_cycle', true);
-            echo '<div>' . $refresh_cycle . '</div>';
-            echo '</div>';
-        endwhile;
+    <h3><?= $custom_term->name ?></h3>
+<div class="journeywrap">
+    <?php while($loop->have_posts()) : $loop->the_post(); ?>
+    <?php $count++ ?>
+    <div class="course<?= $count ?> journeycourse">
+        <div class="head">
+            <div class="groupbadge"> 
+                <?php echo the_terms( $post->ID, 'groups', '', ', ', ' ' ); ?>
+            </div>    
+            <div><a href="<?= get_permalink() ?>"> <?= get_the_title() ?></a></div>
+        </div>
+        <div class="body">
+            
+            <?php $refresh_cycle = get_post_meta(get_the_ID(), 'refresh_cycle', true); ?>
+            <div><?= $refresh_cycle ?></div>
+        </div>
+    </div>
+    <?php endwhile; // endof course loop ?>
+    <?php endif; // are there posts? ?>
 
-     }
-}
-?>
+<?php endforeach; // endof term loop ?>
+</div>
+
 
 </div>
 
