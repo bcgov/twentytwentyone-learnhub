@@ -12,7 +12,17 @@
 get_header();
 
 ?>
-
+<style>
+.groupbadge a {
+    background-color: tomato;
+    border-radius: .5em;
+    color: #FFF;
+    display: inline-block;
+    font-size: 14px;
+    padding: 0 1em;
+    text-decoration: none;
+}
+</style>
 <div class="wp-block-cover alignfull hero" 
 	style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;background-color:#FFF;min-height:150px">
         <h1 class="alignfull has-text-align-center heroheader has-black-color has-text-color">Learning Journeys</h1>
@@ -61,7 +71,10 @@ foreach($children as $custom_term) {
 
         while($loop->have_posts()) : $loop->the_post();
             echo '<div style="background-color: #fcf6ea; padding: 1em;">';
-            echo '<a href="'.get_permalink().'">'.get_the_title().'</a><br>';
+            echo '<div class="groupbadge">'; 
+            echo the_terms( $post->ID, 'groups', '', ', ', ' ' ); 
+            echo '</div>';
+            echo '<div><a href="'.get_permalink().'">'.get_the_title().'</a></div>';
             echo '</div>';
         endwhile;
      }
@@ -89,9 +102,13 @@ foreach($children as $custom_term) {
      if($loop->have_posts()) {
         while($loop->have_posts()) : $loop->the_post();
             echo '<div style="background-color: #fcf6ea; padding: 1em;">';
+            echo '<div class="groupbadge">'; 
+            echo the_terms( $post->ID, 'groups', '', ', ', ' ' ); 
+            echo '</div>';
             echo '<a href="'.get_permalink().'">'.get_the_title().'</a><br>';
             $refresh_cycle = get_post_meta(get_the_ID(), 'refresh_cycle', true);
             echo $refresh_cycle;
+
             echo '</div>';
         endwhile;
      }
