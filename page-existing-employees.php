@@ -28,20 +28,20 @@ get_header();
         <h1 class="alignfull has-text-align-center heroheader has-black-color has-text-color">Learning Journeys</h1>
 </div>
 <div class="alignwide">
-<div style="text-align: center">
-    <a style="background-color: #fcf6ea; display: inline-block; margin: 1em; padding: 1em;" 
+<div style="margin-bottom: 0; text-align: center">
+    <a style="background-color: #FFF; border: 1px solid #333; border-bottom: 0; border-top-left-radius: .5em; border-top-right-radius: .5em; display: inline-block; margin: .25em .25em 0 .25em; padding: .25em 2em; text-decoration: none;" 
         href="/learninghub/learning-journeys/new-hire-employee/">All Employees</a>
-    <a style="background-color: #FFF; display: inline-block; margin: 1em; padding: 1em;" 
+    <a style="background-color: transparent; border-top-left-radius: .5em; border-top-right-radius: .5em; display: inline-block; margin: .25em .25em 0 .25em; padding: .25em 2em; text-decoration: none;"
         href="/learninghub/learning-journeys/new-people-leader/">People Leaders</a>
 </div>
 <div style="text-align: center">
-    <a style="background-color: #FFF; display: inline-block; margin: 1em; padding: 1em;" 
+    <a style="background-color: transparent; border-top-left-radius: .5em; border-top-right-radius: .5em; display: inline-block; margin: .25em .25em 0 .25em; padding: .25em 2em; text-decoration: none;" 
         href="/learninghub/learning-journeys/new-hire-employee/">New Hire Employees</a>
-    <a style="background-color: #fcf6ea; display: inline-block; margin: 1em; padding: 1em;" 
+    <a style="background-color: #FFF; border: 1px solid #333; border-bottom: 0; border-top-left-radius: .5em; border-top-right-radius: .5em; display: inline-block; margin: .25em .25em 0 .25em; padding: .25em 2em; text-decoration: none;"
         href="/learninghub/learning-journeys/existing-employees/">Existing Employees</a>
 </div>
 
-<div class="wp-block-columns alignwide" style="padding-top: 2em;">
+<div class="wp-block-columns alignwide">
 	<div class="wp-block-column menus" style="background-color: #FFF; border-radius: .5em; flex: 50%; padding: 2%; margin-right: 1%;">
     <?php the_title( '<h2 class="has-extra-large-font-size">', '</h2>' ); ?>
 
