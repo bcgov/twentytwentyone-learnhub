@@ -23,7 +23,7 @@ endwhile; // End of the loop.
             <div class="col-lg-7 mb-4 mb-lg-0">
                 <h2 class="fs-1">What is corporate learning?</h2>
                 <p>In the B.C. Public Service, corporate learning is a shared space. The Learning Centre and its partners offer hundreds of courses, available to all BCPS employees. The LearningHUB is the place to see that full catalogue.</p>
-                <p><a href="/learninghub/about">About the LearningHUB</a></p>
+                <a href="/learninghub/course/" class="btn btn-lg btn-primary bg-gov-blue">Catalogue of courses</a>
             </div>
             <div class="col-lg-5">
                 <div class="topic-card border-2 border shadow-sm p-3">
@@ -37,16 +37,16 @@ endwhile; // End of the loop.
                 </div>
             </div>
         </div>
-        <!-- <div class="mt-4 border border-2">
+        <div class="mt-4 border border-2">
             <a href="https://learningcentre.gww.gov.bc.ca/latww2023/"><img src="http://nori.virtuallearn.ca/learninghub/wp-content/uploads/2024/04/LWW_2023_subpage_header-280h.jpg" alt=""></a>
         </div>
         <div class="bg-gov-blue px-3 py-2">
             <h3 class="text-white">Register today!</h3>
             <p class="text-white mb-0">Learn @ Work Week 2023 runs from September 18 to 22</p>
-        </div> -->
+        </div>
     </div>
 </div>
-<div class="wp-block-cover__inner-container">
+<!-- <div class="wp-block-cover__inner-container">
     <form role="search" method="get" action="/learninghub/" class="wp-block-search__button-inside wp-block-search__icon-button wp-block-search mb-0">
         <div class="wp-block-search__inside-wrapper">
             <label for="wp-block-search__input-1" class="sr-only">Search</label>
@@ -58,9 +58,9 @@ endwhile; // End of the loop.
         </div>
     </form>
     <p class="mt-1 fs-6 text-center">Quick search: <a href="/learninghub/?s=BCPSBelonging">#BCPSBelonging</a> <a href="/learninghub/?s=flexibleBCPS">#flexibleBCPS</a></p>
-</div>
+</div> -->
 <div class="alignwide" style="margin-top: 1em;">
-    <div class="has-white-background-color" style="padding: 1em;">
+    <div style="padding: 1em; background-color: white;">
         <h3>How is learning organized?</h3>
         <p>Four types of categorization help you find exactly what you're looking for:
             group, audience, topic and delivery. </p>
@@ -202,8 +202,8 @@ endwhile; // End of the loop.
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="card rounded-0 shadow-sm border-2">
-                        <img src="http://nori.virtuallearn.ca/learninghub/wp-content/uploads/2024/03/Home2.jpg" class="card-img-top rounded-0 object-fit-cover" alt="" style="height:18vh; ">
+                    <div class="card shadow-sm">
+                        <img src="http://nori.virtuallearn.ca/learninghub/wp-content/uploads/2024/03/Home2.jpg" class="card-img-top object-fit-cover" alt="" style="height:18vh; ">
                         <div class="bg-gov-yellow">
                             <div class="card-body">
                                 <h3 class="text-black mb-3">What's new?</h3>

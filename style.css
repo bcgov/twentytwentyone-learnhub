@@ -109,10 +109,12 @@ iframe {
 
 #bcgovmast {
     background-color: #003265;
+    color: white;
 }
 
 #bcgovmast a:focus {
     background-color: transparent !important;
+    color: white;
 }
 
 .logomenu {
@@ -564,4 +566,13 @@ p {
 
 .navbar {
     font-size: 18px;
+}
+
+.has-background-white .site a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
+    color: var(--wp--style--color--link, var(--global--color-primary));
+}
+
+.text-muted a {
+    --bs-text-opacity: 1;
+    color: var(--bs-secondary-color) !important;
 }
