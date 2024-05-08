@@ -69,7 +69,7 @@ get_header();
             array(
                 'taxonomy' => 'audience',
                 'orderby' => 'id',
-                'order' => 'DESC',
+                'order' => 'ASC',
                 'hide_empty' => '0'
             )
         );
@@ -90,9 +90,9 @@ get_header();
             array(
                 'taxonomy' => 'delivery_method',
                 'orderby' => 'id',
-                'order' => 'DESC',
+                'order' => 'ASC',
                 'hide_empty' => '0',
-                'include' => array(3, 37, 82, 236, 410)
+                'include'   => array(65, 83, 119, 163, 567)
             )
         );
         ?>
@@ -111,7 +111,7 @@ get_header();
     </div>
     <div class="wp-block-column" style="flex: 66%;">
         <?php if (have_posts()) : ?>
-            <div style="background-color: #FFF; border-radius: .5em; magrin: 1em 0; padding: 1em;">
+            <div style="background-color: #FFF; border-radius: .5em; margin: 1em 0; padding: 1em;">
                 <?php
                 $resultcount = (int) $wp_query->found_posts;
                 $plural = 'course';
