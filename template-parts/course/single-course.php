@@ -1,22 +1,21 @@
-<div class="course">
-
+<div class="course border-secondary-subtle">
     <details>
         <summary class="coursename mb-0 ms-3" style="list-style-position: outside;">
-            <?= the_title(); ?><div class="text-muted text-decoration-none" style="font-size: 14px;">
-                <div class="d-flex flex-wrap justify-content-end align-items-center gap-3">
-                    <div title="Delivery Method">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-inline-block" viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                            <path d="M160 64c0-35.3 28.7-64 64-64H576c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H336.8c-11.8-25.5-29.9-47.5-52.4-64H384V320c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v32h64V64L224 64v49.1C205.2 102.2 183.3 96 160 96V64zm0 64a96 96 0 1 1 0 192 96 96 0 1 1 0-192zM133.3 352h53.3C260.3 352 320 411.7 320 485.3c0 14.7-11.9 26.7-26.7 26.7H26.7C11.9 512 0 500.1 0 485.3C0 411.7 59.7 352 133.3 352z" />
-                        </svg>
-
-                        <?php the_terms($post->ID, 'delivery_method'); ?>
+            <div class="d-flex justify-content-between">
+                <?= the_title(); ?>
+                <div class="text-muted text-decoration-none text-end flex-shrink-0 mt-1" style="font-size: 12px;">
+                    <div class="ms-3">
+                        <div title="Delivery Method">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="d-inline-block" viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                <path d="M160 64c0-35.3 28.7-64 64-64H576c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H336.8c-11.8-25.5-29.9-47.5-52.4-64H384V320c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v32h64V64L224 64v49.1C205.2 102.2 183.3 96 160 96V64zm0 64a96 96 0 1 1 0 192 96 96 0 1 1 0-192zM133.3 352h53.3C260.3 352 320 411.7 320 485.3c0 14.7-11.9 26.7-26.7 26.7H26.7C11.9 512 0 500.1 0 485.3C0 411.7 59.7 352 133.3 352z" />
+                            </svg>
+                            <?php the_terms($post->ID, 'delivery_method'); ?>
+                        </div>
                     </div>
                 </div>
             </div>
         </summary>
-
-        <div class="mt-2">
-
+        <div class="mt-2 ms-3">
             <?php the_content(); ?>
             <?php if (!empty($post->mandatory_notes)) : ?>
                 <div class="mandonotes" style="background-color: #fffede; border-radius: 5px; margin: 1em 0 0 0; padding: 1em;">
@@ -33,12 +32,12 @@
                                 <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
                             </svg></div>
                     </a>
-                    <div class="text-end" style="font-size: 14px">
+                    <div class="d-inline-block ms-2" style="font-size: 14px">
                         <a title="Permanent link to this course's page" style="text-decoration: none;" href="<?= the_permalink() ?>">
                             <div class="icon-svg baseline-svg"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z" />
                                     <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z" />
-                                </svg></div>Share course listing
+                                </svg></div>Course page
                         </a>
                     </div>
                 </div>
@@ -49,13 +48,13 @@
 
             <?php endif ?>
             <div class="text-muted text-decoration-none" style="font-size: 14px;">
-                <p class="mb-0">
+                <p>
                     <strong>Partner:</strong>
                     <?php the_terms($post->ID, 'learning_partner'); ?>
 
                     <?php $exsys = get_the_terms($post->ID, 'external_system', '', ', ', ' ') ?> <br>
                     <?php if (!empty($exsys[0]->name)) : ?>
-                        <strong>Platform:</strong> <a class="" href="/learninghub/external_system/<?= $exsys[0]->slug ?>">
+                        <strong>Platform:</strong> <a class="text-decoration-none" href="/learninghub/external_system/<?= $exsys[0]->slug ?>">
                             <?= $exsys[0]->name ?>
                         </a>
                 </p>
@@ -88,4 +87,5 @@
         </div>
 
     </details>
+
 </div> <!-- /.course -->
