@@ -13,7 +13,7 @@ $wrapper_classes .= (true === get_theme_mod('display_title_and_tagline', true)) 
 $wrapper_classes .= has_nav_menu('primary') ? ' has-menu' : '';
 $blog_info    = get_bloginfo('name');
 ?>
-<div id="bcgovmast">
+<div id="bcgovmast" class="sticky-top">
     <header id="mainheader" role="banner">
         <nav class="navbar navbar-expand-lg px-3" data-bs-theme="dark" role="navigation" aria-label="<?php esc_attr_e('Primary menu', 'twentytwentyone'); ?>">
             <div class="container-fluid">
@@ -45,7 +45,7 @@ $blog_info    = get_bloginfo('name');
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/learninghub/learning-systems/">
-                                Learning Systems</a>
+                                Learning Platforms</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/learninghub/course/">All Courses</a>
