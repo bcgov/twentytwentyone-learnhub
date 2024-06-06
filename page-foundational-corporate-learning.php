@@ -120,7 +120,26 @@ get_header();
             <summary class="h4 ms-3 mb-0" style="list-style-position: outside;">
                 <h4 class="d-inline text-black">In Your First Year as a People Leader</h4>
             </summary>
-            <div class="mt-2">content</div>
+            <div class="mt-2">
+                <p>In your first year, this is the suggested time frame for completing your Mandatory and Foundational learning. </p>
+                <h5>Month 3</h5>
+                <ul class="mb-4">
+                    <li>Enroll in <a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/">HR Foundations for People Leaders</a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                    <li>Enroll in <a href="https://learningcentre.gww.gov.bc.ca/supervising-bcps/">Supervising in the BC Public Service (SBCPS)</a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                    <li>Leadership Foundations (Coming soon)</li>
+                </ul>
+                <h5>Month 6</h5>
+                <ul class="mb-4">
+                    <li>Intro to Coaching (Coming soon)</li>
+                </ul>
+                <h5>Month 12</h5>
+                <ul class="mb-4">
+                    <li>Complete <a href="https://learningcentre.gww.gov.bc.ca/supervising-bcps/">Supervising in the BC Public Service (SBCPS)</a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                    <li>Conflict Competence (Coming soon)</li>
+                    <li>Intro to Change Leadership (Coming soon)</li>
+                    <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_PL/index.html">Workplace Health and Safety for People Leaders</a> learning resource</li>
+                </ul>
+            </div>
         </details>
         <details class="border border-secondary px-3 py-2 my-3 rounded">
             <summary class="h4 ms-3 mb-0" style="list-style-position: outside;">

@@ -67,6 +67,7 @@ h5 {
 
 h5 {
     letter-spacing: normal;
+    font-size: inherit;
 }
 .more-link {
     display: none;
