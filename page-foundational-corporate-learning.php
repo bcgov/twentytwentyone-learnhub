@@ -9,11 +9,8 @@
  * @subpackage Twenty_Twenty_One
  * @since Twenty Twenty-One 1.0
  */
-
 get_header();
-
 ?>
-
 <div class="wp-block-cover alignfull bg-gov-green" style="height:14vh;"><span aria-hidden="true" class="wp-block-cover__background"></span>
     <div class="wp-block-cover__inner-container">
         <h1 class="wp-block-heading alignfull has-text-align-center has-white-color has-text-color">Foundational Corporate Learning</h1>
@@ -21,14 +18,12 @@ get_header();
     </div>
 </div>
 <!-- /wp:cover -->
-
 <div class="bg-white mt-0 py-5">
     <div class="alignwide">
         <div class="row">
             <div class="col-lg-7 mb-4 mb-lg-0">
                 <h2 class="fs-1">Introduction to Corporate Learning </h2>
                 <p>Foundational corporate learning refers to basic BC Public Service-specific knowledge and skills that all employees should have, regardless of role.</p>
-
             </div>
             <div class="col-lg-5">
                 <div class="topic-card border-2 border rounded shadow-sm p-3 mt-4">
@@ -145,7 +140,18 @@ get_header();
             <summary class="h4 ms-3 mb-0" style="list-style-position: outside;">
                 <h4 class="d-inline text-black">Existing People Leaders</h4>
             </summary>
-            <div class="mt-2">content</div>
+            <div class="mt-2">
+                <p>After your first year, this is the suggested time frame for completing your Mandatory and Foundational learning. </p>
+                <h5>At your own pace</h5>
+                <ul class="mb-4">
+                    <li>Enroll in <a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/">HR Foundations for People Leaders</a></li>
+                    <li>Leadership Foundations (Coming soon)</li>
+                    <li>Intro to Coaching (Coming soon)</li>
+                    <li>Conflict Competence (Coming soon)</li>
+                    <li>Intro to Change Leadership (Coming soon)</li>
+                    <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_PL/index.html">Workplace Health and Safety for People Leaders</a> learning resource</li>
+                </ul>
+            </div>
         </details>
     </div>
 </div>
