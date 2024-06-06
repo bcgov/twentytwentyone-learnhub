@@ -65,6 +65,9 @@ h5 {
     color: var(--global--color-primary)
 }
 
+h5 {
+    letter-spacing: normal;
+}
 .more-link {
     display: none;
 }

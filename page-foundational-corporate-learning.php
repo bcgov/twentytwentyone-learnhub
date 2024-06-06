@@ -87,7 +87,33 @@ get_header();
             <summary class="h4 ms-3 mb-0" style="list-style-position: outside;">
                 <h4 class="d-inline text-black">Existing Employees</h4>
             </summary>
-            <div class="mt-2">content</div>
+            <div class="mt-2">
+                <p>After your first year, this is the suggested time frame for completing your Mandatory and Foundational learning.</p>
+                <h5>Every year</h5>
+                <ul class="mb-4">
+                    <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/annual-review-of-the-standards-of-conduct-and-oath-of-employment/">Annual Review of the Oath of Employment and Standards of Conduct</a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                </ul>
+                <h5>Every 2 years</h5>
+                <ul class="mb-4">
+                    <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/im-117-information-management-managing-government-information-privacy-access-to-information-and-security/">Information Management (IM) 117</a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                </ul>
+                <h5>Every 3 years</h5>
+                <ul class="mb-4">
+                    <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/fraud-awareness-and-prevention/">Fraud Awareness and Prevention</a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                </ul>
+                <h5>At least once</h5>
+                <ul class="mb-4">
+                    <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/diversity-and-inclusion-essentials/">Diversity and Inclusion (D&I) Essentials</a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                    <li>Respectful Workplaces curated pathway (Coming soon)</li>
+                    <li>BC Provincial Government Essentials (Coming soon)</li>
+                    <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_AE/index.html">Workplace Health and Safety</a> learning resource</li>
+                    <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/finance-foundations/">Finance Foundations</a></li>
+                </ul>
+                <h5>Refresh cycle TBD</h5>
+                <ul class="mb-4">
+                    <li>Indigenous Crown Relations Essentials (Coming soon)<span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                </ul>
+            </div>
         </details>
         <h3>People Leaders</h3>
         <details class="border border-secondary px-3 py-2 my-3 rounded">
