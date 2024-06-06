@@ -78,8 +78,8 @@ endwhile; // End of the loop.
     </form>
     <p class="mt-1 fs-6 text-center">Quick search: <a href="/learninghub/?s=BCPSBelonging">#BCPSBelonging</a> <a href="/learninghub/?s=flexibleBCPS">#flexibleBCPS</a></p>
 </div> -->
-<div class="alignwide" style="margin-top: 1em;">
-    <div style="padding: 1em; background-color: white;">
+<div class="alignwide mt-5 mb-0">
+    <div class="p-4 bg-white">
         <h3>How is learning organized?</h3>
         <p>Four types of categorization help you find exactly what you're looking for:
             group, audience, topic and delivery. </p>
@@ -232,4 +232,5 @@ endwhile; // End of the loop.
             </div>
         </div>
     </div>
-    <?php get_footer() ?>
+</div>
+<?php get_footer() ?>

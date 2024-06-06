@@ -14,7 +14,7 @@
 
 ?>
 
-<details id="feedback" class="alignwide bg-white pb-3 px-4">
+<details id="feedback" class="alignwide bg-white pb-3 px-4 mt-0">
     <summary>Need help? </summary>
     <div class="ms-3">
         <p>Have a question about the LearningHUB? <a href="https://sfs7.gov.bc.ca/affwebservices/public/saml2sso?SPID=urn:ca:bc:gov:customerportal:prod">Submit an AskMyHR service request</a> using the category "Learning Centre".</p>
