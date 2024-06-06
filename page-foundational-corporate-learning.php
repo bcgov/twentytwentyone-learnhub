@@ -14,7 +14,7 @@ get_header();
 
 ?>
 
-<div class="wp-block-cover alignfull bg-gov-green" style="height:12vh;"><span aria-hidden="true" class="wp-block-cover__background"></span>
+<div class="wp-block-cover alignfull bg-gov-green" style="height:14vh;"><span aria-hidden="true" class="wp-block-cover__background"></span>
     <div class="wp-block-cover__inner-container">
         <h1 class="wp-block-heading alignfull has-text-align-center has-white-color has-text-color">Foundational Corporate Learning</h1>
         <!-- /wp:heading -->
@@ -25,40 +25,83 @@ get_header();
 <div class="bg-white mt-0 py-5">
     <div class="alignwide">
         <div class="row">
-            <div class="col-lg-8 mb-4 mb-lg-0">
+            <div class="col-lg-7 mb-4 mb-lg-0">
                 <h2 class="fs-1">Introduction to Corporate Learning </h2>
                 <p>Foundational corporate learning refers to basic BC Public Service-specific knowledge and skills that all employees should have, regardless of role.</p>
-                <p>Choose the list below that applies to you.</p>
+
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-5">
                 <div class="topic-card border-2 border rounded shadow-sm p-3 mt-4">
-                    <div class="d-flex">
-                        <div class="icon-square flex-shrink-0 mt-1 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                <path fill="#007864" d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32V64 368 480c0 17.7 14.3 32 32 32s32-14.3 32-32V352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30V66.1c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z" />
-                            </svg></div>
-                        <div class="ms-3">
-                            <h3 class="gov-green">Start here</h3>
-                            <p>Wondering where to start? These learning journeys will guide you.</p>
-                            <p class="mb-1"><strong>Learning journeys</strong></p>
-                            <ul class="mb-2">
-                                <li>All Employees</li>
-                                <li>People Leaders</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <h3 class="gov-green h4">Which mandatory courses do I take?</h3>
+                    <ul class="mb-2">
+                        <li><strong>Mandatory for All Employees:</strong> All BCPS employees at all levels take the mandatory courses for All Employees</li>
+                        <li><strong>Mandatory for People Leaders:</strong> If you have direct reports, you'll also take the courses that are mandatory for People Leaders</li>
+                    </ul>
                 </div>
             </div>
         </div>
-        <a href="https://learningcentre.gww.gov.bc.ca/latww2023/">
-            <div class="mt-4 border border-2 rounded-top">
-                <img src="http://nori.virtuallearn.ca/learninghub/wp-content/uploads/2024/04/LWW_2023_subpage_header-280h.jpg" alt="">
+    </div>
+</div>
+<div class="alignwide mt-4 mb-0">
+    <div class="p-4 bg-white">
+        <p>
+        <div class="icon-svg baseline-svg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+            </svg>
+        </div>Choose the lists that apply to you. Select the heading to show or hide the content.</p>
+        <h3>All Employees</h3>
+        <details class="border border-secondary px-3 py-2 my-3 rounded">
+            <summary class="h4 ms-3 mb-0" style="list-style-position: outside;">
+                <h4 class="d-inline text-black">In Your First Year of Employment</h4>
+            </summary>
+            <div class="mt-2">
+                <p>In your first year, this is the suggested time frame for completing your Mandatory and Foundational learning.</p>
+                <h5>Week 1</h5>
+                <ul class="mb-4">
+                    <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/annual-review-of-the-standards-of-conduct-and-oath-of-employment/">Annual Review of the Oath of Employment and Standards of Conduct</a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                </ul>
+                <h5>Month 1</h5>
+                <ul class="mb-4">
+                    <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/im-117-information-management-managing-government-information-privacy-access-to-information-and-security/">Information Management (IM) 117</a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                    <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/diversity-and-inclusion-essentials/">Diversity and Inclusion (D&I) Essentials</a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                    <li>Indigenous Crown Relations Essentials (Coming soon)<span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                    <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/fraud-awareness-and-prevention/">Fraud Awareness and Prevention</a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
+                </ul>
+                <h5>Month 3</h5>
+                <ul class="mb-4">
+                    <li>Respectful Workplaces curated pathway (Coming soon)</li>
+                    <li>BC Provincial Government Essentials (Coming soon)</li>
+                </ul>
+                <h5>Month 6</h5>
+                <ul class="mb-4">
+                    <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_AE/index.html">Workplace Health and Safety</a> learning resource</li>
+                </ul>
+                <h5>Month 12</h5>
+                <ul class="mb-4">
+                    <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/finance-foundations/">Finance Foundations</a></li>
+                </ul>
             </div>
-            <div class="bg-gov-blue px-3 py-2 rounded-bottom">
-                <h3 class="text-white">Register today!</h3>
-                <p class="text-white mb-0">Learn @ Work Week 2023 runs from September 18 to 22</p>
-            </div>
-        </a>
-
+        </details>
+        <details class="border border-secondary px-3 py-2 my-3 rounded">
+            <summary class="h4 ms-3 mb-0" style="list-style-position: outside;">
+                <h4 class="d-inline text-black">Existing Employees</h4>
+            </summary>
+            <div class="mt-2">content</div>
+        </details>
+        <h3>People Leaders</h3>
+        <details class="border border-secondary px-3 py-2 my-3 rounded">
+            <summary class="h4 ms-3 mb-0" style="list-style-position: outside;">
+                <h4 class="d-inline text-black">In Your First Year as a People Leader</h4>
+            </summary>
+            <div class="mt-2">content</div>
+        </details>
+        <details class="border border-secondary px-3 py-2 my-3 rounded">
+            <summary class="h4 ms-3 mb-0" style="list-style-position: outside;">
+                <h4 class="d-inline text-black">Existing People Leaders</h4>
+            </summary>
+            <div class="mt-2">content</div>
+        </details>
     </div>
 </div>
 <?php get_footer() ?>
