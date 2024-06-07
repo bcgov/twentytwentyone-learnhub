@@ -53,10 +53,6 @@ get_header();
             </summary>
             <div class="mt-2">
                 <p>In your first year, this is the suggested time frame for completing your Mandatory and Foundational learning.</p>
-                <h5>Week 1</h5>
-                <ul class="mb-4">
-                    <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/annual-review-of-the-standards-of-conduct-and-oath-of-employment/">Annual Review of the Oath of Employment and Standards of Conduct</a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
-                </ul>
                 <h5>Month 1</h5>
                 <ul class="mb-4">
                     <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/im-117-information-management-managing-government-information-privacy-access-to-information-and-security/">Information Management (IM) 117</a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
