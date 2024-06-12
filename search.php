@@ -121,9 +121,23 @@ get_header();
 		);
 		?>
 		</div>
+		<?php $tbscheduled = [] ?>
 	<?php while (have_posts()) : the_post(); ?>
+	
+		<?php if(has_term(array( 'tbscheduled' ), 'keywords', get_the_ID() )): ?>
+		<?php array_push($tbscheduled,$post) ?>
+		<?php continue; ?>
+		<?php endif ?>
 		<?php get_template_part( 'template-parts/course/single-course' ) ?>
 	<?php endwhile; ?>
+	<div style="font-weight: bold">These courses are not currently available for registration, but will
+		likely be soon.</div>
+	<?php wp_reset_postdata() ?>
+	<?php foreach($tbscheduled as $post): ?>
+		<?php setup_postdata($post) ?>
+		<?php get_template_part( 'template-parts/course/single-course' ) ?>
+	<?php endforeach ?>
+	
 	<?php else : ?>
 		<p>Oh no! There are no courses that match your filters.</p>
 	<?php endif; ?>
