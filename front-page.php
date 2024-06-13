@@ -115,7 +115,7 @@ endwhile; // End of the loop.
                                 ));
                                 ?>
                                 <?php foreach ($groups as $g) : ?><li>
-                                        <a href="/learninghub/groups/<?= $g->slug ?>"><?= $g->name ?>:</a> <?= $g->description ?>
+                                        <a href="/learninghub/filter/?group[]=<?= $g->slug ?>"><?= $g->name ?>:</a> <?= $g->description ?>
                                     </li>
                                 <?php endforeach ?>
                             </ul>
@@ -147,7 +147,7 @@ endwhile; // End of the loop.
                                 ?>
                                 <?php foreach ($audiences as $a) : ?>
                                     <li>
-                                        <a href="/learninghub/audience/<?= $a->slug ?>"><?= $a->name ?></a>:
+                                        <a href="/learninghub/filter/?audience[]=<?= $a->slug ?>"><?= $a->name ?></a>:
                                         <?= $a->description ?>
                                     </li>
                                 <?php endforeach ?>
@@ -179,7 +179,7 @@ endwhile; // End of the loop.
                     ?>
                     <?php foreach ($topics as $t) : ?>
                         <div class="col-lg-6 col-12 p-0">
-                            <a href="/learninghub/topics/<?= $t->slug ?>" class="text-decoration-none">
+                            <a href="/learninghub/filter/?topic[]=<?= $t->slug ?>" class="text-decoration-none">
                                 <div class="border rounded shadow-sm px-3 py-2 m-1 topic-card"><?= $t->name ?></div>
                             </a>
                         </div>
