@@ -48,7 +48,7 @@ $blog_info    = get_bloginfo('name');
                                 Learning Platforms</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/learninghub/course/">All Courses</a>
+                            <a class="nav-link" href="/learninghub/filter/">All Courses</a>
                         </li>
                     </ul>
                 </div>
