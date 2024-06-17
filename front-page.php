@@ -28,7 +28,7 @@ background: linear-gradient(87deg, rgba(35,64,117,1) 0%, rgba(0,120,100,1) 50%, 
             <div class="col-lg-8 mb-4 mb-lg-0">
                 <h2 class="fs-1">What is corporate learning?</h2>
                 <p>In the B.C. Public Service, corporate learning is a shared space. The Learning Centre and its partners offer hundreds of courses, available to all BCPS employees. The LearningHUB is the place to see that full catalogue.</p>
-                <a href="/learninghub/course/" class="btn btn-lg btn-primary bg-gov-blue">Catalogue of courses</a>
+                <a href="/learninghub/filter/" class="btn btn-lg btn-primary bg-gov-blue">Catalogue of courses</a>
                 <div class="topic-card border-2 border rounded shadow-sm p-3 mt-4">
                     <div class="d-flex">
                         <div class="icon-square flex-shrink-0 mt-1 "><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -227,12 +227,13 @@ if (!empty($sticky)) :
                                     'hide_empty' => false,
                                     'orderby'    => 'count',
                                     'order'   => 'DESC',
-                                    'include'   => array(65, 83, 119, 163, 567)
+                                    
                                 ));
+                                //'include'   => array(65, 83, 119, 163, 567)
                                 ?>
                                 <?php foreach ($delivery as $d) : ?>
                                     <li>
-                                        <a href="/learninghub/delivery_method/<?= $d->slug ?>"><?= $d->name ?></a>:
+                                        <a href="/learninghub/filter/?delivery_method[]=<?= $d->slug ?>"><?= $d->name ?></a>:
                                         <?= $d->description ?>
                                     </li>
                                 <?php endforeach ?>
