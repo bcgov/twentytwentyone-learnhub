@@ -16,7 +16,12 @@ while (have_posts()) : // Start the Loop
 endwhile; // End of the loop.
 ?>
 
+<div class="wp-block-cover alignfull" style="height:18vh; background: rgb(35,64,117);
+background: linear-gradient(87deg, rgba(35,64,117,1) 0%, rgba(0,120,100,1) 50%, rgba(227,168,43,1) 91%);"><span aria-hidden="true" class="wp-block-cover__background"></span><div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow">
 
+<h1 class="wp-block-heading alignwide has-white-color has-text-color wp-elements-691d4c5b19d6a6085c740271ecfe16e0" id="learning-for-bc-public-service-employees-all-in-one-place">Welcome to the LearningHUB</h1>
+
+</div></div>
 <div class="bg-white py-5" id="whatisthehub">
     <div class="alignwide">
         <div class="row">
@@ -34,8 +39,8 @@ endwhile; // End of the loop.
                             <p>Wondering where to start? These learning journeys will guide you.</p>
                             <p class="mb-1"><strong>Learning journeys</strong></p>
                             <ul class="mb-2">
-                                <li>All Employees</li>
-                                <li>People Leaders</li>
+                                <li><a href="/learninghub/foundational-corporate-learning/">All Employees</a></li>
+                                <li><a href="/learninghub/foundational-corporate-learning/">People Leaders</a></li>
                             </ul>
                         </div>
                     </div>
@@ -53,7 +58,8 @@ endwhile; // End of the loop.
                 </div>
             </div>
         </div>
-        <a href="https://learningcentre.gww.gov.bc.ca/latww2023/">
+
+        <!-- <a href="https://learningcentre.gww.gov.bc.ca/latww2023/">
             <div class="mt-4 border border-2 rounded-top">
                 <img src="http://nori.virtuallearn.ca/learninghub/wp-content/uploads/2024/04/LWW_2023_subpage_header-280h.jpg" alt="">
             </div>
@@ -61,23 +67,36 @@ endwhile; // End of the loop.
                 <h3 class="text-white">Register today!</h3>
                 <p class="text-white mb-0">Learn @ Work Week 2023 runs from September 18 to 22</p>
             </div>
-        </a>
+        </a> -->
+<?php 
+$sticky = get_option('sticky_posts');
+// check if there are any
+if (!empty($sticky)) :
+    // optional: sort the newest IDs first
+    rsort($sticky);
+    // override the query
+    $args = array(
+        'post__in' => $sticky
+    );
+    query_posts($args);
+    ?>
+
+    <?php while (have_posts()): ?>
+         <?php the_post() ?>
+         <?php if (has_post_thumbnail( $post->ID ) ): ?>
+            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+            <img class="mt-4 border border-2 rounded-top" style="min-width: 100%" src="<?php echo $image[0]; ?>">
+          <?php endif; ?>
+          <div class="bg-gov-blue text-white px-3 py-2 rounded-bottom">
+            <h3><a href="<?= the_permalink() ?>"><?php the_title() ?></a></h3>
+         </div>
+    <?php endwhile ?>
+<?php endif ?>
 
     </div>
 </div>
-<!-- <div class="wp-block-cover__inner-container">
-    <form role="search" method="get" action="/learninghub/" class="wp-block-search__button-inside wp-block-search__icon-button wp-block-search mb-0">
-        <div class="wp-block-search__inside-wrapper">
-            <label for="wp-block-search__input-1" class="sr-only">Search</label>
-            <input type="search" id="wp-block-search__input-1" class="wp-block-search__input" name="s" placeholder="Search the full LearningHUB catalogue...">
-            <input type="hidden" name="post_type" value="courses">
-            <button type="submit" class="wp-block-search__button searchsubmit" aria-label="Submit Search">
-                Search
-            </button>
-        </div>
-    </form>
-    <p class="mt-1 fs-6 text-center">Quick search: <a href="/learninghub/?s=BCPSBelonging">#BCPSBelonging</a> <a href="/learninghub/?s=flexibleBCPS">#flexibleBCPS</a></p>
-</div> -->
+
+
 <div class="alignwide" style="margin-top: 1em;">
     <div style="padding: 1em; background-color: white;">
         <h3>How is learning organized?</h3>

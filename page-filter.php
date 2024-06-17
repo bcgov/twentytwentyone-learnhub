@@ -91,7 +91,13 @@ input[type="checkbox"], input[type="radio"] {
 	width: 20px;
 }
 </style>
-	<div class="wp-block-columns alignwide" style="padding-top: 2em;">
+<div class="wp-block-cover alignfull bg-gov-green" style="height:14vh;"><span aria-hidden="true" class="wp-block-cover__background"></span>
+    <div class="wp-block-cover__inner-container">
+        <h1 class="wp-block-heading alignwide has-white-color has-text-color">Course Catalog</h1>
+        <!-- /wp:heading -->
+    </div>
+</div>
+	<div class="wp-block-columns alignwide">
 	<div class="wp-block-column menus" id="filters" style="background-color: #FFF; border-radius: .5em; flex: 29%; padding: 2%; margin-right: 1%;">
 
 	<div><strong>Groups</strong></div>
@@ -270,17 +276,18 @@ input[type="checkbox"], input[type="radio"] {
 		<?php if(!empty($_GET['group'])): ?>
 		<?php foreach($_GET['group'] as $g): ?>
 		<div class="">
-			<strong><?= $g->name ?></strong>
+			<strong><?= $g ?></strong>
 			
 		</div>
 		<?php endforeach ?>
 		<?php endif ?>
-		<?php if($topicterm): ?>
-		<div class="">
 
-			<strong><?= $tterm->name ?></strong>
+		<?php foreach($_GET['topic'] as $t): ?>
+		<div class="">
+			<strong><?= $t ?></strong>
+			
 		</div>
-		<?php endif ?>
+		<?php endforeach ?>
 		<?php if($audienceterm): ?>
 		<div class="">
 
