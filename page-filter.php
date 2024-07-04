@@ -1,14 +1,7 @@
 <?php
-/**
- * 
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since Twenty Twenty-One 1.0
- */
-
+//
+// This is the main filter interface for the LearningHUB.
+//
 get_header();
 
 // WP_Query takes a "taxquery" an array argument that allows you to query by 
@@ -106,6 +99,7 @@ if(!empty($_GET['delivery_method'])) {
 	}
 }
 
+// This is the main Wordpress query that we pass our $taxquery to.
 $post_args = array(
     'post_type'                => 'course',
     'post_status'              => 'publish',
@@ -123,12 +117,10 @@ $post_args = array(
     'include'                  => '',
     'number'                   => '',
     'pad_counts'               => true, 
+	//'s'						   => 'ethics'
 );
 $post_my_query = null;
 $post_my_query = new WP_Query($post_args);
-
-
-
 ?>
 <style>
 input[type="checkbox"], input[type="radio"] {
@@ -136,6 +128,10 @@ input[type="checkbox"], input[type="radio"] {
 	height: 20px;
 	width: 20px;
 }
+/* We hide the form submit button for taxonomy filters by default, 
+	but the noscript below will show it if there's no JS. 
+	#gracefuldegradation 
+*/
 .applybutton {
 	display: none;
 }
@@ -147,14 +143,14 @@ input[type="checkbox"], input[type="radio"] {
 }
 </style>
 </noscript>
-<div class="wp-block-cover alignfull bg-gov-green" style="height:14vh;"><span aria-hidden="true" class="wp-block-cover__background"></span>
+<div class="wp-block-cover alignfull bg-gov-green">
     <div class="wp-block-cover__inner-container">
         <h1 class="wp-block-heading alignwide has-white-color has-text-color">Course Catalogue</h1>
         <!-- /wp:heading -->
     </div>
 </div>
-	<div class="wp-block-columns alignwide">
-	<div class="wp-block-column menus" id="filters" style="background-color: #FFF; border-radius: .5em; flex: 29%; padding: 2%; margin-right: 1%;">
+<div class="wp-block-columns alignwide">
+<div class="wp-block-column menus" id="filters" style="background-color: #FFF; border-radius: .5em; flex: 29%; padding: 2%; margin-right: 1%;">
 
 	<div><strong>Groups</strong></div>
 	<form action="/learninghub/filter" method="GET">
