@@ -36,8 +36,7 @@ background: linear-gradient(87deg, rgba(35,64,117,1) 0%, rgba(0,120,100,1) 50%, 
                             </svg></div>
                         <div class="ms-3">
                             <h3 class="gov-green">Start here</h3>
-                            <p>Wondering where to start? These learning journeys will guide you.</p>
-                            <p class="mb-1"><strong>Learning journeys</strong></p>
+                            <p>Wondering where to start? Begin with your mandatory and foundational training.</p>
                             <ul class="mb-2">
                                 <li><a href="/learninghub/foundational-corporate-learning/">All Employees</a></li>
                                 <li><a href="/learninghub/foundational-corporate-learning/">People Leaders</a></li>
