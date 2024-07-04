@@ -135,7 +135,7 @@ get_header();
                 <ul class="mb-4">
                     <li>Complete <a href="https://learningcentre.gww.gov.bc.ca/supervising-bcps/">Supervising in the BC Public Service (SBCPS)</a><span class="badge text-bg-warning fw-medium ms-2">Mandatory</span></li>
                     <li>Conflict Competence (Coming soon)</li>
-                    <li>Intro to Change Leadership (Coming soon)</li>
+                    <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-change-leadership/">Intro to Change Leadership</a></li>
                     <li><a href="https://gww.bcpublicservice.gov.bc.ca/Learning/health/courses/WHS_resources/Learner_Journey_PL/index.html">Workplace Health and Safety for People Leaders</a> learning resource</li>
                 </ul>
             </div>
@@ -149,7 +149,7 @@ get_header();
                 <h5>At your own pace</h5>
                 <ul class="mb-4">
                     <li>Enroll in <a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/hr-foundations-for-people-leaders/">HR Foundations for People Leaders</a></li>
-                    <li>Intro to Change Leadership (Coming soon)</li>
+                    <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-change-leadership/">Intro to Change Leadership</a></li>
                     <li>Leading People in the BCPS (Coming soon)</li>
                     <li><a href="https://learningcentre.gww.gov.bc.ca/learninghub/course/intro-to-coaching/">Intro to Coaching</a></li>
                     <li>Introduction to Communications (Coming soon)</li>
