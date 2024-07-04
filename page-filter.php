@@ -49,7 +49,7 @@ if(!empty($_GET['topic'])) {
 		'terms' => $topicterm,
 	);
 	array_push($taxquery, $t);
-		// Now we need to look up the names of the terms from the slugs
+	// Now we need to look up the names of the terms from the slugs
 	// so that we can show them back to the user in the "remove filter"
 	// area.
 	$tterms = [];
@@ -71,7 +71,17 @@ if(!empty($_GET['audience'])) {
 		'terms' => $audienceterm,
 	);
 	array_push($taxquery, $a);
-	// $aterm = get_term_by( 'slug', get_query_var( 'audience' ), 'audience');
+	// Now we need to look up the names of the terms from the slugs
+	// so that we can show them back to the user in the "remove filter"
+	// area.
+	$aterms = [];
+	// Loop through each of the slugs
+	foreach($_GET['audience'] as $a) {
+		// Look up the term object for the slug
+		$aterm = get_term_by( 'slug', $a, 'audience');
+		// add the result to the array that we can now loop through below.
+		array_push($aterms,$aterm);
+	}
 }
 
 if(!empty($_GET['delivery_method'])) {
@@ -83,9 +93,18 @@ if(!empty($_GET['delivery_method'])) {
 		'terms' => $dmterm,
 	);
 	array_push($taxquery, $dm);
-	// $dterm = get_term_by( 'slug', get_query_var( 'delivery_method' ), 'delivery_method');
+	// Now we need to look up the names of the terms from the slugs
+	// so that we can show them back to the user in the "remove filter"
+	// area.
+	$dterms = [];
+	// Loop through each of the slugs
+	foreach($_GET['delivery_method'] as $d) {
+		// Look up the term object for the slug
+		$dterm = get_term_by( 'slug', $d, 'delivery_method');
+		// add the result to the array that we can now loop through below.
+		array_push($dterms,$dterm);
+	}
 }
-// print_r($gterm);
 
 $post_args = array(
     'post_type'                => 'course',
@@ -108,11 +127,8 @@ $post_args = array(
 $post_my_query = null;
 $post_my_query = new WP_Query($post_args);
 
-// Setup URLs
-$gr = ''; if($groupterm) $gr = 'groups/' . $groupterm . '/';
-$to = ''; if($topicterm) $to = 'topics/' . $topicterm . '/';
-$aud = ''; if($audienceterm) $aud = 'audience/' . $audienceterm . '/';
-$dm = ''; if($dmterm) $dm = 'delivery_method/' . $dmterm . '/';
+
+
 ?>
 <style>
 input[type="checkbox"], input[type="radio"] {
@@ -120,10 +136,20 @@ input[type="checkbox"], input[type="radio"] {
 	height: 20px;
 	width: 20px;
 }
+.applybutton {
+	display: none;
+}
 </style>
+<noscript>
+<style>
+.applybutton {
+	display: block;
+}
+</style>
+</noscript>
 <div class="wp-block-cover alignfull bg-gov-green" style="height:14vh;"><span aria-hidden="true" class="wp-block-cover__background"></span>
     <div class="wp-block-cover__inner-container">
-        <h1 class="wp-block-heading alignwide has-white-color has-text-color">Course Catalog</h1>
+        <h1 class="wp-block-heading alignwide has-white-color has-text-color">Course Catalogue</h1>
         <!-- /wp:heading -->
     </div>
 </div>
@@ -157,10 +183,10 @@ input[type="checkbox"], input[type="radio"] {
 							));
 	?>
 	<?php foreach($groups as $g): ?>
-		<?php $active = ''; if($g->slug == $groupterm) $active = 'active'; ?>
+		<?php $active = '' ?>
 		<?php if(!empty($_GET['group']) && in_array($g->slug,$_GET['group'])) $active = 'checked' ?>
 			<div>
-				<label>
+				<label class="<?php if($active == 'checked') echo 'fw-bold' ?>">
 					<input onChange="this.form.submit()" type="checkbox" value="<?= $g->slug ?>" name="group[]" id="group<?= $g->id ?>" <?= $active ?>>
 					<?= $g->name ?>
 					(<?= $g->count ?>)
@@ -197,7 +223,7 @@ input[type="checkbox"], input[type="radio"] {
 							));
 	?>
 	<?php foreach($topics as $t): ?>
-		<?php $active = ''; if($t->slug == $topicterm) $active = 'active'; ?>
+		<?php $active = '' ?>
 		<?php if(!empty($_GET['topic']) && in_array($t->slug,$_GET['topic'])) $active = 'checked' ?>
 			<div>
 				<label class="<?php if($active == 'checked') echo 'fw-bold' ?>">
@@ -240,7 +266,7 @@ input[type="checkbox"], input[type="radio"] {
 							));
 	?>
 	<?php foreach($audiences as $a): ?>
-		<?php $active = ''; if($a->slug == $audienceterm) $active = 'active'; ?>
+		<?php $active = '' ?>
 		<?php if(!empty($_GET['audience']) && in_array($a->slug,$_GET['audience'])) $active = 'checked' ?>
 			<div>
 				<label class="<?php if($active == 'checked') echo 'fw-bold' ?>">
@@ -277,12 +303,11 @@ input[type="checkbox"], input[type="radio"] {
 								'taxonomy' => 'delivery_method',
 								'orderby' => 'id',
 								'order' => 'DESC',
-								'hide_empty' => '0',
-								'include' => array(3,37,82,236,410)
-							));
+								'hide_empty' => '0'
+							)); //,'include' => array(3,37,82,236,410)
 	?>
 	<?php foreach($dms as $d): ?>
-		<?php $active = ''; if($d->slug == $dmterm) $active = 'active'; ?>
+		<?php $active = '' ?>
 		<?php if(!empty($_GET['delivery_method']) && in_array($d->slug,$_GET['delivery_method'])) $active = 'checked' ?>
 			<div>
 				<label class="<?php if($active == 'checked') echo 'fw-bold' ?>">
@@ -299,48 +324,85 @@ input[type="checkbox"], input[type="radio"] {
 	</div>
 	<div class="wp-block-column" style="flex: 66%;">
 	<div id="courselist">
-	<?php if(!empty($_GET['group']) || !empty($_GET['topic']) || !empty($_GET['audience']) || !empty($_GET['delivery_method'])): ?>
+	<?php 
+	if(!empty($_GET['group']) || !empty($_GET['topic']) || !empty($_GET['audience']) || !empty($_GET['delivery_method'])): 
+	// Grab the current URL
+	$url = $_SERVER['REQUEST_URI'];
+	$currenturl = urldecode($url);
+	?>
 	<div style="background-color: #FFF; border-radius: .5em; magrin: 1em 0; padding: 1em;">
-	<div class="">
-		<div><strong>Filters:</strong></div>
-		<div><a class="btn btn-sm btn-secondary" href="/learninghub/filter/">Clear Filters</a></div>
-		<div class="d-flex">
+	<div><strong>Filters:</strong></div>
+	<div><a class="btn btn-sm btn-secondary" href="/learninghub/filter/">Clear Filters</a></div>
+	<div class="row">
+		
 		<?php if(!empty($gterms)): ?>
-		<div class="p-2">
+		<div class="col-md-2 bg-light-subtle">
 		<div>Group</div>
-		<?php $linkwithout = '' ?>
 		<?php foreach($gterms as $g): ?>
-		<?php if($g->slug): ?>
-		<div class="">
-			<a href="<?= $linkwithout ?>" class="btn btn-sm btn-light">Remove</a> <?= $g->name ?>
-		</div>
-		<?php endif ?>
+		<?php
+		$grpurl = $currenturl;
+		$replace = 'group[]=' . $g->slug . '';
+		$gurl = str_replace($replace,'',$grpurl);
+		$gurl = str_replace('&&','&',$gurl);
+		?>
+		<span class="badge text-bg-dark">
+			<a href="<?= $gurl ?>" class="link-light">x</a> <?= $g->name ?>
+		</span>
 		<?php endforeach ?>
 		</div>
 		<?php endif ?>
-
+	
 		<?php if(!empty($tterms)): ?>
-		<div class="p-2">
+		<div class="col-md-4 bg-light-subtle">
 		<div>Topic</div>
 		<?php foreach($tterms as $t): ?>
-		<div class="">
-			<a href="#" class="btn btn-sm btn-light">Remove</a> <?= $t->name ?>
-		</div>
+		<?php
+		$topurl = $currenturl;
+		$replace = 'topic[]=' . $t->slug . '';
+		$turl = str_replace($replace,'',$topurl);
+		$turl = str_replace('&&','&',$turl);
+		?>
+		<span class="badge text-bg-dark">
+			<a href="<?= $turl ?>" class="link-light">x</a> <?= $t->name ?>
+		</span>
 		<?php endforeach ?>
 		</div>
 		<?php endif ?>
 
-		<?php if($audienceterm): ?>
-		<div class="">
-			<strong><?= $aterm->name ?></strong>
+		<?php if(!empty($aterms)): ?>
+		<div class="col-md-3 bg-light-subtle">
+		<div>Audience</div>
+		<?php foreach($aterms as $a): ?>
+		<?php
+		$audurl = $currenturl;
+		$replace = 'audience[]=' . $a->slug . '';
+		$aurl = str_replace($replace,'',$audurl);
+		$aurl = str_replace('&&','&',$aurl);
+		?>
+		<span class="badge text-bg-dark">
+			<a href="<?= $aurl ?>" class="link-light">x</a> <?= $a->name ?>
+		</span>
+		<?php endforeach ?>
 		</div>
 		<?php endif ?>
-		<?php if($dmterm): ?>
-		<div class="">
-			<strong><?= $dterm->name ?></strong>
+
+		<?php if(!empty($dterms)): ?>
+		<div class="col-md-3 bg-light-subtle">
+		<div>Delivery Method</div>
+		<?php foreach($dterms as $d): ?>
+		<?php
+		$dmurl = $currenturl;
+		$replace = 'delivery_method[]=' . $d->slug . '';
+		$durl = str_replace($replace,'',$dmurl);
+		$durl = str_replace('&&','&',$durl);
+		?>
+		<span class="badge text-bg-dark">
+			<a href="<?= $durl ?>" class="link-light">x</a> <?= $d->name ?>
+		</span>
+		<?php endforeach ?>
 		</div>
 		<?php endif ?>
-		</div>
+
 		</div>
 	</div>
 	<?php endif ?>
@@ -365,7 +427,7 @@ input[type="checkbox"], input[type="radio"] {
 	</div>
 </div>
 <div class="my-3 d-flex p-3 bg-white rounded-3">
-	<input class="form-control search" placeholder="Keyword filter" value="<?php echo $_GET['new'] ?>">
+	<input class="form-control search" placeholder="Filter these results by keyword" value="<?php echo $_GET['new'] ?>">
 </div>
 	<div class="list">
 	<?php if( $post_my_query->have_posts() ) : ?>
@@ -400,19 +462,12 @@ courseList.on('searchComplete', function(){
 	let update = courseList.update().matchingItems.length + ' courses';
 	ccount.innerHTML = update;
 });
+document.addEventListener("DOMContentLoaded", function() {
+  courseList.update;
+});
 
 </script>
 <script type="module">
-
-// There is an onChange="this.form.submit()" on each of the checkboxes for UX
-// reasons but if there is no javascript enabled then it would break the form.
-// There is a submit button on each form that is useless with js enabled,
-// but if there is no js then it becomes the only way to submit the form. Let's
-// hide the button here (and not in CSS) for graceful degradation.
-document.querySelectorAll('.applybutton').forEach(function(el) {
-   el.style.display = 'none';
-});
-
 // 
 // Details/Summary niceties
 //
