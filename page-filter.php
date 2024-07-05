@@ -150,7 +150,7 @@ input[type="checkbox"], input[type="radio"] {
     </div>
 </div>
 <div class="wp-block-columns alignwide">
-<div class="wp-block-column menus" id="filters" style="background-color: #FFF; border-radius: .5em; flex: 29%; padding: 2%; margin-right: 1%;">
+<div class="wp-block-column menus" id="filters" style="background-color: #FFF; border-radius: .5em; flex: 30%; padding: 2%; margin-right: 1%;">
 
 	<div><strong>Groups</strong></div>
 	<form action="/learninghub/filter" method="GET">
@@ -318,7 +318,7 @@ input[type="checkbox"], input[type="radio"] {
 
 
 	</div>
-	<div class="wp-block-column" style="flex: 66%;">
+	<div class="wp-block-column" style="flex: 65%;">
 	<div id="courselist">
 	<?php 
 	if(!empty($_GET['group']) || !empty($_GET['topic']) || !empty($_GET['audience']) || !empty($_GET['delivery_method'])): 
@@ -327,12 +327,14 @@ input[type="checkbox"], input[type="radio"] {
 	$currenturl = urldecode($url);
 	?>
 	<div style="background-color: #FFF; border-radius: .5em; magrin: 1em 0; padding: 1em;">
-	<div><strong>Filters:</strong></div>
-	<div><a class="btn btn-sm btn-secondary" href="/learninghub/filter/">Clear Filters</a></div>
+	<div>
+		<strong>Filters:</strong> 
+		<a class="btn btn-sm bg-dark-subtle text-dark-emphasis" href="/learninghub/filter/">Clear All</a>
+	</div>
 	<div class="row">
 		
 		<?php if(!empty($gterms)): ?>
-		<div class="col-md-2 bg-light-subtle">
+		<div class="col-md-auto bg-light-subtle">
 		<div>Group</div>
 		<?php foreach($gterms as $g): ?>
 		<?php
@@ -341,15 +343,17 @@ input[type="checkbox"], input[type="radio"] {
 		$gurl = str_replace($replace,'',$grpurl);
 		$gurl = str_replace('&&','&',$gurl);
 		?>
-		<span class="badge text-bg-dark">
-			<a href="<?= $gurl ?>" class="link-light">x</a> <?= $g->name ?>
+		<div>
+		<span class="badge bg-dark-subtle text-dark-emphasis">
+			<a href="<?= $gurl ?>" class="link-dark text-decoration-none">x</a> <?= $g->name ?>
 		</span>
+		</div>
 		<?php endforeach ?>
 		</div>
 		<?php endif ?>
 	
 		<?php if(!empty($tterms)): ?>
-		<div class="col-md-4 bg-light-subtle">
+		<div class="col-md-auto bg-light-subtle">
 		<div>Topic</div>
 		<?php foreach($tterms as $t): ?>
 		<?php
@@ -358,15 +362,17 @@ input[type="checkbox"], input[type="radio"] {
 		$turl = str_replace($replace,'',$topurl);
 		$turl = str_replace('&&','&',$turl);
 		?>
-		<span class="badge text-bg-dark">
-			<a href="<?= $turl ?>" class="link-light">x</a> <?= $t->name ?>
+		<div>
+		<span class="badge bg-dark-subtle text-dark-emphasis">
+			<a href="<?= $turl ?>" class="link-dark text-decoration-none">x</a> <?= $t->name ?>
 		</span>
+		</div>
 		<?php endforeach ?>
 		</div>
 		<?php endif ?>
 
 		<?php if(!empty($aterms)): ?>
-		<div class="col-md-3 bg-light-subtle">
+		<div class="col-md-auto bg-light-subtle">
 		<div>Audience</div>
 		<?php foreach($aterms as $a): ?>
 		<?php
@@ -375,15 +381,17 @@ input[type="checkbox"], input[type="radio"] {
 		$aurl = str_replace($replace,'',$audurl);
 		$aurl = str_replace('&&','&',$aurl);
 		?>
-		<span class="badge text-bg-dark">
-			<a href="<?= $aurl ?>" class="link-light">x</a> <?= $a->name ?>
+		<div>
+		<span class="badge bg-dark-subtle text-dark-emphasis">
+			<a href="<?= $aurl ?>" class="link-dark text-decoration-none">x</a> <?= $a->name ?>
 		</span>
+		</div>
 		<?php endforeach ?>
 		</div>
 		<?php endif ?>
 
 		<?php if(!empty($dterms)): ?>
-		<div class="col-md-3 bg-light-subtle">
+		<div class="col-md-auto bg-light-subtle">
 		<div>Delivery Method</div>
 		<?php foreach($dterms as $d): ?>
 		<?php
@@ -392,9 +400,11 @@ input[type="checkbox"], input[type="radio"] {
 		$durl = str_replace($replace,'',$dmurl);
 		$durl = str_replace('&&','&',$durl);
 		?>
-		<span class="badge text-bg-dark">
-			<a href="<?= $durl ?>" class="link-light">x</a> <?= $d->name ?>
+		<div>
+		<span class="badge bg-dark-subtle text-dark-emphasis">
+			<a href="<?= $durl ?>" class="link-dark text-decoration-none">x</a> <?= $d->name ?>
 		</span>
+		</div>
 		<?php endforeach ?>
 		</div>
 		<?php endif ?>
@@ -405,10 +415,10 @@ input[type="checkbox"], input[type="radio"] {
 	<div class="my-3 d-flex p-3 bg-white rounded-3">
     <div class="mr-3 pt-1 fw-bold" id="coursecount"><?= $post_my_query->found_posts ?> courses</div>
     <div class="dropdown px-2">
-        <button class="btn btn-sm bg-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-sm bg-dark-subtle text-dark-emphasis dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Sort by
         </button>
-        <div class="dropdown-menu">
+        <div class="dropdown-menu bg-dark-subtle text-dark-emphasis">
             <li><a class="sort dropdown-item" data-sort="published" href="#">Most Recent</a></li>
             <li><a class="sort dropdown-item" data-sort="coursename" href="#">Alphabetical</a></li>
             <li><a class="sort dropdown-item" data-sort="dm" href="#">Delivery Method</a></li>
@@ -418,8 +428,8 @@ input[type="checkbox"], input[type="radio"] {
         </div>
     </div>
 	<div class="ml-4">
-    	<button id="expall" class="btn btn-sm bg-secondary px-2 d-inline-block">Expand All</button>
-    	<button id="collapseall" class="btn btn-sm bg-secondary px-2 d-inline-block">Collapse All</button>
+    	<button id="expall" class="btn btn-sm bg-dark-subtle text-dark-emphasis px-2 d-inline-block">Expand All</button>
+    	<button id="collapseall" class="btn btn-sm bg-dark-subtle text-dark-emphasis px-2 d-inline-block">Collapse All</button>
 	</div>
 </div>
 <div class="my-3 d-flex p-3 bg-white rounded-3">
